@@ -5,4 +5,4 @@ def showfiles():
     os.chdir("/GMDelight/externalDiskForDR")
     print("os.getcwd() 2 ",os.getcwd())
     return os.getcwd();
-print("!!!!!!!!!!!!!!!!!!!",showfiles(),"!!!!!!!!!!!!!!!!!!!!"); 
+#print("!!!!!!!!!!!!!!!!!!!",showfiles(),"!!!!!!!!!!!!!!!!!!!!"); 
