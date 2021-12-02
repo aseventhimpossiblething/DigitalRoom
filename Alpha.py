@@ -223,7 +223,7 @@ def indece():
     global domain;     
     domainFavi=domain+"/favicon.png";
     #return render_template('LandingTemplate.html',domain=domain,domainFav=domainFavi);
-    #return "vfiles!";
+    #return str("vfiles!");
 
     
     
