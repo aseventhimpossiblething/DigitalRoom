@@ -3,11 +3,13 @@
 {% block content %}
 
 <p>DigitalRoom V1</p>
-<!----<p><a href="SpendTrack">Spend Track Draft</a></p>---> 
-<!-----<p><a href="CommunityUpdates">Community Updates(Generate New Community Keywords and Ads)</a></p>--->
-<p><a href="vfiles">File Mover</a></p> 
-<p><a href="BidOps">Data Anlysis Matrix</a></p>
-
+<div style="height:50px"></div>
+<form  method=POST enctype="multipart/form-data" action="/CTRUpload">
+<input type="file" name="sheet" id="sheet" size="60" width="170">
+<input type="submit" name="submit" >  
+<div style="width:100%; text-align:center;">The Following Columns Must be Included In Bid Ops</div> 
+</form> 
+{{fimage}}
 
  
 {% endblock %}
