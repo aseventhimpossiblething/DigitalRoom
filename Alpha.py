@@ -194,7 +194,8 @@ def indece():
         return str(chckbdxcred());
     global domain;     
     domainFavi=domain+"/favicon.png";
-    #return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi);
+    fimage=str(DisplayFiles.showfiles())
+    #return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage);
     #return "vfiles!";
     return str(DisplayFiles.showfiles())
     
