@@ -3,7 +3,7 @@
 
 
 
-domain="DigitalRoom"
+domain="DigitalRoomFileShare.Cloud"
 usr="open"
 pwd="open"
 from datetime import datetime
