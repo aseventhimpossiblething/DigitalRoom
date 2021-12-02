@@ -23,8 +23,8 @@ import glob
 import numpy
 import scipy
 import pandas
-import BidOpAssist
-import fileHandler
+#import BidOpAssist
+#import fileHandler
 #import accumulateGMEfiles
 import os
 from flask import Flask, Markup, render_template, request, make_response
@@ -32,16 +32,6 @@ from flask import send_file
 from flask import send_from_directory
 
 
-
-
-"""
-nasdaqAbbreviations="http://ftp.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
-print(nasdaqAbbreviations)
-filedate=str(datetime.now().date())
-ndq=str('curl '+nasdaqAbbreviations+' -o nasdaqAbbreviations-'+filedate)
-print(ndq)
-os.system(ndq)
-"""
 
 
 
@@ -60,7 +50,7 @@ os.system('sudo chmod -R 777 templates')
 
 
 
-import psycopg2
+
 
 
 app = Flask(__name__,"/static/")
@@ -85,12 +75,6 @@ def prox2():
 
 
 
-@app.route('/stonks')
-def stonk():
-    if chckbdxcred().find("NULL")==-1:
-        print(str(chckbdxcred()));
-        return str(chckbdxcred());
-    return str(accumulateGMEfiles.TableGen());
 
 
 
@@ -208,16 +192,6 @@ def BasisN3():
  return send_file('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/featuresheet.xlsx', attachment_filename='CTROut5heet2.xlsx')
 
 
-"""
-@app.route('/GMEout0')
-def GME0():
- return send_file('/Sheets/rememberGME/GMEouts/gmetemplate.xlsx', attachment_filename='GMEout.xlsx')
-"""
-@app.route('/GMEout0')
-def GME0():
- print(os.getcwd())  
- print(os.listdir())
- return send_file('/gmetemplate.xlsx', attachment_filename='a')
 
 
 
@@ -257,40 +231,14 @@ print("13")
     
     
     
-@app.route('/BidOps')
-def BidOpInput():
-    if chckbdxcred().find("NULL")==-1:
-        print(str(chckbdxcred()));
-        return str(chckbdxcred());
-    return render_template('BidOpForm.html')
 
 
 
-@app.route('/BidOPUpload', methods=['POST','GET'])
-def BidOPUpload():
-    if chckbdxcred().find("NULL")==-1:
-        print(str(chckbdxcred()));
-        return str(chckbdxcred());
-    return fileHandler.BidOpFileHandler()
 
 
-@app.route('/CTRForm')
-def CTRform():
-    if chckbdxcred().find("NULL")==-1:
-        print(str(chckbdxcred()));
-        return str(chckbdxcred());
-    return render_template('CTRForm.html')
 
 
-@app.route('/CTRUpload', methods=['POST','GET'])
-def CTRupload():
-    print("CTRUpload Button clicked")
-    print("CTRUpload Button clicked")
-    print("CTRUpload Button clicked")    
-    if chckbdxcred().find("NULL")==-1:
-        print(str(chckbdxcred()));
-        return str(chckbdxcred());
-    return fileHandler.CTRUploadFilehandler()
+
 
 
 
@@ -299,69 +247,10 @@ def CTRupload():
 
     
     
-   
-@app.route('/BidOpPending')
-def acd():
-    os.chdir('/var/www/workPortal/Sheets/BidOpData/MachinePatternSheets/')
-    readiness=open("ForestLoadingQueue.txt","r")
-    ready=readiness.read()
-    print(ready)
-    BPD='<meta http-equiv="refresh" content="45"><html>This Training Sheet will be added to the body of training Data  - '+ready+"</html>"
-    if ready=="100%":
-       BPD="render_template('BidOpPending.html')";
-    if ready.find("]")>-1:
-       BPD='<html>The following columns are missing from the Data set - '+ready+"</html>"           
-    #BPD=str(BPD2) 
-    print(BPD)
-    readiness.close()     
-    if ready=="100%":
-       return render_template('BidOpPending.html',CacheBreakStamp=datetime.now());
-    return BPD
-
-
-@app.route('/CTRPending')
-def acdc():
-    os.chdir('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/')
-    readiness=open("ForestLoadingQueue.txt","r")
-    ready=readiness.read()
-    print(ready)
-    BPD='<meta http-equiv="refresh" content="45"><html>This Training Sheet will be added to the body of training Data  - '+ready+"</html>"
-    if ready=="100%":
-       BPD="render_template('BidOpPending.html')";
-    if ready.find("]")>-1:
-       BPD='<html>The following columns are missing from the Data set - '+ready+"</html>"           
-    #BPD=str(BPD2) 
-    print(BPD)
-    readiness.close()     
-    if ready=="100%":
-       return render_template('BidOpPending.html',CacheBreakStamp=datetime.now());
-    return BPD
 
 
 
-@app.route('/BidOptimisation')
-def BdOptmstn():
-    print("timer fired")     
-    os.chdir('/var/www/workPortal/Sheets/BidOpData/MachinePatternSheets/')  
-    #print(os.getcwd())
-    readiness=open("ForestLoadingQueue.txt","r")
-    ready=readiness.read()
-    settleURL='<meta http-equiv="refresh" content="50"><html>Bids are Being Optimised  - '+ready+"</html>"
-    if ready.find("100%")>-1:
-       return render_template("BidOptimisation.html",CacheBreakStamp=datetime.now())           
-    return settleURL
 
-@app.route('/CTRPrediction')
-def CTRmst():
-    print("timer fired")     
-    os.chdir('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/')  
-    #print(os.getcwd())
-    readiness=open("ForestLoadingQueue.txt","r")
-    ready=readiness.read()
-    settleURL='<meta http-equiv="refresh" content="50"><html>Bids are Being Optimised  - '+ready+"</html>"
-    if ready.find("100%")>-1:
-       return render_template("CTRPrediction.html",CacheBreakStamp=datetime.now())           
-    return settleURL
 
 
 
