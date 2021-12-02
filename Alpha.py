@@ -14,7 +14,7 @@ from datetime import datetime
 
 
 
-
+import DisplayFiles
 import glob
 import numpy
 import scipy
@@ -156,34 +156,6 @@ print("7")
 
 
 
-"""
-@app.route('/BasisOfBidsHuman')
-def BasisH():
- return send_file('/var/www/workPortal/Sheets/BidOpData/MachinePatternSheets/BidOpSeedViewable.xlsx', attachment_filename='BidOpSeedViewable.xlsx')
-
-         
-
-@app.route('/BasisOfBidsMachine')
-def BasisM():
- return send_file('/var/www/workPortal/Sheets/BidOpData/MachinePatternSheets/BidOpSeed.xlsx', attachment_filename='BidOpSeed.xlsx')
-
-@app.route('/BasisOfCTRMachine')
-def BasisN():
- return send_file('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/CTRSeed.xlsx', attachment_filename='CTRSeed.xlsx')
-
-         
-@app.route('/OutPutOfBiOp1')
-def BasisN1():
- return send_file('/var/www/workPortal/Sheets/BidOpData/MachinePatternSheets/outputsheet.xlsx', attachment_filename='Bid0p5heet1.xlsx')
-
-@app.route('/OutPutOfCTRPred')
-def BasisN2():
- return send_file('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/ctroutputsheet.xlsx', attachment_filename='CTROut5heet1.xlsx')
-
-@app.route('/OutPutOfCTRfeatureReport')
-def BasisN3():
- return send_file('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/featuresheet.xlsx', attachment_filename='CTROut5heet2.xlsx')
-"""
 
 
 
@@ -223,8 +195,8 @@ def indece():
     global domain;     
     domainFavi=domain+"/favicon.png";
     #return render_template('LandingTemplate.html',domain=domain,domainFav=domainFavi);
-    return "vfiles!";
-
+    #return "vfiles!";
+    return DisplayFiles
     
     
     
