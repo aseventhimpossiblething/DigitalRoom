@@ -215,8 +215,8 @@ def index():
     #return chckbdxcred();
     
     
-@app.route('vfiles')
-def index():
+@app.route('/vfiles')
+def indece():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
