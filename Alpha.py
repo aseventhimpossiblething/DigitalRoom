@@ -1,13 +1,9 @@
-#import accesspoint
-#import accumulateGMEfiles
-#accesspoint.pullpage();
-#accumulateGMEfiles.py;
-#delete above after experiment
 
 
 
-#domain="http://bdxapilink.com"
-domain="rememberGME"
+
+
+domain="DigitalRoom"
 usr="open"
 pwd="open"
 from datetime import datetime
@@ -23,9 +19,7 @@ import glob
 import numpy
 import scipy
 import pandas
-#import BidOpAssist
-#import fileHandler
-#import accumulateGMEfiles
+
 import os
 from flask import Flask, Markup, render_template, request, make_response
 from flask import send_file
@@ -43,8 +37,7 @@ from flask import send_from_directory
 os.system('sudo chmod -R 777 Sheets')
 os.system('sudo chmod -R 777 templates')
 
-#os.system('curl https://www.google.com')
-#os.system('curl https://www.google.com')
+
 
 
 
@@ -163,7 +156,7 @@ print("7")
 
 
 
-
+"""
 @app.route('/BasisOfBidsHuman')
 def BasisH():
  return send_file('/var/www/workPortal/Sheets/BidOpData/MachinePatternSheets/BidOpSeedViewable.xlsx', attachment_filename='BidOpSeedViewable.xlsx')
@@ -190,7 +183,7 @@ def BasisN2():
 @app.route('/OutPutOfCTRfeatureReport')
 def BasisN3():
  return send_file('/var/www/workPortal/Sheets/CTRData/MachinePatternSheets/featuresheet.xlsx', attachment_filename='CTROut5heet2.xlsx')
-
+"""
 
 
 
@@ -220,6 +213,17 @@ def index():
     domainFavi=domain+"/favicon.png";
     return render_template('LandingTemplate.html',domain=domain,domainFav=domainFavi);
     #return chckbdxcred();
+    
+    
+@app.route('vfiles')
+def index():
+    if chckbdxcred().find("NULL")==-1:
+        print(str(chckbdxcred()));
+        return str(chckbdxcred());
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    #return render_template('LandingTemplate.html',domain=domain,domainFav=domainFavi);
+    #return "vfiles!";
 
     
     
