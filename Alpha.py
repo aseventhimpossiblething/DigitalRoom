@@ -1,5 +1,5 @@
-import accesspoint
-import accumulateGMEfiles
+#import accesspoint
+#import accumulateGMEfiles
 #accesspoint.pullpage();
 #accumulateGMEfiles.py;
 #delete above after experiment
