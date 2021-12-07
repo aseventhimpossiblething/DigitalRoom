@@ -206,7 +206,13 @@ def indece():
 print("13")
     
 
+@app.route('/tests')
+def indtest():
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
     
+        
     
     
 
