@@ -1,1 +1,19 @@
+<html>
+{%extends 'DefaultTemplate.html'%}
+{% block content %}
+
+<p>DigitalRoom V1</p>
+<div style="height:50px"></div>
+<form  method=POST enctype="multipart/form-data" action="/DRupload">
+<input type="file" name="sheet" id="sheet" size="60" width="170">
+<input type="submit" name="submit" >  
+<!---<div style="width:100%; text-align:center;">The Following Columns Must be Included In Bid Ops</div> --->
+</form> 
+<hr> 
+{{fimage}}
+<embed type="text/html" src={{view9}}> 
+
+ 
+{% endblock %}
+</html>
 
