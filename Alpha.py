@@ -210,6 +210,7 @@ print("13")
 def indtest():
     global domain;     
     domainFavi=domain+"/favicon.png";
+    fimage=str(DisplayFiles.showfiles())
     return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
     
         
