@@ -60,7 +60,7 @@ def Cupload():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
-    return Uploads
+    return Uploads.store();
 
 
 @app.route('/proxy1')
