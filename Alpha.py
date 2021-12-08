@@ -62,7 +62,7 @@ def Cupload():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
-    return render_template('LoadingTemplate2.html');
+    return render_template('LoadingTemplate.html');
 
 
 @app.route('/proxy1')
