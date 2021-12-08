@@ -54,7 +54,7 @@ app = Flask(__name__,"/static/")
 @app.route('/DRUpload', methods=['POST','GET'])
 def Cupload():
     os.chdir("/GMDelight/externalDiskForDR");
-    Uploads.store();
+    #Uploads.store();
     print("CTRUpload Button clicked")
     print("CTRUpload Button clicked")
     print("CTRUpload Button clicked") 
