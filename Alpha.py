@@ -55,14 +55,16 @@ app = Flask(__name__,"/static/")
 def Cupload():
     os.chdir("/GMDelight/externalDiskForDR");
     request.files['sheet'].save("UploadedExcel");
+    
     req=request.files['sheet'];
     reqstr=str(req);
+    print(os.listdir())
     print(reqstr)
     #startfn=reqstr.find("FileStorage:");
     #print(startfn)
     endfn=reqstr.find("(");
     print(endfn)
-    FileName=reqstr[13:endfn-1];
+    FileName=reqstr[15:endfn-2];
     print("FileName - ",FileName);
     #Uploads.store();
     print(" Button clicked")
