@@ -53,7 +53,7 @@ app = Flask(__name__,"/static/")
 
 @app.route('/DRUpload', methods=['POST','GET'])
 def Cupload():
-    os.chdir("/GMDelight/externalDiskForDR");
+    os.chdir("/GMDelight/view9");
     print(os.listdir())
     
     
