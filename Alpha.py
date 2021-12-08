@@ -54,6 +54,12 @@ app = Flask(__name__,"/static/")
 @app.route('/DRUpload', methods=['POST','GET'])
 def Cupload():
     os.chdir("/GMDelight/externalDiskForDR");
+    req=request.files['sheet'].save("UploadedExcel");
+    reqstr=str(req);
+    startfn=req.find("FileStorage:");
+    endfn=req.find("(");
+    FileName=reqstr[startfn:endfn];
+    print("FileName - ",FileName):
     #Uploads.store();
     print(" Button clicked")
     print("Button clicked")
@@ -61,9 +67,9 @@ def Cupload():
     print("request-",request.files['sheet'])
     
     domainFavi=domain+"/favicon.png";
-    #view9="http://"+domain+"/view9"
+    view9="http://"+domain+"/view9"
     fimage=str(DisplayFiles.showfiles())
-    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage);
+    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
     """
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
