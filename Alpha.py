@@ -48,6 +48,20 @@ os.system('sudo chmod -R 777 templates')
 
 app = Flask(__name__,"/static/")
 
+
+
+
+@app.route('/DRUpload', methods=['POST','GET'])
+def Cupload():
+    print("CTRUpload Button clicked")
+    print("CTRUpload Button clicked")
+    print("CTRUpload Button clicked")    
+    if chckbdxcred().find("NULL")==-1:
+        print(str(chckbdxcred()));
+        return str(chckbdxcred());
+    return Uploads
+
+
 @app.route('/proxy1')
 def prox1():
     if chckbdxcred().find("NULL")==-1:
