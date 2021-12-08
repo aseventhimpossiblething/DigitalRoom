@@ -54,6 +54,7 @@ app = Flask(__name__,"/static/")
 @app.route('/DRUpload', methods=['POST','GET'])
 def Cupload():
     os.chdir("/GMDelight/externalDiskForDR");
+    print(os.listdir())
     request.files['sheet'].save("UploadedExcel");
     
     req=request.files['sheet'];
