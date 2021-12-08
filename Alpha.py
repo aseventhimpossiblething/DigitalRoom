@@ -59,7 +59,7 @@ def Cupload():
     startfn=req.find("FileStorage:");
     endfn=req.find("(");
     FileName=reqstr[startfn:endfn];
-    print("FileName - ",FileName):
+    print("FileName - ",FileName);
     #Uploads.store();
     print(" Button clicked")
     print("Button clicked")
