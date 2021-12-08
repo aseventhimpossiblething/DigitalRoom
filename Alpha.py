@@ -56,8 +56,11 @@ def Cupload():
     os.chdir("/GMDelight/externalDiskForDR");
     req=request.files['sheet'].save("UploadedExcel");
     reqstr=str(req);
+    print(reqstr)
     startfn=reqstr.find("FileStorage:");
+    print(startfn)
     endfn=reqstr.find("(");
+    print(endfn)
     FileName=reqstr[startfn:endfn];
     print("FileName - ",FileName);
     #Uploads.store();
