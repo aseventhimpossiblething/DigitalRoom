@@ -58,11 +58,11 @@ def Cupload():
     req=request.files['sheet'];
     reqstr=str(req);
     print(reqstr)
-    startfn=reqstr.find("FileStorage:");
-    print(startfn)
+    #startfn=reqstr.find("FileStorage:");
+    #print(startfn)
     endfn=reqstr.find("(");
     print(endfn)
-    FileName=reqstr[startfn:endfn];
+    FileName=reqstr[13:endfn-1];
     print("FileName - ",FileName);
     #Uploads.store();
     print(" Button clicked")
