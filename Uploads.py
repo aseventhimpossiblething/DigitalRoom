@@ -1,5 +1,8 @@
 from flask import request
+import os
 
 def store():
-    print("request-",request.files['sheet']);
+    print("os listdir() - ",os.listdir())
+    # os.chdir();
+    #print("request-",request.files['sheet']);
     return str(request.files['sheet']);
