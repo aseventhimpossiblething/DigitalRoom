@@ -59,11 +59,17 @@ def Cupload():
     print("CTRUpload Button clicked")
     print("CTRUpload Button clicked") 
     print("request-",request.files['sheet'])
+    
+    domainFavi=domain+"/favicon.png";
+    #view9="http://"+domain+"/view9"
+    fimage=str(DisplayFiles.showfiles())
+    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage);
+    """
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
     return render_template('LoadingTemplate.html');
-
+    """
 
 @app.route('/proxy1')
 def prox1():
@@ -214,8 +220,7 @@ def indece():
     view9="http://"+domain+"/view9"
     fimage=str(DisplayFiles.showfiles())
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
-    #return "vfiles!";
-    #return str(DisplayFiles.showfiles())
+    
     
     
     
