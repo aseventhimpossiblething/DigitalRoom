@@ -55,7 +55,8 @@ app = Flask(__name__,"/static/")
 def Cupload():
     print("CTRUpload Button clicked")
     print("CTRUpload Button clicked")
-    print("CTRUpload Button clicked")    
+    print("CTRUpload Button clicked") 
+    pritn("request-",request.files['sheet'])
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
