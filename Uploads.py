@@ -5,4 +5,4 @@ def store():
     print("os listdir() - ",os.listdir())
     # os.chdir();
     #print("request-",request.files['sheet']);
-    return str(request.files['sheet']);
+    return str("os list --- ",os.listdir());
