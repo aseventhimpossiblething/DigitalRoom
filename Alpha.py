@@ -53,6 +53,8 @@ app = Flask(__name__,"/static/")
 
 @app.route('/DRUpload', methods=['POST','GET'])
 def Cupload():
+    os.chdir("/GMDelight/externalDiskForDR");
+    Uploads.store();
     print("CTRUpload Button clicked")
     print("CTRUpload Button clicked")
     print("CTRUpload Button clicked") 
@@ -60,7 +62,7 @@ def Cupload():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
-    return Uploads.store();
+    return render_template('LoadingTemplate2.html');
 
 
 @app.route('/proxy1')
