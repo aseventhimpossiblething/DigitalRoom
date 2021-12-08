@@ -55,9 +55,9 @@ app = Flask(__name__,"/static/")
 def Cupload():
     os.chdir("/GMDelight/externalDiskForDR");
     #Uploads.store();
-    print("CTRUpload Button clicked")
-    print("CTRUpload Button clicked")
-    print("CTRUpload Button clicked") 
+    print(" Button clicked")
+    print("Button clicked")
+    print("Button clicked") 
     print("request-",request.files['sheet'])
     
     domainFavi=domain+"/favicon.png";
