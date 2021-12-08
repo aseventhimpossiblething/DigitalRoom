@@ -1,4 +1,4 @@
-import request
+from flask import request
 
 def store():
     print("request-",request.files['sheet']);
