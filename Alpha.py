@@ -79,6 +79,7 @@ def Cupload():
     domainFavi=domain+"/favicon.png";
     view9="http://"+domain+"/view9"
     fimage=str(DisplayFiles.showfiles())
+    print("fimage ",fimage)
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
     """
     if chckbdxcred().find("NULL")==-1:
