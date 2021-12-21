@@ -26,6 +26,14 @@ def showfiles():
     print("os.getcwd() 2 ",os.getcwd())
     print("len(os.listdir())  ",len(os.listdir()))
     contents=os.listdir()
+    len(contents);
+    print("len(contents) = ",len(contents));
+    nz=0;
+    while nz<len(contents):
+          li=contents[nz];
+             
+          print(li)  
+          nz=nz+1;
     #return os.getcwd();
     return contents
 #print("!!!!!!!!!!!!!!!!!!!",showfiles(),"!!!!!!!!!!!!!!!!!!!!"); 
