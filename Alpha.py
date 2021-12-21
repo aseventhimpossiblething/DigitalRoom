@@ -53,7 +53,7 @@ app = Flask(__name__,"/static/")
 
 @app.route('/DRUpload', methods=['POST','GET'])
 def Cupload():
-    DisplayFiles.SaveFileFromLoadingTemplate();
+    DisplayFiles.SaveFileFromLoadingTemplate(request);
     
     """
     os.chdir("/GMDelight/view9");
