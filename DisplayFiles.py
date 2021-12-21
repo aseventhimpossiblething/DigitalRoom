@@ -1,4 +1,5 @@
 import os
+import pandas
 def SaveFileFromLoadingTemplate(x):
     request=x
     os.chdir("/GMDelight/view9");
@@ -26,8 +27,11 @@ def showfiles():
     print("os.getcwd() 2 ",os.getcwd())
     print("len(os.listdir())  ",len(os.listdir()))
     contents=os.listdir()
+    DF=pandas.DataFrame(contents);
+    print("DF ",DF)
     len(contents);
     print("len(contents) = ",len(contents));
+    
     nz=0;
     while nz<len(contents):
           li=contents[nz];
