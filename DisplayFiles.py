@@ -38,7 +38,7 @@ def showfiles():
     nz=0;
     while nz<len(contents):
           li=contents[nz];
-          HTMLSe1="<html><a href="">samli</a></html>" 
+          HTMLSeq="<html><a href="">samli</a></html>" 
           SecondCol.append(HTMLSeq);  
           print(li)  
           nz=nz+1;
