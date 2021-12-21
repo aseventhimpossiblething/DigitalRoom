@@ -1,5 +1,6 @@
 import os
-def SaveFileFromLoadingTemplate():
+def SaveFileFromLoadingTemplate(x):
+    request=x
     os.chdir("/GMDelight/view9");
     #print(os.listdir())
     req=request.files['sheet'];
