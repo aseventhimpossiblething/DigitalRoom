@@ -22,7 +22,7 @@ def SaveFileFromLoadingTemplate(x):
 
 def showfiles():
     print("os.getcwd() 1 ",os.getcwd())
-    os.chdir("/GMDelight/externalDiskForDR")
+    os.chdir("/GMDelight/view9")
     print("os.getcwd() 2 ",os.getcwd())
     print("len(os.listdir())  ",len(os.listdir()))
     contents=os.listdir()
