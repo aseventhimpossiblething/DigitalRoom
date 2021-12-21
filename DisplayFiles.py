@@ -47,5 +47,5 @@ def showfiles():
     DF["Fun"]=SecondCol;
     print("DF ",DF)
     #return contents
-    return DF.to_html()
+    return DF
 #print("!!!!!!!!!!!!!!!!!!!",showfiles(),"!!!!!!!!!!!!!!!!!!!!"); 
