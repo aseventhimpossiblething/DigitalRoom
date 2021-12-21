@@ -28,16 +28,23 @@ def showfiles():
     print("len(os.listdir())  ",len(os.listdir()))
     contents=os.listdir()
     DF=pandas.DataFrame(contents);
-    print("DF ",DF)
+    DF.columns=["Files"];
+    
+    
+    #print("DF ",DF)
     len(contents);
     print("len(contents) = ",len(contents));
-    
+    SecondCol=[];
     nz=0;
     while nz<len(contents):
           li=contents[nz];
-             
+           HTMLSe1="<html><a href="">samli</a></html>" 
+          SecondCol.append(HTMLSeq);  
           print(li)  
           nz=nz+1;
     #return os.getcwd();
-    return contents
+    DF.Fun=SecondCol;
+    print("DF ",DF)
+    #return contents
+    return DF.to_html()
 #print("!!!!!!!!!!!!!!!!!!!",showfiles(),"!!!!!!!!!!!!!!!!!!!!"); 
