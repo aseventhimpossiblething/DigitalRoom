@@ -53,10 +53,11 @@ app = Flask(__name__,"/static/")
 
 @app.route('/DRUpload', methods=['POST','GET'])
 def Cupload():
+    DisplayFiles.SaveFileFromLoadingTemplate();
+    
+    """
     os.chdir("/GMDelight/view9");
-    print(os.listdir())
-    
-    
+    #print(os.listdir())
     req=request.files['sheet'];
     reqstr=str(req);
     print(os.listdir())
@@ -64,7 +65,7 @@ def Cupload():
     #startfn=reqstr.find("FileStorage:");
     #print(startfn)
     endfn=reqstr.find("(");
-    print(endfn)
+    #print(endfn)
     FileName=reqstr[15:endfn-2];
     print("FileName - ",FileName);
     request.files['sheet'].save(FileName);
@@ -72,7 +73,8 @@ def Cupload():
     print(" Button clicked")
     print("Button clicked")
     print("Button clicked") 
-    print("request-",request.files['sheet'])
+    #print("request-",request.files['sheet'])
+    """
     
     domainFavi=domain+"/favicon.png";
     view9="http://"+domain+"/view9"
