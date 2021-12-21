@@ -39,11 +39,12 @@ def showfiles():
     while nz<len(contents):
           li=contents[nz];
           HTMLSeq="<html><a href="">samli</a></html>" 
+          HTMLSeq="nhu"
           SecondCol.append(HTMLSeq);  
           print(li)  
           nz=nz+1;
     #return os.getcwd();
-    DF.Fun=SecondCol;
+    DF[Fun]=SecondCol;
     print("DF ",DF)
     #return contents
     return DF.to_html()
