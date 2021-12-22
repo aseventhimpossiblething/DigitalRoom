@@ -95,7 +95,8 @@ def dfile():
     os.remove(filename);
     print("os,getcwd() ",os.getcwd());
     print("listdir ",os.listdir())
-    return filename;  
+    deletedfile=filename+" deleted"
+    return deletedfile;  
     
     
 @app.route('/proxy1')
@@ -248,7 +249,7 @@ def indece():
     #view9="http://"+domain+"/Testing"
     fimage=DisplayFiles.showfiles()
     view9="http://"+domain+"/view10"
-    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage);
+    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
     
     
     
