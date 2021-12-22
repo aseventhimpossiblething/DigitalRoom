@@ -80,7 +80,7 @@ def Cupload():
     view9="http://"+domain+"/view9"
     #view9="http://"+domain+"/Testing"
     fimage=str(DisplayFiles.showfiles())
-    view9=fimage
+    view9=DisplayFiles.showfiles().to_html()
     print("fimage ",fimage)
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
     """
