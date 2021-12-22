@@ -251,6 +251,14 @@ def indece():
     view9="http://"+domain+"/view10"
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
 
+@app.route('/view10')
+def indembd():
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    #fimage=str(DisplayFiles.showfilesV0())
+    #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+    return DisplayFiles.showfiles();
+
 @app.route('/external')
 def indvr():
     global domain;     
