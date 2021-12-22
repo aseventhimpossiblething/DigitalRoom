@@ -77,10 +77,11 @@ def Cupload():
     """
     
     domainFavi=domain+"/favicon.png";
-    view9="http://"+domain+"/view9"
+    #view9="http://"+domain+"/view9"
     #view9="http://"+domain+"/Testing"
     fimage=str(DisplayFiles.showfiles())
-    view9=DisplayFiles.showfiles()
+    #view9=DisplayFiles.showfiles()
+    view9="http://"+domain+"/view10"
     print("fimage ",fimage)
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
     """
@@ -247,6 +248,14 @@ def indece():
     
 
 print("13")
+
+@app.route('/view10')
+def indembed():
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    fimage=str(DisplayFiles.showfiles())
+    #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+    return DisplayFiles.showfiles();
     
 
 @app.route('/tests')
