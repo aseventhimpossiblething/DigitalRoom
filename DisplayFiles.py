@@ -54,7 +54,7 @@ def showfilesV0():
     nz=0;
     while nz<len(contents):
           li=contents[nz];
-          HTMLSeq='<div><form action="/delfile"><input type="hidden" name="'+li+'" value="'+li+'"><a href="/test/'+li+'">'+li+'</a> ___ <input type="submit" value="delete"></form></div>' 
+          HTMLSeq='<div><a href="/test/'+li+'">'+li+'</a></div>' 
           SecondCol.append(HTMLSeq);  
           print(li)  
           nz=nz+1;
