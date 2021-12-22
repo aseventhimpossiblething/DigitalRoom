@@ -96,7 +96,7 @@ def dfile():
     print("os,getcwd() ",os.getcwd());
     print("listdir ",os.listdir())
     deletedfile=filename+" deleted"
-    return deletedfile;  
+    return DisplayFiles.showfiles();;  
     
     
 @app.route('/proxy1')
