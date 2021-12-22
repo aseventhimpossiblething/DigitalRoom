@@ -92,7 +92,7 @@ def dfile():
     print("listdir ",os.listdir())
     #oc.chdir()
     os.chdir("/GMDelight/view9")
-    os.remove(filename);
+    os.remove(filename.replace(" ","+"));
     print("os,getcwd() ",os.getcwd());
     print("listdir ",os.listdir())
     deletedfile=filename+" deleted"
