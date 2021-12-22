@@ -76,10 +76,10 @@ def Cupload():
 
 @app.route('/delfile',methods=['POST','GET'])
 def dfile():
-    print("request ",request)
+    print("request.name ",request.name)
     mss="delfile called"
     print(mss)    
-    return str(request);  
+    return str(request.name);  
     
     
 @app.route('/proxy1')
