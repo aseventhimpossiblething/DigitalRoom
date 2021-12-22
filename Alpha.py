@@ -79,7 +79,7 @@ def dfile():
     print("request ",request);
     reqstr=str(request);
     findsign=reqstr.find("=")
-    findendspace=reqstr.find(" ")
+    findendspace=reqstr.find("[")
     print("find = ",findsign)
     print("findendspace ",findendspace)
     filename=reqstr[findsign:findendspace]
