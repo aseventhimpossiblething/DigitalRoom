@@ -235,7 +235,7 @@ def indece():
     global domain;     
     domainFavi=domain+"/favicon.png";
     #view9="http://"+domain+"/Testing"
-    fimage=str(DisplayFiles.showfiles())
+    fimage=DisplayFiles.showfiles()
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage);
     
     
