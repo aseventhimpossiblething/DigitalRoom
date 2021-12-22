@@ -46,7 +46,7 @@ def showfiles():
           nz=nz+1;
     #return os.getcwd();
     #DF["Fun"]=SecondCol;
-    print("DF ",DF)
+    #print("DF ",DF)
     #return contents
     #return DF.to_html();
     return ''.join(SecondCol);
