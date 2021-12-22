@@ -250,6 +250,17 @@ def indece():
     fimage=DisplayFiles.showfiles()
     view9="http://"+domain+"/view10"
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
+
+@app.route('/external')
+def indvr():
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    #view9="http://"+domain+"/Testing"
+    #view9="http://"+domain+"/Testing"
+    #fimage=DisplayFiles.showfilesV0()
+    view9="http://"+domain+"/externalview"
+    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,view9=view9);
+    
     
     
     
@@ -257,22 +268,22 @@ def indece():
 
 print("13")
 
-@app.route('/view10')
+@app.route('/externalview')
 def indembed():
     global domain;     
     domainFavi=domain+"/favicon.png";
-    fimage=str(DisplayFiles.showfiles())
+    #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    return DisplayFiles.showfiles();
+    return DisplayFiles.showfilesV0();
     
-
+"""
 @app.route('/tests')
 def indtest():
     global domain;     
     domainFavi=domain+"/favicon.png";
     fimage=str(DisplayFiles.showfiles())
     return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    
+"""    
         
     
     
