@@ -74,7 +74,7 @@ def Cupload():
     """
 
 
-@app.route('/delfile',methods=['POST','GET'])
+@app.route('/delfile',methods=['POST'])
 def dfile():
     print("request ",request);
     #print("request.name ",request.name)
