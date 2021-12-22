@@ -64,7 +64,7 @@ def Cupload():
     #view9=DisplayFiles.showfiles()
     view9="http://"+domain+"/view10"
     delfile="/delfile"
-    print("fimage ",fimage)
+    #print("fimage ",fimage)
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9,delfile=delfile);
     """
     if chckbdxcred().find("NULL")==-1:
@@ -247,7 +247,7 @@ def indece():
     #view9="http://"+domain+"/Testing"
     #view9="http://"+domain+"/Testing"
     fimage=DisplayFiles.showfiles()
-    view9="http://"+domain+"/Testing"
+    view9="http://"+domain+"/view10"
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage);
     
     
