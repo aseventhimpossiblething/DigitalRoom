@@ -79,7 +79,7 @@ def dfile():
     print("request ",request)
     mss="delfile called"
     print(mss)    
-    return request;  
+    return str(request);  
     
     
 @app.route('/proxy1')
