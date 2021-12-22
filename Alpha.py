@@ -79,11 +79,16 @@ def dfile():
     print("request ",request);
     reqstr=str(request);
     findsign=reqstr.find("=")
+    findendspace=reqstr[findsign:].find()
     print("find = ",findsign)
+    print("findendspace ",findendspace)
+    filename=reqstr[findsign:indendspace]
+    print("filename ",filename)
+    
     #print("request.name ",request.name)
     mss="delfile called"
     #print(mss)    
-    return reqstr;  
+    return filename;  
     
     
 @app.route('/proxy1')
