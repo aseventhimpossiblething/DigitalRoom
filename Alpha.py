@@ -55,26 +55,7 @@ app = Flask(__name__,"/static/")
 def Cupload():
     DisplayFiles.SaveFileFromLoadingTemplate(request);
     
-    """
-    os.chdir("/GMDelight/view9");
-    #print(os.listdir())
-    req=request.files['sheet'];
-    reqstr=str(req);
-    print(os.listdir())
-    print(reqstr)
-    #startfn=reqstr.find("FileStorage:");
-    #print(startfn)
-    endfn=reqstr.find("(");
-    #print(endfn)
-    FileName=reqstr[15:endfn-2];
-    print("FileName - ",FileName);
-    request.files['sheet'].save(FileName);
-    #Uploads.store();
-    print(" Button clicked")
-    print("Button clicked")
-    print("Button clicked") 
-    #print("request-",request.files['sheet'])
-    """
+  
     
     domainFavi=domain+"/favicon.png";
     #view9="http://"+domain+"/view9"
@@ -82,8 +63,9 @@ def Cupload():
     fimage=str(DisplayFiles.showfiles())
     #view9=DisplayFiles.showfiles()
     view9="http://"+domain+"/view10"
+    delfile="/delfile"
     print("fimage ",fimage)
-    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
+    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9,delfile=delfile);
     """
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
@@ -91,6 +73,14 @@ def Cupload():
     return render_template('LoadingTemplate.html');
     """
 
+
+@app.route('/delfile')
+def dfile():
+    mss="delfile called"
+    print(mss)    
+    return mss ;  
+    
+    
 @app.route('/proxy1')
 def prox1():
     if chckbdxcred().find("NULL")==-1:
