@@ -82,12 +82,17 @@ def dfile():
     findendspace=reqstr.find("[")
     print("find = ",findsign)
     print("findendspace ",findendspace)
-    filename=reqstr[findsign:findendspace]
+    filename=reqstr[findsign+1:findendspace]
     print("filename ",filename)
     
     #print("request.name ",request.name)
     mss="delfile called"
-    #print(mss)    
+    #print(mss)
+    print("os,getcwd() ",os.getcwd())
+    print("listdir ",os.listdir())
+    #oc.chdir()
+    os.chdir("/GMDelight/view9")
+    print("os,getcwd() ",os.getcwd());
     return filename;  
     
     
