@@ -32,14 +32,15 @@ def showfiles():
     
     
     #print("DF ",DF)
+    cssgrid="grid-template-columns: 90px 50 px 120px"
     len(contents);
     print("len(contents) = ",len(contents));
     SecondCol=[];
     nz=0;
     while nz<len(contents):
           li=contents[nz];
-          HTMLSeq="<html><a href="">samli</a></html>" 
-          #HTMLSeq="nhu"
+          HTMLSeq="<a href="">samli</a>" 
+          #HTMLSeq="<div></div>"
           SecondCol.append(HTMLSeq);  
           print(li)  
           nz=nz+1;
