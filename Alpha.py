@@ -82,7 +82,7 @@ def dfile():
     findendspace=reqstr[findsign:].find(" ")
     print("find = ",findsign)
     print("findendspace ",findendspace)
-    filename=reqstr[findsign:indendspace]
+    filename=reqstr[findsign:findendspace]
     print("filename ",filename)
     
     #print("request.name ",request.name)
