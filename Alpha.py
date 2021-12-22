@@ -237,7 +237,7 @@ def indece():
     #view9="http://"+domain+"/Testing"
     #view9="http://"+domain+"/Testing"
     fimage=DisplayFiles.showfiles()
-    view9=fimage
+    view9="http://"+domain+"/Testing"
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage);
     
     
