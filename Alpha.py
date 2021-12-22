@@ -65,7 +65,7 @@ def Cupload():
     view9="http://"+domain+"/view10"
     delfile="/delfile"
     #print("fimage ",fimage)
-    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9,delfile=delfile);
+    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
     """
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
