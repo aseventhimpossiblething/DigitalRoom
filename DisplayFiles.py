@@ -49,5 +49,5 @@ def showfiles():
     print("DF ",DF)
     #return contents
     #return DF.to_html();
-    return SecondCol;
+    return ''.join(SecondCol);
 #print("!!!!!!!!!!!!!!!!!!!",showfiles(),"!!!!!!!!!!!!!!!!!!!!"); 
