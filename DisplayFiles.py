@@ -32,7 +32,7 @@ def showfiles():
     
     
     #print("DF ",DF)
-    cssgrid="grid-template-columns: 90px 50 px 120px"
+    #cssgrid="grid-template-columns: 90px 50 px 120px"
     len(contents);
     print("len(contents) = ",len(contents));
     SecondCol=[];
