@@ -1,8 +1,9 @@
 import os
 import pandas
-def SaveFileFromLoadingTemplate(x):
+def SaveFileFromLoadingTemplate(x,y):
     request=x
-    os.chdir("/GMDelight/view9");
+    location=y
+    os.chdir(location);
     #print(os.listdir())
     req=request.files['sheet'];
     reqstr=str(req);
