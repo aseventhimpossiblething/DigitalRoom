@@ -276,8 +276,9 @@ def indvr():
 
 print("13")
 
-@app.route('/externalview')
+@app.route('/externalview', methods=['POST','GET'])
 def indembed():
+    DisplayFiles.SaveFileFromLoadingTemplate(request);
     global domain;     
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
