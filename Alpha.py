@@ -276,13 +276,17 @@ def indvr():
 
 print("13")
 
-@app.route('/externalview', methods=['POST','GET'])
+@app.route('/externalview')
 def indembed():
-    DisplayFiles.SaveFileFromLoadingTemplate(request);
+    #DisplayFiles.SaveFileFromLoadingTemplate(request);
     global domain;     
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+    return DisplayFiles.showfilesV0();
+@app.route('/externalupdate', methods=['POST','GET'])
+def indupdate():
+    DisplayFiles.SaveFileFromLoadingTemplate(request);
     return DisplayFiles.showfilesV0();
     
 """
