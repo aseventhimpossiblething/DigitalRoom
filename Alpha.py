@@ -267,7 +267,7 @@ def indvr():
     #view9="http://"+domain+"/Testing"
     #fimage=DisplayFiles.showfilesV0()
     view9="http://"+domain+"/externalview"
-    return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,view9=view9);
+    return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,view9=view9);
     
     
     
