@@ -301,9 +301,9 @@ def inddigogo():
     global domain;     
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
-    #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi);
     #return DisplayFiles.showfilesV0();
-    return "Loadfiles";
+    #return "Loadfiles";
     
     
     
