@@ -58,4 +58,5 @@ def showfilesV0():
           SecondCol.append(HTMLSeq);  
           print(li)  
           nz=nz+1;
+    print("showfilesV0()")        
     return ''.join(SecondCol);
