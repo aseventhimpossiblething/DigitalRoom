@@ -295,6 +295,18 @@ def indupdate():
     return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,view9=view9);
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
     
+@app.route('/Loadfiles')
+def inddigogo():
+    #DisplayFiles.SaveFileFromLoadingTemplate(request);
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    #fimage=str(DisplayFiles.showfilesV0())
+    #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+    #return DisplayFiles.showfilesV0();
+    return "Loadfiles";
+    
+    
+    
 """
 @app.route('/tests')
 def indtest():
