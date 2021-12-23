@@ -284,10 +284,16 @@ def indembed():
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
     return DisplayFiles.showfilesV0();
+
 @app.route('/externalupdate', methods=['POST','GET'])
 def indupdate():
     DisplayFiles.SaveFileFromLoadingTemplate(request);
-    return DisplayFiles.showfilesV0();
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    #return DisplayFiles.showfilesV0();
+    view9="http://"+domain+"/externalview"
+    return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,view9=view9);
+    #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
     
 """
 @app.route('/tests')
