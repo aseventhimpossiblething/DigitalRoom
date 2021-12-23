@@ -53,7 +53,7 @@ app = Flask(__name__,"/static/")
 
 @app.route('/DRUpload', methods=['POST','GET'])
 def Cupload():
-    DisplayFiles.SaveFileFromLoadingTemplate(request);
+    DisplayFiles.SaveFileFromLoadingTemplate(request,"/GMDelight/view9");
     
   
     
@@ -305,7 +305,16 @@ def inddigogo():
     #return DisplayFiles.showfilesV0();
     #return "Loadfiles";
     
-    
+@app.route('/Loadfiles1',methods=['POST','GET'])
+def inddigog1():
+    print("Print cwd ",os.getcwd())
+    DisplayFiles.SaveFileFromLoadingTemplate(request,"/Sheets");
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    #fimage=str(DisplayFiles.showfilesV0())
+    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi);
+    #return DisplayFiles.showfilesV0();
+    #return "Loadfiles";    
     
 """
 @app.route('/tests')
