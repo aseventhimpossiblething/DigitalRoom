@@ -1,3 +1,0 @@
-#echo "first \n second \n" | bash myscript
-cat "input.txt" | bash myscript
-
