@@ -77,6 +77,7 @@ def Cupload():
 
 @app.route('/delfile',methods=['POST','GET'])
 def dfile():
+    delfile="/delfile"
     print("request ",request);
     reqstr=str(request);
     findsign=reqstr.find("=")
@@ -97,7 +98,7 @@ def dfile():
     print("os,getcwd() ",os.getcwd());
     print("listdir ",os.listdir())
     deletedfile=filename+" deleted"
-    return DisplayFiles.showfiles("/GMDelight/view9");
+    return DisplayFiles.showfiles("/GMDelight/view9",delfile);
 
 @app.route('/delfile0',methods=['POST','GET'])
 def dfile0():
@@ -279,11 +280,12 @@ def indece():
 
 @app.route('/view10')
 def indembd():
+    delfile="/delfile"
     global domain;     
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    return DisplayFiles.showfiles("/GMDelight/view9");
+    return DisplayFiles.showfiles("/GMDelight/view9",delfile);
 
 @app.route('/external')
 def indvr():
@@ -304,12 +306,13 @@ print("13")
 
 @app.route('/externalview')
 def indembed():
+    delfile="/delfile0"
     #DisplayFiles.SaveFileFromLoadingTemplate(request);
     global domain;     
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    return DisplayFiles.showfilesV0("/GMDelight/view9");
+    return DisplayFiles.showfilesV0("/GMDelight/view9",delfile);
 
 @app.route('/view11')
 def inde11d():
