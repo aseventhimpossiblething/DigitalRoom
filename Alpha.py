@@ -105,7 +105,7 @@ def dfile0():
     print("os,getcwd() ",os.getcwd());
     print("listdir ",os.listdir())
     deletedfile=filename+" deleted"
-    return DisplayFiles.showfiles("/GMDelight/DigitalRoom/Sheets",delfile);
+    return DisplayFiles.showfiles("/GMDelight/DigitalRoom/Sheets/CTRData",delfile);
     
     
 @app.route('/proxy1')
