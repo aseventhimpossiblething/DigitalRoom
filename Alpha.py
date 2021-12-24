@@ -267,6 +267,7 @@ def index():
     
 @app.route('/vfiles')
 def indece():
+    delfile="/delfile"
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
@@ -274,7 +275,7 @@ def indece():
     domainFavi=domain+"/favicon.png";
     #view9="http://"+domain+"/Testing"
     #view9="http://"+domain+"/Testing"
-    fimage=DisplayFiles.showfiles("/GMDelight/view9")
+    fimage=DisplayFiles.showfiles("/GMDelight/view9",delfile)
     view9="http://"+domain+"/view10"
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
 
