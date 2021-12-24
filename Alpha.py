@@ -100,7 +100,7 @@ def dfile0():
     print("filename ",filename)
     print("os,getcwd() ",os.getcwd())
     print("listdir ",os.listdir())
-    os.chdir("/GMDelight/DigitalRoom/Sheets")
+    os.chdir("/GMDelight/DigitalRoom/Sheets/CTRData")
     os.remove(filename.replace("+"," "));
     print("os,getcwd() ",os.getcwd());
     print("listdir ",os.listdir())
