@@ -257,7 +257,7 @@ def indembd():
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    return DisplayFiles.showfiles();
+    return DisplayFiles.showfiles("/GMDelight/view9");
 
 @app.route('/external')
 def indvr():
@@ -283,7 +283,7 @@ def indembed():
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    return DisplayFiles.showfilesV0();
+    return DisplayFiles.showfilesV0("/GMDelight/view9");
 
 @app.route('/externalupdate', methods=['POST','GET'])
 def indupdate():
