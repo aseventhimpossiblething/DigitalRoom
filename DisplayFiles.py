@@ -23,9 +23,9 @@ def SaveFileFromLoadingTemplate(x,y):
     print("Button clicked") 
     #print("request-",request.files['sheet'])
 
-def showfiles():
+def showfiles(x):
     print("os.getcwd() 1 ",os.getcwd())
-    os.chdir("/GMDelight/view9")
+    os.chdir(x)
     print("os.getcwd() 2 ",os.getcwd())
     print("len(os.listdir())  ",len(os.listdir()))
     contents=os.listdir()
@@ -44,9 +44,9 @@ def showfiles():
 
 
 
-def showfilesV0():
+def showfilesV0(x):
     print("os.getcwd() 1 ",os.getcwd())
-    os.chdir("/GMDelight/view9")
+    os.chdir(x)
     print("os.getcwd() 2 ",os.getcwd())
     print("len(os.listdir())  ",len(os.listdir()))
     contents=os.listdir()
