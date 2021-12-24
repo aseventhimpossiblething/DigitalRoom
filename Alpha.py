@@ -285,6 +285,15 @@ def indembed():
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
     return DisplayFiles.showfilesV0("/GMDelight/view9");
 
+@app.route('/view11')
+def inde11d():
+    #DisplayFiles.SaveFileFromLoadingTemplate(request);
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    #fimage=str(DisplayFiles.showfilesV0())
+    #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+    return DisplayFiles.showfilesV0("/GMDelight/DigitalRoom/Sheets");
+
 @app.route('/externalupdate', methods=['POST','GET'])
 def indupdate():
     DisplayFiles.SaveFileFromLoadingTemplate(request,"/GMDelight/view9");
@@ -301,7 +310,8 @@ def inddigogo():
     global domain;     
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
-    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi);
+    view9="/view11"
+    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
     #return DisplayFiles.showfilesV0();
     #return "Loadfiles";
     
@@ -312,7 +322,8 @@ def inddigog1():
     global domain;     
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
-    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi);
+    view9="/view11"
+    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
     #return DisplayFiles.showfilesV0();
     #return "Loadfiles";    
     
