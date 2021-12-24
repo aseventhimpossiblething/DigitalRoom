@@ -97,6 +97,30 @@ def dfile():
     print("listdir ",os.listdir())
     deletedfile=filename+" deleted"
     return DisplayFiles.showfiles("/GMDelight/view9");
+
+@app.route('/delfile0',methods=['POST','GET'])
+def dfile0():
+    print("request ",request);
+    reqstr=str(request);
+    findsign=reqstr.find("=")
+    findendspace=reqstr.find("' ")
+    print("find = ",findsign)
+    print("findendspace ",findendspace)
+    filename=reqstr[findsign+1:findendspace]
+    print("filename ",filename)
+    
+    #print("request.name ",request.name)
+    mss="delfile called"
+    #print(mss)
+    print("os,getcwd() ",os.getcwd())
+    print("listdir ",os.listdir())
+    #oc.chdir()
+    os.chdir("/GMDelight/DigitalRoom/Sheets")
+    os.remove(filename.replace("+"," "));
+    print("os,getcwd() ",os.getcwd());
+    print("listdir ",os.listdir())
+    deletedfile=filename+" deleted"
+    return DisplayFiles.showfiles("/GMDelight/view11");
     
     
 @app.route('/proxy1')
