@@ -314,11 +314,12 @@ def indembed():
 @app.route('/view11')
 def inde11d():
     #DisplayFiles.SaveFileFromLoadingTemplate(request);
+    delfile="/delfile0"
     global domain;     
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    return DisplayFiles.showfiles("/GMDelight/DigitalRoom/Sheets");
+    return DisplayFiles.showfiles("/GMDelight/DigitalRoom/Sheets",delfile);
 
 @app.route('/externalupdate', methods=['POST','GET'])
 def indupdate():
