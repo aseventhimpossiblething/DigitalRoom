@@ -58,12 +58,13 @@ def Cupload():
   
     
     domainFavi=domain+"/static/favicon.png";
+    delfile="/delfile"
     #view9="http://"+domain+"/view9"
     #view9="http://"+domain+"/Testing"
-    fimage=str(DisplayFiles.showfiles("/GMDelight/view9"))
+    fimage=str(DisplayFiles.showfiles("/GMDelight/view9",delfile))
     #view9=DisplayFiles.showfiles()
     view9="http://"+domain+"/view10"
-    delfile="/delfile"
+    
     #print("fimage ",fimage)
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
     """
@@ -104,6 +105,7 @@ def dfile0():
     reqstr=str(request);
     findsign=reqstr.find("=")
     findendspace=reqstr.find("' ")
+    delfile="/delfile0"
     print("find = ",findsign)
     print("findendspace ",findendspace)
     filename=reqstr[findsign+1:findendspace]
@@ -120,7 +122,7 @@ def dfile0():
     print("os,getcwd() ",os.getcwd());
     print("listdir ",os.listdir())
     deletedfile=filename+" deleted"
-    return DisplayFiles.showfiles("/GMDelight/view11");
+    return DisplayFiles.showfiles("/GMDelight/view11",delfile);
     
     
 @app.route('/proxy1')
