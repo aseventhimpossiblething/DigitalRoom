@@ -313,7 +313,7 @@ def indembed():
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    return DisplayFiles.showfilesV0("/GMDelight/view9",delfile);
+    return DisplayFiles.showfilesV0("/GMDelight/view9");
 
 @app.route('/view11')
 def inde11d():
