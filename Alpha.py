@@ -60,7 +60,7 @@ def Cupload():
     domainFavi=domain+"/static/favicon.png";
     #view9="http://"+domain+"/view9"
     #view9="http://"+domain+"/Testing"
-    fimage=str(DisplayFiles.showfiles())
+    fimage=str(DisplayFiles.showfiles("/GMDelight/view9"))
     #view9=DisplayFiles.showfiles()
     view9="http://"+domain+"/view10"
     delfile="/delfile"
