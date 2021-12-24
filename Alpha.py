@@ -308,7 +308,7 @@ def inddigogo():
 @app.route('/Loadfiles1',methods=['POST','GET'])
 def inddigog1():
     print("Print cwd ",os.getcwd())
-    DisplayFiles.SaveFileFromLoadingTemplate(request,"Sheets");
+    DisplayFiles.SaveFileFromLoadingTemplate(request,"/GMDelight/DigitalRoom/Sheets");
     global domain;     
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
