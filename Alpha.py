@@ -113,7 +113,6 @@ def prox1():
     if chckbdxcred().find("NULL")==-1:
         print(str(chckbdxcred()));
         return str(chckbdxcred());
-    #return render_template('proxy1.html')
     return accesspoint.pullpage();  
 
 
@@ -123,12 +122,6 @@ def prox2():
         print(str(chckbdxcred()));
         return str(chckbdxcred());
     return render_template('proxy2.html')
-
-
-
-
-
-
 
 
 
@@ -161,7 +154,6 @@ def chckbdxcred():
        c="'><html>did not forward - GMDelight</html>"
        abc=a+b+c
        return abc 
-       #return logontrue();
     else:
        return "NULL"
  
@@ -176,7 +168,6 @@ print("5")
 def mlgn():
     gencook="<a href='/l2'>form</a>";
     gencook=render_template("loginPage.html")
-    #gencook.set_cookie(setCnam(),bdxcred());
     return gencook
 
 @app.route('/l2', methods=['POST'])
@@ -290,21 +281,15 @@ print("13")
 @app.route('/externalview')
 def indembed():
     delfile="/delfile0"
-    #DisplayFiles.SaveFileFromLoadingTemplate(request);
     global domain;     
     domainFavi=domain+"/favicon.png";
-    #fimage=str(DisplayFiles.showfilesV0())
-    #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
     return DisplayFiles.showfilesV0("/GMDelight/view9");
 
 @app.route('/view11')
 def inde11d():
-    #DisplayFiles.SaveFileFromLoadingTemplate(request);
     delfile="/delfile0"
     global domain;     
     domainFavi=domain+"/favicon.png";
-    #fimage=str(DisplayFiles.showfilesV0())
-    #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
     return DisplayFiles.showfiles("/GMDelight/DigitalRoom/Sheets/CTRData",delfile);
 
 @app.route('/externalupdate', methods=['POST','GET'])
@@ -312,33 +297,27 @@ def indupdate():
     DisplayFiles.SaveFileFromLoadingTemplate(request,"/GMDelight/view9");
     global domain;     
     domainFavi=domain+"/favicon.png";
-    #return DisplayFiles.showfilesV0();
     view9="http://"+domain+"/externalview"
     return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,view9=view9);
-    #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+
     
 @app.route('/Loadfiles')
 def inddigogo():
-    #DisplayFiles.SaveFileFromLoadingTemplate(request);
     global domain;     
     domainFavi=domain+"/favicon.png";
-    #fimage=str(DisplayFiles.showfilesV0())
     view9="/view11"
     return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
-    #return DisplayFiles.showfilesV0();
-    #return "Loadfiles";
+   
     
 @app.route('/Loadfiles1',methods=['POST','GET'])
 def inddigog1():
     print("Print cwd ",os.getcwd())
-    DisplayFiles.SaveFileFromLoadingTemplate(request,"/GMDelight/DigitalRoom/Sheets");
+    DisplayFiles.SaveFileFromLoadingTemplate(request,"/GMDelight/DigitalRoom/Sheets/CTRData");
     global domain;     
     domainFavi=domain+"/favicon.png";
-    #fimage=str(DisplayFiles.showfilesV0())
     view9="/view11"
     return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
-    #return DisplayFiles.showfilesV0();
-    #return "Loadfiles";    
+      
     
 """
 @app.route('/tests')
