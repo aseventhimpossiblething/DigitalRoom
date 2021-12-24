@@ -17,6 +17,7 @@ def SaveFileFromLoadingTemplate(x,y):
     print("FileName - ",FileName);
     request.files['sheet'].save(FileName);
     #Uploads.store();
+    os.chdir("/GMDelight/DigitalRoom")
     print(" Button clicked")
     print("Button clicked")
     print("Button clicked") 
