@@ -292,7 +292,7 @@ def inde11d():
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    return DisplayFiles.showfilesV0("/GMDelight/DigitalRoom/Sheets");
+    return DisplayFiles.showfiles("/GMDelight/DigitalRoom/Sheets");
 
 @app.route('/externalupdate', methods=['POST','GET'])
 def indupdate():
