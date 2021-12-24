@@ -23,7 +23,7 @@ def SaveFileFromLoadingTemplate(x,y):
     print("Button clicked") 
     #print("request-",request.files['sheet'])
 
-def showfiles(x):
+def showfiles(x,y):
     print("os.getcwd() 1 ",os.getcwd())
     os.chdir(x)
     print("os.getcwd() 2 ",os.getcwd())
@@ -35,7 +35,7 @@ def showfiles(x):
     nz=0;
     while nz<len(contents):
           li=contents[nz];
-          HTMLSeq='<div><form action="/delfile"><input type="hidden" name="'+li+'" value="'+li+'"><a href="/test/'+li+'">'+li+'</a> ___ <input type="submit" value="delete"></form></div>' 
+          HTMLSeq='<div><form action="'+y+'"><input type="hidden" name="'+li+'" value="'+li+'"><a href="/test/'+li+'">'+li+'</a> ___ <input type="submit" value="delete"></form></div>' 
           SecondCol.append(HTMLSeq);  
           print(li)  
           nz=nz+1;
