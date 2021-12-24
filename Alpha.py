@@ -54,18 +54,10 @@ app = Flask(__name__,"/static/")
 @app.route('/DRUpload', methods=['POST','GET'])
 def Cupload():
     DisplayFiles.SaveFileFromLoadingTemplate(request,"/GMDelight/view9");
-    
-  
-    
     domainFavi=domain+"/static/favicon.png";
     delfile="/delfile"
-    #view9="http://"+domain+"/view9"
-    #view9="http://"+domain+"/Testing"
     fimage=str(DisplayFiles.showfiles("/GMDelight/view9",delfile))
-    #view9=DisplayFiles.showfiles()
     view9="http://"+domain+"/view10"
-    
-    #print("fimage ",fimage)
     return render_template('LoadingTemplate.html',domain=domain,domainFav=domainFavi,fimage=fimage,view9=view9);
     """
     if chckbdxcred().find("NULL")==-1:
@@ -86,13 +78,8 @@ def dfile():
     print("findendspace ",findendspace)
     filename=reqstr[findsign+1:findendspace]
     print("filename ",filename)
-    
-    #print("request.name ",request.name)
-    mss="delfile called"
-    #print(mss)
     print("os,getcwd() ",os.getcwd())
     print("listdir ",os.listdir())
-    #oc.chdir()
     os.chdir("/GMDelight/view9")
     os.remove(filename.replace("+"," "));
     print("os,getcwd() ",os.getcwd());
@@ -111,13 +98,8 @@ def dfile0():
     print("findendspace ",findendspace)
     filename=reqstr[findsign+1:findendspace]
     print("filename ",filename)
-    
-    #print("request.name ",request.name)
-    mss="delfile called"
-    #print(mss)
     print("os,getcwd() ",os.getcwd())
     print("listdir ",os.listdir())
-    #oc.chdir()
     os.chdir("/GMDelight/DigitalRoom/Sheets")
     os.remove(filename.replace("+"," "));
     print("os,getcwd() ",os.getcwd());
@@ -323,7 +305,7 @@ def inde11d():
     domainFavi=domain+"/favicon.png";
     #fimage=str(DisplayFiles.showfilesV0())
     #return render_template('LoadingTemplate2.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-    return DisplayFiles.showfiles("/GMDelight/DigitalRoom/Sheets",delfile);
+    return DisplayFiles.showfiles("/GMDelight/DigitalRoom/Sheets/CTRData",delfile);
 
 @app.route('/externalupdate', methods=['POST','GET'])
 def indupdate():
