@@ -287,7 +287,7 @@ def indembed():
 
 @app.route('/externalupdate', methods=['POST','GET'])
 def indupdate():
-    DisplayFiles.SaveFileFromLoadingTemplate(request);
+    DisplayFiles.SaveFileFromLoadingTemplate(request,"/GMDelight/view9");
     global domain;     
     domainFavi=domain+"/favicon.png";
     #return DisplayFiles.showfilesV0();
