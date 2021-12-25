@@ -1,1 +1,1 @@
-print(os.getcwd())
+print("os getcwd ",os.getcwd())
