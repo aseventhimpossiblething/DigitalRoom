@@ -19,6 +19,7 @@ import glob
 import numpy
 import scipy
 import pandas
+import FormatSheet
 
 import os
 from flask import Flask, Markup, render_template, request, make_response
@@ -306,7 +307,8 @@ def inddigogo():
     global domain;     
     domainFavi=domain+"/favicon.png";
     view9="/view11"
-    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
+    Formatinput=FormatSheet();
+    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9,Formatinput=Formatinput);
    
     
 @app.route('/Loadfiles1',methods=['POST','GET'])
@@ -316,6 +318,7 @@ def inddigog1():
     global domain;     
     domainFavi=domain+"/favicon.png";
     view9="/view11"
+    Formatinput=FormatSheet();
     return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
       
     
