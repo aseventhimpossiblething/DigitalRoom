@@ -17,14 +17,14 @@ def headers():
   while lCount < numOfSheets:
         ActiveSheet=ActiveSheets[lCount];
         print("ActiveSheet ",ActiveSheet);
-        try:
-         OpenActiveSheets=open(ActiveSheet,'r');
-         #readActiveSheets=read(ActiveSheets);
-         print(" opened ",ActiveSheet);
-         readActiveSheets=read_excel(ActiveSheet);
-         print(" readActiveSheets ",readActiveSheets);
-        except:
-          print(" failed to open ",ActiveSheet)
+        #try:
+        OpenActiveSheets=open(ActiveSheet,'r');
+        #readActiveSheets=read(ActiveSheets);
+        print(" opened ",ActiveSheet);
+        readActiveSheets=read_excel(ActiveSheet);
+        print(" readActiveSheets ",readActiveSheets);
+        #except:
+        print(" failed to open ",ActiveSheet)
         #print(lCount," done")
         lCount=lCount+1;
           
