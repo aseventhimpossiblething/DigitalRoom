@@ -20,7 +20,11 @@ def headers():
         print("ftype os.getcwd() ",type(os.getcwd()));
         print("ftype os.getcwd() ",type(os.getcwd()));
         print("tFL ", tFL);
-        #OpenActiveSheets=open(ActiveSheet,'r');
+        try:
+         OpenActiveSheets=open(ActiveSheet,'r');
+         print(" opened ",ActiveSheet)
+        except:
+          print(" failed to open ",ActiveSheet)
         print(lCount," done")
         lCount=lCount+1;
         
