@@ -15,8 +15,10 @@ def headers():
         ActiveSheet=ActiveSheets[lCount];
         print("ActiveSheet ",ActiveSheet);
         ftype=type(ActiveSheet);
-        print("ftype ",ftype)
-        OpenActiveSheets=open(ActiveSheet,'r');
+        print("ftype ActiveSheet ",ftype);
+        print("ftype os.getcwd() ",os.getcwd());
+        #print("os.getcwd() ",os.getcwd())
+        #OpenActiveSheets=open(ActiveSheet,'r');
         print(lCount," done")
         lCount=lCount+1;
         
