@@ -16,7 +16,7 @@ def headers():
         print("ActiveSheet ",ActiveSheet);
         ftype=type(ActiveSheet);
         print("ftype ",ftype)
-        #OpenActiveSheets=open(ActiveSheet,'r');
+        OpenActiveSheets=open(ActiveSheet,'r');
         print(lCount," done")
         lCount=lCount+1;
         
