@@ -13,8 +13,8 @@ def headers():
   lCount=0;
   while lCount < numOfSheets:
         ActiveSheet=ActiveSheets[lCount];
-        print("ActiveSheets ",ActiveSheets);
-        OpenActiveSheets=open(ActiveSheets,'r');
+        print("ActiveSheet ",ActiveSheet);
+        OpenActiveSheets=open(ActiveSheet,'r');
         print(lCount," done")
         
   print(" entered sequence ")
@@ -22,4 +22,4 @@ def headers():
   #print("os listdir[1] ",os.listdir()[1])
   #print("os listdir[2] ",os.listdir()[2])
   
-  return numOfSheets+os.listdir();
+  return ActiveSheets;
