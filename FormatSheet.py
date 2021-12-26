@@ -1,4 +1,7 @@
+import pd
 import os
+import ExcelWriter
+import ExcelFile
 
 def headers():
   os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
@@ -16,8 +19,9 @@ def headers():
         print("ActiveSheet ",ActiveSheet);
         try:
          OpenActiveSheets=open(ActiveSheet,'r');
-         readActiveSheets=read(ActiveSheets);
+         #readActiveSheets=read(ActiveSheets);
          print(" opened ",ActiveSheet);
+         readActiveSheets=read_excel(ActiveSheet);
          print(" readActiveSheets ",readActiveSheets);
         except:
           print(" failed to open ",ActiveSheet)
