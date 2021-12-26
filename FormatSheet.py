@@ -1,7 +1,7 @@
 import pandas
 import os
-import ExcelWriter
-import ExcelFile
+from pandas import ExcelWriter
+from pandas import ExcelFile
 
 def headers():
   os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
