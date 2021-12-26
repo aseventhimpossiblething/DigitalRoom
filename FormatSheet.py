@@ -19,9 +19,9 @@ def headers():
         print("ActiveSheet ",ActiveSheet);
         #try:
         OpenActiveSheets=open(ActiveSheet,'r');
-        #readActiveSheets=read(ActiveSheets);
+        #readActiveSheets=pandas.read(ActiveSheets);
         print(" opened ",ActiveSheet);
-        readActiveSheets=read_excel(ActiveSheet);
+        readActiveSheets=pandas.read_excel(ActiveSheet);
         print(" readActiveSheets ",readActiveSheets);
         #except:
         print(" failed to open ",ActiveSheet)
