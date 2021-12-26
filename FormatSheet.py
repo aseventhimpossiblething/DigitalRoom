@@ -4,7 +4,7 @@ def headers():
   os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
   numOfSheets=len(ActiveSheets);
-  if numOfSheets =0:
+  if numOfSheets==0:
      return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
   print("-----------------------------------------------------------")
   print("---calling headers-----")
