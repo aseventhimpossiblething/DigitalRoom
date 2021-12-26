@@ -17,7 +17,8 @@ def headers():
         try:
          OpenActiveSheets=open(ActiveSheet,'r');
          readActiveSheets=read(ActiveSheets);
-         print(" opened ",ActiveSheet)
+         print(" opened ",ActiveSheet);
+         print(" readActiveSheets ",readActiveSheets);
         except:
           print(" failed to open ",ActiveSheet)
         #print(lCount," done")
