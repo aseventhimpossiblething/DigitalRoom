@@ -11,7 +11,7 @@ def headers():
   print("numOfSheets ",numOfSheets)
   #ActiveSheets=os.listdir();
   lCount=0;
-  while lCount < numOfSheets():
+  while lCount < numOfSheets:
         ActiveSheet=ActiveSheets[lCount];
         print("ActiveSheets ",ActiveSheets);
         OpenActiveSheets=open(ActiveSheets,'r');
