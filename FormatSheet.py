@@ -16,6 +16,7 @@ def headers():
         print("ActiveSheet ",ActiveSheet);
         OpenActiveSheets=open(ActiveSheet,'r');
         print(lCount," done")
+        lCount=lCount+1;
         
   print(" entered sequence ")
   print("os listdir[0] ",os.listdir()[0])
