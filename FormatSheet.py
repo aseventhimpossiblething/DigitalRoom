@@ -1,4 +1,4 @@
-import pd
+import pandas
 import os
 import ExcelWriter
 import ExcelFile
