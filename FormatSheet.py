@@ -14,10 +14,12 @@ def headers():
   while lCount < numOfSheets:
         ActiveSheet=ActiveSheets[lCount];
         print("ActiveSheet ",ActiveSheet);
+        tFL=os.getcwd()+ActiveSheet;
         ftype=type(ActiveSheet);
         print("ftype ActiveSheet ",ftype);
         print("ftype os.getcwd() ",type(os.getcwd()));
-        #print("os.getcwd() ",os.getcwd())
+        print("ftype os.getcwd() ",type(os.getcwd()));
+        print("tFL ", tFL);
         #OpenActiveSheets=open(ActiveSheet,'r');
         print(lCount," done")
         lCount=lCount+1;
