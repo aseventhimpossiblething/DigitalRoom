@@ -16,7 +16,7 @@ def headers():
         print("ActiveSheet ",ActiveSheet);
         ftype=type(ActiveSheet);
         print("ftype ActiveSheet ",ftype);
-        print("ftype os.getcwd() ",os.getcwd());
+        print("ftype os.getcwd() ",type(os.getcwd()));
         #print("os.getcwd() ",os.getcwd())
         #OpenActiveSheets=open(ActiveSheet,'r');
         print(lCount," done")
