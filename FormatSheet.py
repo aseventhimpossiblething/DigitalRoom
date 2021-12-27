@@ -54,7 +54,7 @@ def headers():
         print("strconv[1] = ",strconv[1]);
         l2count=0;
         while l2count<len(strconv):
-              if strconv[l2count]=='':
+              #if strconv[l2count]=='':
                  
               hcolnam=strconv[l2count];
               col=readActiveSheet[hcolnam];
