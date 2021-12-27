@@ -130,6 +130,7 @@ def RegCorDescShift():
     #plt.savefig("CorMap.png");
     print(relations);
     selectedFrame.plot();
+    os.chdir('/GMDelight/DigitalRoom/static/');
     plt.savefig("selectedFrame.png")
     #print(plotit)
     
