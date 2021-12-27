@@ -45,6 +45,26 @@ def headers():
                   col=readActiveSheet.columns[l2count];
                   dcolumn=readActiveSheet[col];
                   coltype=dcolumn.dtypes;
+                  Qobject=coltype.find('object');
+                  NewQcats=[];
+                  OldQcats=[];  
+                  if Qobject>-1:
+                     print(col," is catagorical cat process run");
+                     catcount=0;
+                     while catcount<len(dcolumn):
+                           dcolumn[catcount];
+                           catnum=str(OldQcats).find(dcolumn[catcount]);
+                           if catnum>-1:
+                              NewQcats.append(catnum)
+                           if catnum<0: 
+                              OldQcats.append(dcolumn[catcount]);
+                              NewQcats.append(catnum);
+                           
+                           #NewQcats.append(catcount);
+                           catcount=catcount+1;
+                     ncolnam=str(dcolumn)+"_as_Cat_Var";      
+                     readActiveSheet.drop([dcolumn]);
+                     readActiveSheet[ncolnam]=NewQcats; 
                   print("col ",col);
                   print("dcolumn ", dcolumn);
                   print("coltype ", coltype);
