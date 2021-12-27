@@ -22,13 +22,16 @@ def headers():
         #print("isxlsx ",isxlsx); 
         #print("iscsv ",iscsv);
         print(" opened ",ActiveSheet);
-        OpenActiveSheets=open(ActiveSheet,'r');
+        OpenActiveSheet=open(ActiveSheet,'r');
         if isxlsx > 1:
-              readActiveSheets=pandas.read_excel(ActiveSheet); 
+              readActiveSheet=pandas.read_excel(ActiveSheet); 
         if iscsv > 1:
               #readActiveSheets=open(ActiveSheet,'r').read();
-              readActiveSheets=pandas.read_csv(ActiveSheet); 
-              readActiveSheets=pandas.DataFrame(data=readActiveSheets) 
-        print(" readActiveSheets ",readActiveSheets);
+              readActiveSheet=pandas.read_csv(ActiveSheet); 
+              readActiveSheet=pandas.DataFrame(data=readActiveSheets) 
+        print("readActiveSheet");
+        print(readActiveSheet);
+        print("readActiveSheet.columns = ",readActiveSheet.columns);
+        print("typeof readActiveSheet.columns = ",typeof(readActiveSheet.columns));
         lCount=lCount+1;
   return ActiveSheets;
