@@ -38,7 +38,7 @@ def headers():
                #print("emptySet!"); 
                return "Empty_File";
             #print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
-            readActiveSheet=readActiveSheet.dropna(axis=1);
+            #readActiveSheet=readActiveSheet.dropna(axis=1);
             #print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
             l2count=0;
             while l2count<len(readActiveSheet.columns):
@@ -58,7 +58,7 @@ def headers():
                               NewQcats.append(catnum)
                            if catnum<0: 
                               OldQcats.append(dcolumn[catcount]);
-                              NewQcats.append(catnum);
+                              NewQcats.append(catcount);
                            
                            #NewQcats.append(catcount);
                            catcount=catcount+1;
