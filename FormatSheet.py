@@ -6,6 +6,7 @@ import seaborn
 import matplotlib.pyplot as plt
 
 def headers():
+  print("Headers called 1")
   os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
   numOfSheets=len(ActiveSheets);
@@ -18,8 +19,10 @@ def headers():
   ListOfFrames=[];
   lCount=0;
   while lCount < numOfSheets:
-        readActiveSheet="";
+        #readActiveSheet="";
         ActiveSheet=ActiveSheets[lCount];
+        print("Headers called 2")
+        print("Headers called active sheet ",ActiveSheet)
         isxlsx=ActiveSheet.lower().find(".xlsx");
         iscsv=ActiveSheet.lower().find(".csv");
         if isxlsx > 1:
