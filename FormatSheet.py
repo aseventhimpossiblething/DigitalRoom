@@ -19,21 +19,14 @@ def headers():
         isxlsx=ActiveSheet.lower().find(".xlsx");
         iscsv=ActiveSheet.lower().find(".csv");
         print("ActiveSheet ",ActiveSheet);
-        print("isxlsx ",isxlsx); 
-        print("iscsv ",iscsv);
+        #print("isxlsx ",isxlsx); 
+        #print("iscsv ",iscsv);
         print(" opened ",ActiveSheet);
-        try:
-           isxlsx=ActiveSheet.lower().find(".xlsx");
-           iscsv=ActiveSheet.lower().find(".csv"); 
-           OpenActiveSheets=open(ActiveSheet,'r');
-           print("isxlsx ",isxlsx); 
-           print("iscsv ",iscsv);
-           print(" opened ",ActiveSheet);
-           readActiveSheets=pandas.read_excel(ActiveSheet);
-           print(" readActiveSheets ",readActiveSheets);
-        except:
-           print(" failed to open ",ActiveSheet)
-       
+        OpenActiveSheets=open(ActiveSheet,'r');
+        if isxlsx > 1:
+              readActiveSheets=pandas.read_excel(ActiveSheet); 
+        if iscsv > 1:
+              readActiveSheets=pandas.read_excel(ActiveSheet);    
+        print(" readActiveSheets ",readActiveSheets);
         lCount=lCount+1;
-          
   return ActiveSheets;
