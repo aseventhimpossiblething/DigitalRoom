@@ -33,8 +33,8 @@ def headers():
         def activeSheetParse(readActiveSheet):
             global ListOfFrames
             ListOfFrames=[];
-            print("readActiveSheet");
-            print(readActiveSheet);
+            #print("readActiveSheet");
+            #print(readActiveSheet);
             print("readActiveSheet.columns = ",readActiveSheet.columns);
             print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
             strconv=str(readActiveSheet.columns)
@@ -67,7 +67,11 @@ def headers():
               print(col);
               l2count=l2count+1;
             """
+            print("000000000000000000000000000000000000000000000000oooooooooooooo")
+            print("000000000000000000000000000000000000000000000000oooooooooooooo") 
             print(ListOfFrames);
+            print("000000000000000000000000000000000000000000000000oooooooooooooo") 
+            print("000000000000000000000000000000000000000000000000oooooooooooooo") 
             print("ActiveSheetParse Finished")  
         activeSheetParse(readActiveSheet);
         lCount=lCount+1;
