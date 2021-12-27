@@ -39,8 +39,8 @@ def headers():
                return "Empty_File";
             return readActiveSheet;
         aSP=activeSheetParse(readActiveSheet);
-        print("type aSP ",type(aSP))
-        print("type type aSP ",type(type(aSP)))
+        print(" str aSP ",str(aSP))
+        print("type str aSP ",type(str(aSP)))
         #if aSP!="Empty_File":
         ListOfFrames.append(aSP);
         lCount=lCount+1;
