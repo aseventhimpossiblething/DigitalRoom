@@ -55,6 +55,8 @@ def headers():
         l2count=0;
         while l2count<len(strconv):
               hcolnam=strconv[l2count];
+              if hcolnam=='':
+                 hcolnam='Empty_Col_No_Values'
               col=readActiveSheet[hcolnam];
               print(col);
               l2count=l2count+1;
