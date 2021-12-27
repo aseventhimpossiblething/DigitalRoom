@@ -112,9 +112,12 @@ def RegCorDescShift():
     selectedFrame=selectedFrame.dropna(axis=1);
     print(selectedFrame);
     relations=selectedFrame.corr();
-    seaborn.heatmap(relations);
-    plt.savefig("CorMap.png");
+    #seaborn.heatmap(relations);
+    #plt.savefig("CorMap.png");
     print(relations);
+    plotit=selectedFrame.plot();
+    print(plotit)
+    
     
     
     return "RegCorDescShift"; 
