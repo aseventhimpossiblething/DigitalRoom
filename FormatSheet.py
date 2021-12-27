@@ -37,6 +37,7 @@ def headers():
         strconv=strconv.replace("Index(","");
         strconv=strconv.replace("dtype='object')","");
         strconv=strconv.replace("'],","']");
+        strconv=list(strconv);
         print("strconv ch = ",strconv);
         print("typeof strconv = ",type(strconv));
         print("strconv[0] = ",strconv[0]);
