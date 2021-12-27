@@ -33,6 +33,7 @@ def headers():
               readActiveSheet=pandas.DataFrame(data=readActiveSheet);
         
         def activeSheetParse(readActiveSheet):
+            print(type "readActiveSheet ",type(readActiveSheet));
             QdropSheet=readActiveSheet.find("Drop9");
             if QdropSheet>-1:
                return "Empty_File"; 
