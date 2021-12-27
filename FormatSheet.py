@@ -113,7 +113,9 @@ def RegCorDescShift():
     print(selectedFrame);
     relations=selectedFrame.corr();
     seaborn.heatmap(relations);
+    plt.show();
     print(relations);
+    
     
     return "RegCorDescShift"; 
 #RegCorDescShift();
