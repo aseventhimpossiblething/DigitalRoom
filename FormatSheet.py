@@ -16,6 +16,7 @@ def headers():
   lCount=0;
   while lCount < numOfSheets:
         ListOfFrames=[];
+        ActiveSheet=ActiveSheets[lcount];
         isxlsx=ActiveSheet.lower().find(".xlsx");
         iscsv=ActiveSheet.lower().find(".csv");
         #print("ActiveSheet ",ActiveSheet);
