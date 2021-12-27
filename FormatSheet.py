@@ -31,10 +31,11 @@ def headers():
         if iscsv > 1:
               readActiveSheet=pandas.read_csv(ActiveSheet); 
               readActiveSheet=pandas.DataFrame(data=readActiveSheet);
-        QdropSheet=readActiveSheet.find("Drop9");
-        if QdropSheet>-1:
-           return "Empty_File"; 
+        
         def activeSheetParse(readActiveSheet):
+            QdropSheet=readActiveSheet.find("Drop9");
+            if QdropSheet>-1:
+               return "Empty_File"; 
             #print("readActiveSheet.columns = ",readActiveSheet.columns);
             #print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
             strconv=str(readActiveSheet.columns)
