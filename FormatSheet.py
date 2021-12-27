@@ -46,6 +46,7 @@ def headers():
                   dcolumn=readActiveSheet[col];
                   coltype=str(dcolumn.dtypes);
                   Qobject=coltype.find('object');
+                  print("Qobject ",Qobject);
                   NewQcats=[];
                   OldQcats=[];  
                   if Qobject>-1:
