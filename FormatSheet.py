@@ -54,8 +54,10 @@ def headers():
             l2count=0;
             while l2count<len(strconv):
               hcolnam=strconv[l2count];
-              hcolnam=hcolnam.replace("       ","");
-              hcolnam=hcolnam.replace(" ","m");
+              if hcolnam.find("\n")>0:
+                 hcolnam=hcolnam.replace("\n       ","");
+              #hcolnam=hcolnam.replace("       ","");
+              #hcolnam=hcolnam.replace(" ","m");
               col=readActiveSheet[hcolnam];
               print(col);
               l2count=l2count+1;
