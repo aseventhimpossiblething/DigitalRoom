@@ -42,7 +42,13 @@ def headers():
             print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
             l2count=0;
             while l2count<len(readActiveSheet.columns):
-                  print("readActiveSheet.columns[0] ",readActiveSheet.columns[0]);
+                  col=readActiveSheet.columns[l2count]);
+                  dcolumn=readActiveSheet[col];
+                  coltype=dcolumn.dtypes;
+                  print("col ",col);
+                  print("dcolumn ", dcolumn);
+                  print("coltype ", coltype);
+                  l2count=l2count+1;
             return readActiveSheet;
         aSP=activeSheetParse(readActiveSheet);
         EmptyQ=str(aSP).find("Empty_File");
