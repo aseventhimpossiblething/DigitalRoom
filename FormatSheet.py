@@ -23,6 +23,7 @@ def headers():
         #print("iscsv ",iscsv);
         print(" opened ",ActiveSheet);
         OpenActiveSheet=open(ActiveSheet,'r');
+        print("OpenActiveSheet ",OpenActiveSheet)
         if isxlsx > 1:
               readActiveSheet=pandas.read_excel(ActiveSheet); 
         if iscsv > 1:
