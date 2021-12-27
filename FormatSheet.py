@@ -44,6 +44,23 @@ def headers():
   print("00000000000000000000000000000000000000000000000011111111111111") 
   print("00000000000000000000000000000000000000000000000011111111111111") 
   print(ListOfFrames);  
+  print("len(ListOfFrames) ",len(ListOfFrames))
   print("00000000000000000000000000000000000000000000000022222222222222") 
   print("00000000000000000000000000000000000000000000000022222222222222") 
   return ActiveSheets;
+
+
+def RegCorDescShift(x):
+    print("headers() regcordescshift ");  
+
+RegCorDescShift(headers()):
+      
+    
+
+
+
+
+
+
+
+
