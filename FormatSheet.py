@@ -38,8 +38,9 @@ def headers():
         strconv=strconv.replace("dtype='object')","");
         strconv=strconv.replace("'],","']");
         strconv=strconv.replace("[","");
+        print("strconv ch 1 = ",strconv);
         strconv=strconv.split(",");
-        print("strconv ch = ",strconv);
+        print("strconv ch 2 = ",strconv);
         print("typeof strconv = ",type(strconv));
         print("strconv[0] = ",strconv[0]);
         print("strconv[1] = ",strconv[1]);
