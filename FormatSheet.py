@@ -49,6 +49,11 @@ def headers():
         print("typeof strconv = ",type(strconv));
         print("strconv[0] = ",strconv[0]);
         print("strconv[1] = ",strconv[1]);
-        
+        l2count=0;
+        while l2count<len(strconv):
+              hcolnam=strconv[l2count];
+              col=readActiveSheet[hcolnam];
+              print(col);
+              l2count=l2count+1;
         lCount=lCount+1;
   return ActiveSheets;
