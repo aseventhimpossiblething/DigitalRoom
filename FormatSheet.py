@@ -47,6 +47,7 @@ def headers():
             if strconv.replace(",","")=="":
                print("emptySet!"); 
                return "Empty_File";
+            return readActiveSheet;
             #ListOfFrames.append(readActiveSheet);
             print("strconv ch 1 = ",strconv);
             strconv=strconv.split(",");
@@ -73,6 +74,7 @@ def headers():
             print("000000000000000000000000000000000000000000000000oooooooooooooo") 
             print("000000000000000000000000000000000000000000000000oooooooooooooo") 
             print("ActiveSheetParse Finished")  
+            
         aSP=activeSheetParse(readActiveSheet);
         #if aSP!="Empty_File":
         print(aSP)
