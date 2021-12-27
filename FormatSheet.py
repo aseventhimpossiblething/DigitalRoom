@@ -87,6 +87,10 @@ def headers():
 
 
 def RegCorDescShift():
+    os.chdir('/GMDelight/DigitalRoom/static/');
+    os.remove("heatmap.png");
+    os.remove("selectedFrame.png");
+    
     #headers() 
     #print("headers() regcordescshift ",headers());
     selectedFrame=headers()[0];
@@ -95,7 +99,7 @@ def RegCorDescShift():
     selectedFrame=selectedFrame.dropna(axis=1);
     print(selectedFrame);
     
-    os.chdir('/GMDelight/DigitalRoom/static/');
+   
     relations=selectedFrame.corr();
     seaborn.heatmap(relations);
     plt.savefig("heatmap.png")
