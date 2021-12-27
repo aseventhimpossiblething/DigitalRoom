@@ -26,7 +26,8 @@ def headers():
         if isxlsx > 1:
               readActiveSheets=pandas.read_excel(ActiveSheet); 
         if iscsv > 1:
-              readActiveSheets=open(ActiveSheet,'r').read();  
+              #readActiveSheets=open(ActiveSheet,'r').read();
+              readActiveSheets=pandas.read_csv(ActiveSheet); 
               readActiveSheets=pandas.DataFrame(data=readActiveSheets) 
         print(" readActiveSheets ",readActiveSheets);
         lCount=lCount+1;
