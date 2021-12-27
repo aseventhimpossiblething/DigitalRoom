@@ -18,6 +18,7 @@ def headers():
   ListOfFrames=[];
   lCount=0;
   while lCount < numOfSheets:
+        readActiveSheet="";
         ActiveSheet=ActiveSheets[lCount];
         isxlsx=ActiveSheet.lower().find(".xlsx");
         iscsv=ActiveSheet.lower().find(".csv");
@@ -80,8 +81,8 @@ def headers():
                   """
                   l2count=l2count+1;
             return readActiveSheet;
-        if readActiveSheet:  
-           aSP=activeSheetParse(readActiveSheet);
+        #if readActiveSheet:  
+        aSP=activeSheetParse(readActiveSheet);
         EmptyQ=str(aSP).find("Empty_File");
         if EmptyQ<0:
            ListOfFrames.append(aSP);
