@@ -33,7 +33,7 @@ def headers():
         print(readActiveSheet);
         print("readActiveSheet.columns = ",readActiveSheet.columns);
         print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
-        strconv=readActiveSheet.columns
+        strconv=str(readActiveSheet.columns)
         print("typeof strconv = ",type(strconv));
         #print("readActiveSheet.columns[0] = ",readActiveSheet.columns[0]);
         #print("readActiveSheet.columns[1] = ",readActiveSheet.columns[1]);
