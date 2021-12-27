@@ -16,7 +16,6 @@ def headers():
   ListOfFrames=[];
   lCount=0;
   while lCount < numOfSheets:
-        
         ActiveSheet=ActiveSheets[lCount];
         isxlsx=ActiveSheet.lower().find(".xlsx");
         iscsv=ActiveSheet.lower().find(".csv");
@@ -39,16 +38,12 @@ def headers():
                print("emptySet!"); 
                return "Empty_File";
             return readActiveSheet;
-           
-           
         aSP=activeSheetParse(readActiveSheet);
-        #if aSP!="Empty_File":
-        #print(aSP)
         ListOfFrames.append(aSP);
         lCount=lCount+1;
-        print("00000000000000000000000000000000000000000000000011111111111111") 
-        print("00000000000000000000000000000000000000000000000011111111111111") 
-        print(ListOfFrames);  
-        print("00000000000000000000000000000000000000000000000022222222222222") 
-        print("00000000000000000000000000000000000000000000000022222222222222") 
+  print("00000000000000000000000000000000000000000000000011111111111111") 
+  print("00000000000000000000000000000000000000000000000011111111111111") 
+  print(ListOfFrames);  
+  print("00000000000000000000000000000000000000000000000022222222222222") 
+  print("00000000000000000000000000000000000000000000000022222222222222") 
   return ActiveSheets;
