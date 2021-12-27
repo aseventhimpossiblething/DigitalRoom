@@ -42,7 +42,7 @@ def headers():
             print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
             l2count=0;
             while l2count<len(readActiveSheet.columns):
-                  col=readActiveSheet.columns[l2count]);
+                  col=readActiveSheet.columns[l2count];
                   dcolumn=readActiveSheet[col];
                   coltype=dcolumn.dtypes;
                   print("col ",col);
