@@ -2,6 +2,8 @@ import pandas
 import os
 from pandas import ExcelWriter
 from pandas import ExcelFile
+import seaborn
+import matplotlib.pyplot as plt
 
 def headers():
   os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
@@ -109,8 +111,8 @@ def RegCorDescShift():
     print(selectedFrame);
     selectedFrame=selectedFrame.dropna(axis=1);
     print(selectedFrame);
-    
-    
+    relations=selectedFrame.corr();
+    print(relations);
     
     return "RegCorDescShift"; 
 #RegCorDescShift();
