@@ -64,6 +64,9 @@ def RegCorDescShift():
     selectedFrame=headers()[0];
     print("selectedFrame");
     print(selectedFrame);
+    selectedFrame=selectedFrame.dropna(axis=1);
+    print(selectedFrame);
+    
     
     
     return "RegCorDescShift"; 
