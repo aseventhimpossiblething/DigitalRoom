@@ -46,7 +46,7 @@ def headers():
         strconv=strconv.replace(", ",",");
         #strconv=strconv.replace("'],","'");
         #strconv=strconv.replace("[","");
-        if strconv.replace("","")=="":
+        if strconv.replace(",","")=="":
            print("emptySet!"); 
         print("strconv ch 1 = ",strconv);
         strconv=strconv.split(",");
