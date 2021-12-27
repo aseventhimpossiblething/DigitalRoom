@@ -32,8 +32,8 @@ def headers():
               readActiveSheet=pandas.DataFrame(data=readActiveSheet); 
         print("readActiveSheet");
         print(readActiveSheet);
-        #if readActiveSheet=='Empty DataFrame':
-        #   print("Frame is empty");
+        if str(readActiveSheet)=='Empty DataFrame':
+          print("Frame is empty");
         print("readActiveSheet.columns = ",readActiveSheet.columns);
         print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
         strconv=str(readActiveSheet.columns)
@@ -54,9 +54,9 @@ def headers():
         print("strconv[1] = ",strconv[1]);
         l2count=0;
         while l2count<len(strconv):
+              if strconv[l2count]=='':
+                 
               hcolnam=strconv[l2count];
-              if hcolnam=='':
-                 hcolnam='Empty_Col_No_Values'
               col=readActiveSheet[hcolnam];
               print(col);
               l2count=l2count+1;
