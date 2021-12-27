@@ -37,9 +37,10 @@ def headers():
             if strconv.replace(",","")=="":
                #print("emptySet!"); 
                return "Empty_File";
-            len(readActiveSheet.columns);
+            print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
             readActiveSheet=readActiveSheet.dropna(axis=1);
-            len(readActiveSheet.columns);
+            print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
+            #len(readActiveSheet.columns);
             return readActiveSheet;
         aSP=activeSheetParse(readActiveSheet);
         EmptyQ=str(aSP).find("Empty_File");
