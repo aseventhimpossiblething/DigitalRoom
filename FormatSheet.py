@@ -94,18 +94,17 @@ def RegCorDescShift():
     print(selectedFrame);
     selectedFrame=selectedFrame.dropna(axis=1);
     print(selectedFrame);
-    relations=selectedFrame.corr();
-    #seaborn.heatmap(relations);
-    #plt.savefig("CorMap.png");
-    #print(relations);
-    selectedFrame.plot(kind='bar');
-    print("plot made")
+    
     os.chdir('/GMDelight/DigitalRoom/static/');
-    print("changing file location")
+    relations=selectedFrame.corr();
+    seaborn.heatmap(relations);
+    plt.savefig("heatmap.png")
+    
+    selectedFrame.plot(kind='bar');
     plt.savefig("selectedFrame.png")
     print("image saved")
         
-    #return "RegCorDescShift"; 
+   
     return "RegCorDescShift";
   
   
