@@ -307,7 +307,7 @@ def inddigogo():
     global domain;     
     domainFavi=domain+"/favicon.png";
     view9="/view11"
-    Formatinput=FormatSheet.headers();
+    Formatinput=FormatSheet.RegCorDescShift();
     return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9,Formatinput=Formatinput);
    
     
@@ -318,7 +318,7 @@ def inddigog1():
     global domain;     
     domainFavi=domain+"/favicon.png";
     view9="/view11"
-    Formatinput=FormatSheet.headers();
+    Formatinput=FormatSheet.RegCorDescShift();
     return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9,Formatinput=Formatinput);
       
     
