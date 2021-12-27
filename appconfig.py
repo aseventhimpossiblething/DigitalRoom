@@ -1,4 +1,4 @@
-NUM_WOKERS=10
+NUM_WORKERS=10
 timeout=1000
 #accesslog="/var/log/gunicorn/access.log"
 #errorlog="/var/log/gunicorn/error.log"
