@@ -309,7 +309,7 @@ def inddigogo():
     domainFavi=domain+"/favicon.png";
     view9="/view11"
     Formatinput=FormatSheet.RegCorDescShift();
-    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9,Formatinput=Formatinput);
+    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
    
     
 @app.route('/Loadfiles1',methods=['POST','GET'])
@@ -320,7 +320,7 @@ def inddigog1():
     domainFavi=domain+"/favicon.png";
     view9="/view11"
     Formatinput=FormatSheet.RegCorDescShift();
-    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9,Formatinput=Formatinput);
+    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
       
     
 """
