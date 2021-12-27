@@ -105,8 +105,16 @@ def RegCorDescShift():
     plt.savefig("selectedFrame.png")
     print("image saved")
         
-    return "RegCorDescShift"; 
-
+    #return "RegCorDescShift"; 
+    return "RegCorDescShift";
+  
+  
+  
+  
+def rpt():
+    distalRPT=threading.Thread(target=RegCorDescShift); 
+    distalRPT.start();
+    return "temporary"
       
     
 
