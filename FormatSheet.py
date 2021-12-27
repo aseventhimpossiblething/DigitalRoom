@@ -40,7 +40,7 @@ def headers():
             return readActiveSheet;
         aSP=activeSheetParse(readActiveSheet);
         EmptyQ=str(aSP).find("Empty_File");
-        if EmptyQ>-1:
+        if EmptyQ<0:
            ListOfFrames.append(aSP);
         print("EmptyQ ",EmptyQ)
         print(" str aSP ",str(aSP))
