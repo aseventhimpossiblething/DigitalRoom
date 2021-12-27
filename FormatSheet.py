@@ -80,7 +80,8 @@ def headers():
                   """
                   l2count=l2count+1;
             return readActiveSheet;
-        aSP=activeSheetParse(readActiveSheet);
+        if readActiveSheet:  
+           aSP=activeSheetParse(readActiveSheet);
         EmptyQ=str(aSP).find("Empty_File");
         if EmptyQ<0:
            ListOfFrames.append(aSP);
