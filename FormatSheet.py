@@ -35,8 +35,11 @@ def headers():
             strconv=strconv.replace("[","");
             strconv=strconv.replace(", ",",");
             if strconv.replace(",","")=="":
-               print("emptySet!"); 
+               #print("emptySet!"); 
                return "Empty_File";
+            len(readActiveSheet.columns);
+            readActiveSheet=readActiveSheet.dropna(axis=1);
+            len(readActiveSheet.columns);
             return readActiveSheet;
         aSP=activeSheetParse(readActiveSheet);
         EmptyQ=str(aSP).find("Empty_File");
