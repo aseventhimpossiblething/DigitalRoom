@@ -32,6 +32,6 @@ def headers():
         print("readActiveSheet");
         print(readActiveSheet);
         print("readActiveSheet.columns = ",readActiveSheet.columns);
-        print("typeof readActiveSheet.columns = ",typeof(readActiveSheet.columns));
+        print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
         lCount=lCount+1;
   return ActiveSheets;
