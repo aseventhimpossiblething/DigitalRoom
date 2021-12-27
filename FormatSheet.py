@@ -16,15 +16,15 @@ def headers():
   lCount=0;
   while lCount < numOfSheets:
         ActiveSheet=ActiveSheets[lCount];
-        isxlsx=lower( ActiveSheet).find(".xlsx");
-        iscsv=lower( ActiveSheet).find(".csv");
+        isxlsx=ActiveSheet.lower().find(".xlsx");
+        iscsv=ActiveSheet.lower().find(".csv");
         print("ActiveSheet ",ActiveSheet);
         print("isxlsx ",isxlsx); 
         print("iscsv ",iscsv);
         print(" opened ",ActiveSheet);
         try:
-           isxlsx=lower( ActiveSheet).find(".xlsx");
-           iscsv=lower( ActiveSheet).find(".csv"); 
+           isxlsx=ActiveSheet.lower().find(".xlsx");
+           iscsv=ActiveSheet.lower().find(".csv"); 
            OpenActiveSheets=open(ActiveSheet,'r');
            print("isxlsx ",isxlsx); 
            print("iscsv ",iscsv);
