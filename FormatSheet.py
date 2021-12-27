@@ -31,7 +31,7 @@ def headers():
               readActiveSheet=pandas.read_csv(ActiveSheet); 
               readActiveSheet=pandas.DataFrame(data=readActiveSheet); 
         def activeSheetParse(readActiveSheet):
-            global ListOfFrames
+            #global ListOfFrames
             #ListOfFrames=[];
             #print("readActiveSheet");
             #print(readActiveSheet);
@@ -47,7 +47,7 @@ def headers():
             if strconv.replace(",","")=="":
                print("emptySet!"); 
                return "Empty_File";
-            ListOfFrames.append(readActiveSheet);
+            #ListOfFrames.append(readActiveSheet);
             print("strconv ch 1 = ",strconv);
             strconv=strconv.split(",");
             print("strconv ch 2 = ",strconv);
@@ -69,10 +69,13 @@ def headers():
             """
             print("000000000000000000000000000000000000000000000000oooooooooooooo")
             print("000000000000000000000000000000000000000000000000oooooooooooooo") 
-            print(ListOfFrames);
+            #print(ListOfFrames);
             print("000000000000000000000000000000000000000000000000oooooooooooooo") 
             print("000000000000000000000000000000000000000000000000oooooooooooooo") 
             print("ActiveSheetParse Finished")  
-        activeSheetParse(readActiveSheet);
+        aSP=activeSheetParse(readActiveSheet);
+        if aSP!="Empty_File":
+          ListOfFrames.append(aSP);
+        print(ListOfFrames);  
         lCount=lCount+1;
   return ActiveSheets;
