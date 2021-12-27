@@ -35,7 +35,7 @@ def headers():
         print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
         strconv=str(readActiveSheet.columns)
         strconv=strconv.replace("Index(","");
-        strconv=strconv.replace(",dtype='object')","");
+        strconv=strconv.replace(", dtype='object')","");
         print("strconv ch = ",strconv);
         print("typeof strconv = ",type(strconv));
         print("strconv[0] = ",strconv[0]);
