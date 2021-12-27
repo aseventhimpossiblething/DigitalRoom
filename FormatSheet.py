@@ -25,11 +25,15 @@ def headers():
         print("Headers called active sheet ",ActiveSheet)
         isxlsx=ActiveSheet.lower().find(".xlsx");
         iscsv=ActiveSheet.lower().find(".csv");
+        readActiveSheet="Drop9";
         if isxlsx > 1:
               readActiveSheet=pandas.read_excel(ActiveSheet); 
         if iscsv > 1:
               readActiveSheet=pandas.read_csv(ActiveSheet); 
-              readActiveSheet=pandas.DataFrame(data=readActiveSheet); 
+              readActiveSheet=pandas.DataFrame(data=readActiveSheet);
+        QdropSheet=readActiveSheet.find("Drop9");
+        if QdropSheet>-1:
+           return "Empty_File"; 
         def activeSheetParse(readActiveSheet):
             #print("readActiveSheet.columns = ",readActiveSheet.columns);
             #print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
