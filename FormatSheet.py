@@ -50,9 +50,10 @@ def headers():
                   print(" dcolumn ", dcolumn);
                   print("coltype ",coltype);
                   print("Qobject ",Qobject);
+                  """
                   NewQcats=[];
                   OldQcats=[];  
-                  """
+                  
                   if Qobject>-1:
                      print(col," is catagorical cat process run");
                      catcount=0;
