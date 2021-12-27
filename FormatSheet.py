@@ -74,8 +74,8 @@ def headers():
             print("000000000000000000000000000000000000000000000000oooooooooooooo") 
             print("ActiveSheetParse Finished")  
         aSP=activeSheetParse(readActiveSheet);
-        if aSP!="Empty_File":
-          ListOfFrames.append(aSP);
+        #if aSP!="Empty_File":
+        ListOfFrames.append(aSP);
         print(ListOfFrames);  
         lCount=lCount+1;
   return ActiveSheets;
