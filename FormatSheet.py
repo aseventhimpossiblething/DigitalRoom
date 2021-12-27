@@ -57,10 +57,11 @@ def headers():
   return ActiveSheets;
 
 
-def RegCorDescShift(x):
-    print("headers() regcordescshift ");  
+def RegCorDescShift():
+    #headers() 
+    print("headers() regcordescshift ",headers());  
     return len(ListOfFrames); 
-RegCorDescShift(headers());
+RegCorDescShift();
       
     
 
