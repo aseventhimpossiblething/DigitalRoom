@@ -30,8 +30,8 @@ def headers():
               readActiveSheet=pandas.read_csv(ActiveSheet); 
               readActiveSheet=pandas.DataFrame(data=readActiveSheet); 
         def activeSheetParse(readActiveSheet):
-            global
-            ListOfFrames
+            global ListOfFrames
+            ListOfFrames=[];
             print("readActiveSheet");
             print(readActiveSheet);
             print("readActiveSheet.columns = ",readActiveSheet.columns);
