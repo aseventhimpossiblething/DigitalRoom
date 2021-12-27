@@ -36,9 +36,11 @@ def headers():
         strconv=str(readActiveSheet.columns)
         strconv=strconv.replace("Index(","");
         strconv=strconv.replace("dtype='object')","");
+         #strconv=strconv.replace("],","");
         strconv=strconv.replace("'","");
         strconv=strconv.replace("]","");
         strconv=strconv.replace("[","");
+        strconv=strconv.replace(", ",",");
         #strconv=strconv.replace("'],","'");
         #strconv=strconv.replace("[","");
         print("strconv ch 1 = ",strconv);
