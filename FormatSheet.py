@@ -129,7 +129,7 @@ def RegCorDescShift():
     #seaborn.heatmap(relations);
     #plt.savefig("CorMap.png");
     print(relations);
-    selectedFrame.plot();
+    selectedFrame.plot(kind='bar');
     os.chdir('/GMDelight/DigitalRoom/static/');
     plt.savefig("selectedFrame.png")
     #print(plotit)
