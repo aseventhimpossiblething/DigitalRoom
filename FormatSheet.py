@@ -28,7 +28,7 @@ def headers():
         if iscsv > 1:
               #readActiveSheets=open(ActiveSheet,'r').read();
               readActiveSheet=pandas.read_csv(ActiveSheet); 
-              readActiveSheet=pandas.DataFrame(data=readActiveSheets) 
+              readActiveSheet=pandas.DataFrame(data=readActiveSheet); 
         print("readActiveSheet");
         print(readActiveSheet);
         print("readActiveSheet.columns = ",readActiveSheet.columns);
