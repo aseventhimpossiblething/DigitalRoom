@@ -44,7 +44,7 @@ def headers():
             while l2count<len(readActiveSheet.columns):
                   col=readActiveSheet.columns[l2count];
                   dcolumn=readActiveSheet[col];
-                  coltype=dcolumn.dtypes;
+                  coltype=str(dcolumn.dtypes);
                   Qobject=coltype.find('object');
                   NewQcats=[];
                   OldQcats=[];  
