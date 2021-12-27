@@ -40,11 +40,13 @@ def headers():
             return readActiveSheet;
         aSP=activeSheetParse(readActiveSheet);
         EmptyQ=str(aSP).find("Empty_File");
+        if EmptyQ>-1:
+           ListOfFrames.append(aSP);
         print("EmptyQ ",EmptyQ)
         print(" str aSP ",str(aSP))
         print("type str aSP ",type(str(aSP)))
         #if aSP!="Empty_File":
-        ListOfFrames.append(aSP);
+        
         lCount=lCount+1;
   print("00000000000000000000000000000000000000000000000011111111111111") 
   print("00000000000000000000000000000000000000000000000011111111111111") 
