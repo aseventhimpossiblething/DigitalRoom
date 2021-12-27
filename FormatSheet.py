@@ -34,9 +34,12 @@ def headers():
         
         def activeSheetParse(readActiveSheet):
             print("type readActiveSheet ",type(readActiveSheet));
-            QdropSheet=readActiveSheet.find("Drop9");
-            if QdropSheet>-1:
-               return "Empty_File"; 
+            TypereadActiveSheet=str(type(readActiveSheet)).find('str');
+            if TypereadActiveSheet<0:
+               return "Empty_File";
+            #QdropSheet=readActiveSheet.find("Drop9");
+            #if QdropSheet>-1:
+            #   return "Empty_File"; 
             #print("readActiveSheet.columns = ",readActiveSheet.columns);
             #print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
             strconv=str(readActiveSheet.columns)
