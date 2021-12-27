@@ -56,7 +56,7 @@ def headers():
                      catcount=0;
                      while catcount<len(dcolumn):
                            dcolumn[catcount];
-                           catnum=str(str(OldQcats).find(dcolumn[catcount]));
+                           catnum=int(str(OldQcats).find(dcolumn[catcount]));
                            if catnum>-1:
                               NewQcats.append(catnum)
                            if catnum<0: 
