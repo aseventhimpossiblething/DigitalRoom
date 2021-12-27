@@ -98,7 +98,9 @@ def RegCorDescShift():
     #plt.savefig("CorMap.png");
     #print(relations);
     selectedFrame.plot(kind='bar');
+    print("plot made")
     os.chdir('/GMDelight/DigitalRoom/static/');
+    print("changing file location")
     plt.savefig("selectedFrame.png")
     print("image saved")
         
