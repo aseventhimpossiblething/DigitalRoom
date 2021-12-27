@@ -62,8 +62,8 @@ def headers():
                            
                            #NewQcats.append(catcount);
                            catcount=catcount+1;
-                     ncolnam=str(dcolumn)+"_as_Cat_Var";      
-                     readActiveSheet.drop([dcolumn]);
+                     ncolnam=str(col)+"_as_Cat_Var";      
+                     readActiveSheet.drop([col]);
                      readActiveSheet[ncolnam]=NewQcats; 
                   print("col ",col);
                   print("dcolumn ", dcolumn);
