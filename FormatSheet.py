@@ -16,6 +16,8 @@ def headers():
   lCount=0;
   while lCount < numOfSheets:
         ActiveSheet=ActiveSheets[lCount];
+        isxlsx=lower( ActiveSheet).find(".xlsx");
+        iscsv=lower( ActiveSheet).find(".csv");
         print("ActiveSheet ",ActiveSheet);
         print("isxlsx ",isxlsx); 
         print("iscsv ",iscsv);
