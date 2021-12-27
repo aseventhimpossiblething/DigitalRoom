@@ -9,8 +9,8 @@ def headers():
   numOfSheets=len(ActiveSheets);
   if numOfSheets==0:
      return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
-  print("-----------------------------------------------------------")
-  print("---calling headers-----")
+  #print("-----------------------------------------------------------")
+  #print("---calling headers-----")
   #print("numOfSheets ",numOfSheets)
   #ActiveSheets=os.listdir();
   ListOfFrames=[];
@@ -25,8 +25,8 @@ def headers():
               readActiveSheet=pandas.read_csv(ActiveSheet); 
               readActiveSheet=pandas.DataFrame(data=readActiveSheet); 
         def activeSheetParse(readActiveSheet):
-            print("readActiveSheet.columns = ",readActiveSheet.columns);
-            print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
+            #print("readActiveSheet.columns = ",readActiveSheet.columns);
+            #print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
             strconv=str(readActiveSheet.columns)
             strconv=strconv.replace("Index(","");
             strconv=strconv.replace("dtype='object')","");
@@ -37,9 +37,9 @@ def headers():
             if strconv.replace(",","")=="":
                #print("emptySet!"); 
                return "Empty_File";
-            print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
+            #print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
             readActiveSheet=readActiveSheet.dropna(axis=1);
-            print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
+            #print("len(readActiveSheet.columns); ",len(readActiveSheet.columns));
             l2count=0;
             while l2count<len(readActiveSheet.columns):
                   col=readActiveSheet.columns[l2count];
@@ -92,7 +92,7 @@ def headers():
 
 def RegCorDescShift():
     #headers() 
-    print("headers() regcordescshift ",headers());
+    #print("headers() regcordescshift ",headers());
     selectedFrame=headers()[0];
     print("selectedFrame");
     print(selectedFrame);
@@ -102,7 +102,7 @@ def RegCorDescShift():
     
     
     return "RegCorDescShift"; 
-RegCorDescShift();
+#RegCorDescShift();
       
     
 
