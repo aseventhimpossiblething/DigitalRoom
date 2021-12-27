@@ -18,7 +18,11 @@ def headers():
         ActiveSheet=ActiveSheets[lCount];
         print("ActiveSheet ",ActiveSheet);
         try:
+           isxlsx=lower( ActiveSheet).find(".xlsx");
+           iscsv=lower( ActiveSheet).find(".csv"); 
            OpenActiveSheets=open(ActiveSheet,'r');
+           print("isxlsx ",isxlsx); 
+           print("iscsv ",iscsv);
            print(" opened ",ActiveSheet);
            readActiveSheets=pandas.read_excel(ActiveSheet);
            print(" readActiveSheets ",readActiveSheets);
