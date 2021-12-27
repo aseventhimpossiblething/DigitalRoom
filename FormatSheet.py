@@ -59,7 +59,12 @@ def headers():
 
 def RegCorDescShift():
     #headers() 
-    print("headers() regcordescshift ",headers());  
+    print("headers() regcordescshift ",headers());
+    selectedFrame=headers()[0];
+    print("selectedFrame");
+    print(selectedFrame);
+    
+    
     return "RegCorDescShift"; 
 RegCorDescShift();
       
