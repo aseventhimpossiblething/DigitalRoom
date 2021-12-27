@@ -60,7 +60,7 @@ def headers():
 def RegCorDescShift():
     #headers() 
     print("headers() regcordescshift ",headers());  
-    return len(ListOfFrames); 
+    return "RegCorDescShift"; 
 RegCorDescShift();
       
     
