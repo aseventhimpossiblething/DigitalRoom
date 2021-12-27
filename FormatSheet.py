@@ -35,8 +35,8 @@ def headers():
         print("typeof readActiveSheet.columns = ",type(readActiveSheet.columns));
         listconv=list(readActiveSheet.columns)
         print("typeof listconv = ",type(listconv));
-        #print("readActiveSheet.columns[0] = ",readActiveSheet.columns[0]);
-        #print("readActiveSheet.columns[1] = ",readActiveSheet.columns[1]);
+        print("listconv[0] = ",listconv[0]);
+        print("listconv[1] = ",listconv[1]);
         
         lCount=lCount+1;
   return ActiveSheets;
