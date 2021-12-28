@@ -110,7 +110,7 @@ def RegCorDescShift():
     os.chdir('/GMDelight/DigitalRoom/static/');
     plt.savefig("heatmap.png")
     
-    selectedFrame.plot(kind='scatter');
+    selectedFrame.plot(kind='hist');
     plt.savefig("selectedFrame.png")
     print("image saved")
     
