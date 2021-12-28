@@ -308,7 +308,7 @@ def inddigogo():
     global domain;     
     domainFavi=domain+"/favicon.png";
     view9="/view11"
-    FormatSheet.rpt();
+    #FormatSheet.rpt();
     #rpt=threading.Thread(target=FormatSheet.RegCorDescShift());
     #rpt.start();
     #Formatinput=FormatSheet.RegCorDescShift();
@@ -322,12 +322,23 @@ def inddigog1():
     global domain;     
     domainFavi=domain+"/favicon.png";
     view9="/view11"
-    FormatSheet.rpt();
+    #FormatSheet.rpt();
     #rpt=threading.Thread(target=FormatSheet.RegCorDescShift());
     #rpt.start();
     #Formatinput=FormatSheet.RegCorDescShift();
     return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
-      
+
+@app.route('/rpt')
+def rpt():
+    global domain;     
+    domainFavi=domain+"/favicon.png";
+    FormatSheet.rpt();
+    #fimage=str(DisplayFiles.showfiles())
+    return "<embed src='/static/rpt.html'>"
+    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+"""          
+    
+    
     
 """
 @app.route('/tests')
