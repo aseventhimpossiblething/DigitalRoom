@@ -109,7 +109,7 @@ def RegCorDescShift():
     print("columns - ",columns);
     print("columns[0] - ",columns[0]);
     colNames=[];
-    colcount=reviewcol.count();
+    colcounts=[];
     colSums=[];
     colMedians=[];
     colMeans=[];
