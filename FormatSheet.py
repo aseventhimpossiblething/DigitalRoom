@@ -69,8 +69,10 @@ def headers():
                      print("type dcolumn-", type(dcolumn));
                      Newdict=dcolumn.to_dict();
                      print("type Newdict ",type(Newdict));
-                     print("Newdict ",Newdict); 
-                     print("Newdict.keys() ",Newdict.keys()); 
+                     #print("Newdict ",Newdict); 
+                     print("Newdict[0] ",Newdict[0]); 
+                     print("Newdict[1] ",Newdict[1]);  
+                     print("Newdict[2] ",Newdict[2]); 
                      dcolumnEX=numpy.array(dcolumn);
                      print("HHHHH lll end ",(dcolumnEX=='xo').sum());
                      #print( Newdict)
@@ -81,6 +83,7 @@ def headers():
                      catcount=0;
                      while catcount<len(dcolumn):
                            dcolumn[catcount];
+                           ind_elementName=Newdict[catcount];
                            catnum=str(OldQcats).find(str(dcolumn[catcount]));
                            if catnum>-1:
                               NewQcats.append(catnum)
