@@ -2,6 +2,7 @@ import pandas
 import os
 from pandas import ExcelWriter
 from pandas import ExcelFile
+from scipy import stats
 import seaborn
 import matplotlib.pyplot as plt
 import threading
@@ -107,18 +108,37 @@ def RegCorDescShift():
     columns=selectedFrame.columns;
     print("columns - ",columns);
     print("columns[0] - ",columns[0]);
-    reviewcolData=[];
+    colNames=[];
+    colcount=reviewcol.count();
+    colSums=[];
+    colMedians=[];
+    colMeans=[];
+    colSTDs=[];
+    colMaxs=[];
+    colMins=[];
+    colranges=[];
+    Trimmed05s=[];
+    Trimmed10s=[];
+    Trimmed15s=[];
     colrcount=0;
     while colrcount<len(columns):
-          reviewcol=columns[colrcount];
-          reviewcol.count();
-          reviewcol.sum();
-          reviewcol.median();
-          reviewcol.mean();
-          reviewcol.std();
+          colname=reviewcol=columns[colrcount];
+          colcount=reviewcol.count();
+          colSum=reviewcol.sum();
+          colMedian=reviewcol.median();
+          colMean=reviewcol.mean();
+          colSTD=reviewcol.std();
+          colMax=reviewcol.max();
+          colMin=reviewcol.min();
+          colrange=colMax-colMin;
+          Trimmed05=stats.trim_mean(reviewcol.points,0.05);
+          Trimmed10=stats.trim_mean(reviewcol.points,0.10);
+          Trimmed15=stats.trim_mean(reviewcol.points,0.15);
           colrcount=colrcount+1; 
     
-   
+    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcount,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
+    print("DescriptiveTable");
+    print(DescriptiveTable);
     relations=selectedFrame.corr();
     seaborn.heatmap(relations);
     os.chdir('/GMDelight/DigitalRoom/static/');
