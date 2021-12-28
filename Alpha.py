@@ -345,7 +345,7 @@ def rptt():
     domainFavi=domain+"/favicon.png";
     if os.path.exists("rpt.html"): 
        return "<embed src='/static/rpt.html'>" 
-    return "<html><meta http-qquiv='refresh' content='10'>Loading...</html>"
+    return "<html><meta http-qquiv='refresh' content='5'>Loading...</html>"
   
              
     
