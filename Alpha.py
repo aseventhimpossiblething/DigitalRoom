@@ -343,8 +343,10 @@ def rpt():
 def rptt():
     global domain;     
     domainFavi=domain+"/favicon.png";
+    print("reload-----")
+    print(os.getcwd())
     if os.path.exists("rpt.html"): 
-       return "<embed src='/static/rpt.html'>" 
+        return "<embed src='/static/rpt.html'>" 
     return "<html><meta http-qquiv='refresh' content='5'>Loading...</html>"
   
              
