@@ -130,7 +130,7 @@ def RegCorDescShift():
          print("guard ",guard);
          
          guardVar=0; 
-         if guardVar=1:  
+         if guardVar==1:  
           colName=columns[colrcount];
           print("colName ",colName);
           reviewcol=selectedFrame[colName];
