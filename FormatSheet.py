@@ -139,7 +139,7 @@ def RegCorDescShift():
           print("colName  ",colName,"Passed the Guard");
           reviewcol=selectedFrame[colName];
           colcount=len(reviewcol);
-          colcounts.append(colcount):
+          colcounts.append(colcount);
           colSum=reviewcol.sum();
           colSums.append();
           colMedian=reviewcol.median(skipna=True);
