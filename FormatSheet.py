@@ -68,7 +68,8 @@ def headers():
                      #can delete below-----------------------------
                      print("id dcolumn-", dcolumn);
                      dcolumnEX=numpy.array(dcolumn);
-                     (dcolumnEX=='xo').sum();
+                     print("HHHHH lll end ",(dcolumnEX=='xo').sum());
+                      
                      #can delet above------------------------------ 
                      
                      print(col," is catagorical cat process run");
