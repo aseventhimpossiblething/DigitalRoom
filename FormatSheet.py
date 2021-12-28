@@ -122,7 +122,8 @@ def RegCorDescShift():
     Trimmed15s=[];
     colrcount=0;
     while colrcount<len(columns):
-          colname=reviewcol=columns[colrcount];
+          colName=columns[colrcount];
+          reviewcol=selectedFrame[colName];
           colcount=len(reviewcol);
           colSum=reviewcol.sum();
           colMedian=reviewcol.median();
