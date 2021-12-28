@@ -336,7 +336,7 @@ def rpt():
     #if os.path.exists("rpt.html"):  
     #return "<embed src='/rptry'>"
     #fimage=str(DisplayFiles.showfiles())
-    return flask.redirect("/rptry");
+    return redirect("/rptry");
     #return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
          
 @app.route('/rptry')
