@@ -123,7 +123,7 @@ def RegCorDescShift():
     colrcount=0;
     while colrcount<len(columns):
           colname=reviewcol=columns[colrcount];
-          colcount=reviewcol.count();
+          colcount=len(reviewcol);
           colSum=reviewcol.sum();
           colMedian=reviewcol.median();
           colMean=reviewcol.mean();
