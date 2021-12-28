@@ -6,6 +6,7 @@ from scipy import stats
 import seaborn
 import matplotlib.pyplot as plt
 import threading
+import numpy
 plt.tight_layout();
 
 def headers():
