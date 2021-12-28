@@ -67,7 +67,7 @@ def headers():
                      
                      #can delete below-----------------------------
                      print("type dcolumn-", type(dcolumn));
-                     Newdict={dcolumn};
+                     Newdict=dcolumn.to_dict();
                      print("type Newdict ",type(Newdict));
                      dcolumnEX=numpy.array(dcolumn);
                      print("HHHHH lll end ",(dcolumnEX=='xo').sum());
