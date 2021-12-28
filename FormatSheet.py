@@ -60,7 +60,7 @@ def headers():
                   
                   #can delete below-----------------------------
                   print("id Qobject -", Qobject);
-                  QobjectEX=np.array(Qobject);
+                  QobjectEX=numpy.array(Qobject);
                   (QobjectEX=='xo').sum();
                   #can delet above------------------------------
                   
