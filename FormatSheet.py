@@ -104,6 +104,7 @@ def RegCorDescShift():
    
     relations=selectedFrame.corr();
     seaborn.heatmap(relations);
+    os.chdir('/GMDelight/DigitalRoom/static/');
     plt.savefig("heatmap.png")
     
     selectedFrame.plot(kind='bar');
