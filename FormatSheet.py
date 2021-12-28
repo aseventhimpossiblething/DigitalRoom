@@ -92,6 +92,9 @@ def RegCorDescShift():
        os.remove("heatmap.png");
     if os.path.exists("selectedFrame.png"):    
        os.remove("selectedFrame.png");
+    if os.path.exists("rpt.html"):    
+       os.remove("rpt.html");    
+        
     
     #headers() 
     #print("headers() regcordescshift ",headers());
@@ -110,6 +113,8 @@ def RegCorDescShift():
     selectedFrame.plot(kind='bar');
     plt.savefig("selectedFrame.png")
     print("image saved")
+    
+    page=<html><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></html>
         
    
     return "RegCorDescShift";
