@@ -135,20 +135,31 @@ def RegCorDescShift():
          if guardVar==-2: 
           #print("Passed the Guard")
           colName=columns[colrcount];
+          colNames.append(colName)
           print("colName  ",colName,"Passed the Guard");
           reviewcol=selectedFrame[colName];
-          print("dtype ",reviewcol.dtype);
           colcount=len(reviewcol);
+          colcounts.append(colcount):
           colSum=reviewcol.sum();
+          colSums.append();
           colMedian=reviewcol.median(skipna=True);
+          colMedians.append();
           colMean=reviewcol.mean();
+          colMeans.append();
           colSTD=reviewcol.std();
+          colSTDs.append();
           colMax=reviewcol.max();
+          colMaxs.append();
           colMin=reviewcol.min();
+          colMins.append();
           colrange=colMax-colMin;
+          colranges.append();
           Trimmed05=stats.trim_mean(reviewcol,0.05);
+          Trimmed05s.append();
           Trimmed10=stats.trim_mean(reviewcol,0.10);
+          Trimmed10s.append();
           Trimmed15=stats.trim_mean(reviewcol,0.15);
+          Trimmed15s.append();          
          colrcount=colrcount+1; 
     
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
