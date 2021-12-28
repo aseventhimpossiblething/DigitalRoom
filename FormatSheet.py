@@ -126,7 +126,7 @@ def RegCorDescShift():
           reviewcol=selectedFrame[colName];
           colcount=len(reviewcol);
           colSum=reviewcol.sum();
-          colMedian=reviewcol.median(axis='None',skipna='True');
+          colMedian=reviewcol.median(axis = 1, skipna='True');
           colMean=reviewcol.mean();
           colSTD=reviewcol.std();
           colMax=reviewcol.max();
