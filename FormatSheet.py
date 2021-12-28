@@ -110,11 +110,11 @@ def RegCorDescShift():
     os.chdir('/GMDelight/DigitalRoom/static/');
     plt.savefig("heatmap.png")
     
-    selectedFrame.plot(kind='bar');
+    selectedFrame.plot(kind='scatter');
     plt.savefig("selectedFrame.png")
     print("image saved")
     
-    page="<html><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></html>"
+    page="<html><div><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+relations+"</div></html>"
     report=open("rpt.html",'w');
     report.write(page);
     report.close();
