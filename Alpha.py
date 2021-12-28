@@ -328,7 +328,7 @@ def inddigog1():
     #Formatinput=FormatSheet.RegCorDescShift();
     return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,view9=view9);
 
-@app.route('/rpt')
+@app.route('/rpt',methods=['POST','GET'])
 def rpt():
     global domain;     
     domainFavi=domain+"/favicon.png";
