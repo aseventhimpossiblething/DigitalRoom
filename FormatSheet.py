@@ -66,9 +66,11 @@ def headers():
                   if Qobject>-1:
                      
                      #can delete below-----------------------------
-                     print("id dcolumn-", dcolumn);
+                     print("type dcolumn-", type(dcolumn));
+                     Newdict={dcolumn};
+                     print("type Newdict ",type(Newdict));
                      dcolumnEX=numpy.array(dcolumn);
-                     print("HHHHH lll end ",(dcolumnEX=='xo').sum('Energy'));
+                     print("HHHHH lll end ",(dcolumnEX=='xo').sum());
                       
                      #can delet above------------------------------ 
                      
