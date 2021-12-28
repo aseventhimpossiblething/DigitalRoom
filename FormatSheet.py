@@ -59,15 +59,18 @@ def headers():
                   coltype=str(dcolumn.dtypes);
                   Qobject=coltype.find('object');
                   
-                  #can delete below-----------------------------
-                  print("id Qobject -", Qobject);
-                  QobjectEX=numpy.array(Qobject);
-                  (QobjectEX=='xo').sum();
-                  #can delet above------------------------------
+                 
                   
                   NewQcats=[];
                   OldQcats=[];  
                   if Qobject>-1:
+                     
+                     #can delete below-----------------------------
+                     print("id dcolumn-", dcolumn);
+                     dcolumnEX=numpy.array(dcolumn);
+                     (dcolumnEX=='xo').sum();
+                     #can delet above------------------------------ 
+                     
                      print(col," is catagorical cat process run");
                      catcount=0;
                      while catcount<len(dcolumn):
