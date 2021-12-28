@@ -131,8 +131,8 @@ def RegCorDescShift():
          print("dtype ",reviewcol.dtype);
          print("guard ",guardVar);
          
-         guardVar>-1; 
-         if guardVar==1:  
+         #guardVar<-1; 
+         if guardVar<-1:  
           colName=columns[colrcount];
           print("colName ",colName);
           reviewcol=selectedFrame[colName];
