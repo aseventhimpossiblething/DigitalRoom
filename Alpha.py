@@ -333,9 +333,11 @@ def rpt():
     global domain;     
     domainFavi=domain+"/favicon.png";
     FormatSheet.rpt();
+    if os.path.exists("rpt.html"):  
+        return "<embed src='/static/rpt.html'>"
     #fimage=str(DisplayFiles.showfiles())
-    return "<embed src='/static/rpt.html'>"
-    return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+    return "<html><meta http-qquiv='refresh' content='10'></html>"
+    #return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
          
     
     
