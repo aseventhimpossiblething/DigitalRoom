@@ -336,7 +336,7 @@ def rpt():
     #fimage=str(DisplayFiles.showfiles())
     return "<embed src='/static/rpt.html'>"
     return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
-"""          
+         
     
     
     
