@@ -57,6 +57,13 @@ def headers():
                   dcolumn=readActiveSheet[col];
                   coltype=str(dcolumn.dtypes);
                   Qobject=coltype.find('object');
+                  
+                  #can delete below-----------------------------
+                  print("id Qobject - "Qobject);
+                  QobjectEX=np.array(Qobject);
+                  (QobjectEX=='xo').sum();
+                  #can delet above------------------------------
+                  
                   NewQcats=[];
                   OldQcats=[];  
                   if Qobject>-1:
@@ -186,7 +193,7 @@ def RegCorDescShift():
     
     
     
-    page="<html><header><style>#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div>Statistical Overview</div><div>"+DescriptiveTableTB+"</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
+    page="<html><header><style>#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
     #page="<html><header><style>#cortab{margin-top: 25px;}</style></header><div>Statistical Overview</div><div>"+DescriptiveTableTB+"</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div id='cortab'>"+relations.to_html()+"</div></html>"
    
     
