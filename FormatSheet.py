@@ -5,6 +5,7 @@ from pandas import ExcelFile
 import seaborn
 import matplotlib.pyplot as plt
 import threading
+plt.tight_layout();
 
 def headers():
   print("Headers called 1")
@@ -108,7 +109,7 @@ def RegCorDescShift():
     relations=selectedFrame.corr();
     seaborn.heatmap(relations);
     os.chdir('/GMDelight/DigitalRoom/static/');
-    plt.savefig("heatmap.png")
+    plt.savefig("heatmap.png", )
     
     selectedFrame.plot(kind='hist');
     plt.savefig("selectedFrame.png")
