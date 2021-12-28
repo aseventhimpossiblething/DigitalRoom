@@ -118,7 +118,7 @@ def RegCorDescShift():
     
     
     
-    page="<style>#right{float:right; width:20%;}</style><html><div><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='right'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+relations.to_html()+"</div></html>"
+    page="<style>#left{float:left; width:20%;}#right{float:right; width:20%;}</style><html><div id='left'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='right'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+relations.to_html()+"</div></html>"
     report=open("rpt.html",'w');
     report.write(page);
     report.close();
