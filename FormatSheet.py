@@ -17,7 +17,7 @@ def headers():
        os.remove("selectedFrame.png");
   if os.path.exists("rpt.html"):    
        os.remove("rpt.html");    
-  print("Headers called 1")
+  #print("Headers called 1")
   os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
   numOfSheets=len(ActiveSheets);
@@ -28,8 +28,8 @@ def headers():
   while lCount < numOfSheets:
         #readActiveSheet="";
         ActiveSheet=ActiveSheets[lCount];
-        print("Headers called 2")
-        print("Headers called active sheet ",ActiveSheet)
+        #print("Headers called 2")
+        #print("Headers called active sheet ",ActiveSheet)
         isxlsx=ActiveSheet.lower().find(".xlsx");
         iscsv=ActiveSheet.lower().find(".csv");
         readActiveSheet="Drop9";
@@ -95,7 +95,7 @@ def headers():
            ListOfFrames.append(aSP);
        
         lCount=lCount+1;
-  
+  """
   print("00000000000000000000000000000000000000000000000011111111111111") 
   print("00000000000000000000000000000000000000000000000011111111111111") 
   print(ListOfFrames);  
@@ -103,7 +103,7 @@ def headers():
   print("00000000000000000000000000000000000000000000000022222222222222") 
   print("00000000000000000000000000000000000000000000000022222222222222") 
   #return ActiveSheets;
-  
+  """
   return ListOfFrames;
 
 
@@ -120,13 +120,13 @@ def RegCorDescShift():
     #headers() 
     #print("headers() regcordescshift ",headers());
     selectedFrame=headers()[0];
-    print("selectedFrame");
-    print(selectedFrame);
+    #print("selectedFrame");
+    #print(selectedFrame);
     selectedFrame=selectedFrame.dropna(axis=1);
     print(selectedFrame);
     columns=selectedFrame.columns;
-    print("columns - ",columns);
-    print("columns[0] - ",columns[0]);
+    #print("columns - ",columns);
+    #print("columns[0] - ",columns[0]);
     colNames=[];
     colcounts=[];
     colSums=[];
@@ -142,20 +142,20 @@ def RegCorDescShift():
     colrcount=0;
     while colrcount<len(columns):
          colName=columns[colrcount];
-         print("colName ",colName);
+         #print("colName ",colName);
          reviewcol=selectedFrame[colName];
          guard1=str(reviewcol.dtype).find('object')
          guard2=str(reviewcol.dtype).find('str') 
          guardVar=guard1+guard2;
-         print("dtype ",reviewcol.dtype);
-         print("guard ",guardVar);
+         #print("dtype ",reviewcol.dtype);
+         #print("guard ",guardVar);
          
          #guardVar<-1; 
          if guardVar==-2: 
           #print("Passed the Guard")
           colName=columns[colrcount];
           colNames.append(colName)
-          print("colName  ",colName,"Passed the Guard");
+          #print("colName  ",colName,"Passed the Guard");
           reviewcol=selectedFrame[colName];
           colcount=len(reviewcol);
           colcounts.append(colcount);
@@ -182,8 +182,8 @@ def RegCorDescShift():
          colrcount=colrcount+1; 
     
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
-    print("DescriptiveTable");
-    print(DescriptiveTable);
+    #print("DescriptiveTable");
+    #print(DescriptiveTable);
     DescriptiveTableTB=DescriptiveTable.to_html();
     
     relations=selectedFrame.corr();
@@ -194,7 +194,7 @@ def RegCorDescShift():
     selectedFrame.plot(kind='hist');
     plt.savefig("selectedFrame.png")
     print("image saved")
-    print("type relations",type(relations));
+    #print("type relations",type(relations));
     
     
     
