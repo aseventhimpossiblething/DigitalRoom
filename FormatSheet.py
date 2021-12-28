@@ -68,7 +68,7 @@ def headers():
                      #can delete below-----------------------------
                      print("id dcolumn-", dcolumn);
                      dcolumnEX=numpy.array(dcolumn);
-                     print("HHHHH lll end ",(dcolumnEX=='xo').sum());
+                     print("HHHHH lll end ",(dcolumnEX=='xo').sum('Energy'));
                       
                      #can delet above------------------------------ 
                      
