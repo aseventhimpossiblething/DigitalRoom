@@ -125,11 +125,13 @@ def RegCorDescShift():
          colName=columns[colrcount];
          print("colName ",colName);
          reviewcol=selectedFrame[colName];
-         guard=str(reviewcol.dtype).find('str')
+         guard1=str(reviewcol.dtype).find('object')
+         guard2=str(reviewcol.dtype).find('str') 
+         guardVar=guard1+guard2;
          print("dtype ",reviewcol.dtype);
-         print("guard ",guard);
+         print("guard ",guardVar);
          
-         guardVar=0; 
+         guardVar>-1; 
          if guardVar==1:  
           colName=columns[colrcount];
           print("colName ",colName);
@@ -148,7 +150,7 @@ def RegCorDescShift():
           Trimmed15=stats.trim_mean(reviewcol,0.15);
          colrcount=colrcount+1; 
     
-    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcount,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
+    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
     print("DescriptiveTable");
     print(DescriptiveTable);
     relations=selectedFrame.corr();
