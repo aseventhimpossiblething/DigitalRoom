@@ -18,6 +18,11 @@ File Type: single sheet xlsx only
 {{Formatinput}}
 <!---<img src="/static/selectedFrame.png"> ---->
 <a href='/rpt'>View Report...</a>
+File Type: single sheet xlsx only
+<div style="height:50px"></div>
+<form  method=POST enctype="multipart/form-data" action="/rpt">
+<!--<input type="file" name="sheet" id="sheet" size="60" width="170">-->
+<input type="submit" value="Run Report" name="submit" >  
 
  
 {% endblock %}
