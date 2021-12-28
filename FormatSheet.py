@@ -123,8 +123,9 @@ def RegCorDescShift():
     colrcount=1;
     while colrcount<len(columns):
           colName=columns[colrcount];
-          print("colName ",colName)
+          print("colName ",colName);
           reviewcol=selectedFrame[colName];
+          print("dtype ",reviewcol.dtype);
           colcount=len(reviewcol);
           colSum=reviewcol.sum();
           colMedian=reviewcol.median(skipna=True);
@@ -133,9 +134,9 @@ def RegCorDescShift():
           colMax=reviewcol.max();
           colMin=reviewcol.min();
           colrange=colMax-colMin;
-          Trimmed05=stats.trim_mean(reviewcol.points,0.05);
-          Trimmed10=stats.trim_mean(reviewcol.points,0.10);
-          Trimmed15=stats.trim_mean(reviewcol.points,0.15);
+          Trimmed05=stats.trim_mean(reviewcol,0.05);
+          Trimmed10=stats.trim_mean(reviewcol,0.10);
+          Trimmed15=stats.trim_mean(reviewcol,0.15);
           colrcount=colrcount+1; 
     
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcount,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
