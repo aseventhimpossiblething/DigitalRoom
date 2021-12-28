@@ -109,7 +109,7 @@ def RegCorDescShift():
     relations=selectedFrame.corr();
     seaborn.heatmap(relations);
     os.chdir('/GMDelight/DigitalRoom/static/');
-    plt.savefig("heatmap.png", )
+    plt.savefig("heatmap.png",bbox_inches='tight' )
     
     selectedFrame.plot(kind='hist');
     plt.savefig("selectedFrame.png")
@@ -118,7 +118,7 @@ def RegCorDescShift():
     
     
     
-    page="<style>#left{float:left; width:20%;}#right{float:right; width:20%;}</style><html><div id='left'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='right'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+relations.to_html()+"</div></html>"
+    page="<style>#cortab{margin-top: 25px;}#left{float:left; width:20%;}#right{float:right; width:20%;}</style><html><div id='left'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='right'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div id='cortab'>"+relations.to_html()+"</div></html>"
     report=open("rpt.html",'w');
     report.write(page);
     report.close();
