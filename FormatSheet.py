@@ -59,7 +59,7 @@ def headers():
                   Qobject=coltype.find('object');
                   
                   #can delete below-----------------------------
-                  print("id Qobject - Qobject);
+                  print("id Qobject -", Qobject);
                   QobjectEX=np.array(Qobject);
                   (QobjectEX=='xo').sum();
                   #can delet above------------------------------
