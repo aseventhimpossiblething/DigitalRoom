@@ -334,9 +334,9 @@ def rpt():
     domainFavi=domain+"/favicon.png";
     FormatSheet.rpt();
     #if os.path.exists("rpt.html"):  
-    return "<embed src='/rptry'>"
+    #return "<embed src='/rptry'>"
     #fimage=str(DisplayFiles.showfiles())
-    return "<html><meta http-qquiv='refresh' content='10'></html>"
+    return "fail"
     #return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
          
 @app.route('/rptry')
