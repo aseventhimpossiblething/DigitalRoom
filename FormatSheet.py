@@ -88,8 +88,10 @@ def headers():
 
 def RegCorDescShift():
     os.chdir('/GMDelight/DigitalRoom/static/');
-    os.remove("heatmap.png");
-    os.remove("selectedFrame.png");
+    if os.path.exists("heatmap.png"):
+       os.remove("heatmap.png");
+    if os.path.exists("selectedFrame.png"):    
+       os.remove("selectedFrame.png");
     
     #headers() 
     #print("headers() regcordescshift ",headers());
