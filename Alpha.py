@@ -336,7 +336,7 @@ def rpt():
     #if os.path.exists("rpt.html"):  
     #return "<embed src='/rptry'>"
     #fimage=str(DisplayFiles.showfiles())
-    return redirect("/rptry");
+    return redirect("/rptry?");
     #return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
          
 @app.route('/rptry')
@@ -347,7 +347,8 @@ def rptt():
     print(os.getcwd())
     if os.path.exists("rpt.html"):
         print("if path entered..")
-        return redirect("/rptry"); 
+        #return redirect("/rptry"); 
+        return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,fimage='TEST!',);
     return "<html><meta http-qquiv='refresh' content='5'>Loading...</html>"
   
              
