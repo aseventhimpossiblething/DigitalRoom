@@ -115,7 +115,7 @@ def RegCorDescShift():
     print("image saved")
     
     page=<html><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></html>
-        
+    os.system();    
    
     return "RegCorDescShift";
   
