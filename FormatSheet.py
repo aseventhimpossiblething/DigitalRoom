@@ -9,6 +9,13 @@ import threading
 plt.tight_layout();
 
 def headers():
+  os.chdir('/GMDelight/DigitalRoom/static/');
+  if os.path.exists("heatmap.png"):
+       os.remove("heatmap.png");
+  if os.path.exists("selectedFrame.png"):    
+       os.remove("selectedFrame.png");
+  if os.path.exists("rpt.html"):    
+       os.remove("rpt.html");    
   print("Headers called 1")
   os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
@@ -165,6 +172,8 @@ def RegCorDescShift():
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
     print("DescriptiveTable");
     print(DescriptiveTable);
+    DescriptiveTableTB=DescriptiveTable.to_html();
+    
     relations=selectedFrame.corr();
     seaborn.heatmap(relations);
     os.chdir('/GMDelight/DigitalRoom/static/');
@@ -178,7 +187,7 @@ def RegCorDescShift():
     
     
     page="<html><header><style>#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div>Statistical Overview</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div id='cortab'>"+relations.to_html()+"</div></html>"
-    page="<html><header><style>#cortab{margin-top: 25px;}</style></header><div>Statistical Overview</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div id='cortab'>"+relations.to_html()+"</div></html>"
+    page="<html><header><style>#cortab{margin-top: 25px;}</style></header><div>Statistical Overview</div><div>"+DescriptiveTableTB+"</div><div id='right'><"+DescriptiveTableTB+"img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div id='cortab'>"+relations.to_html()+"</div></html>"
    
     
     report=open("rpt.html",'w');
@@ -196,7 +205,7 @@ def RegCorDescShift():
 def rpt():
     distalRPT=threading.Thread(target=RegCorDescShift); 
     distalRPT.start();
-    return "temporary"
+    return "report pending"
       
     
 
