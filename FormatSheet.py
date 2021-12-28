@@ -113,8 +113,11 @@ def RegCorDescShift():
     selectedFrame.plot(kind='hist');
     plt.savefig("selectedFrame.png")
     print("image saved")
+    print("type relations",type(relations));
     
-    page="<html><div><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+relations+"</div></html>"
+    
+    
+    page="<html><div><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+relations.to_html()+"</div></html>"
     report=open("rpt.html",'w');
     report.write(page);
     report.close();
