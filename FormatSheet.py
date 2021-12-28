@@ -132,7 +132,7 @@ def RegCorDescShift():
          print("guard ",guardVar);
          
          #guardVar<-1; 
-         if guardVar<-1: 
+         if guardVar==-2: 
           #print("Passed the Guard")
           colName=columns[colrcount];
           print("colName  ",colName,"Passed the Guard");
