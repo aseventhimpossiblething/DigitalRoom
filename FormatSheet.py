@@ -104,6 +104,19 @@ def RegCorDescShift():
     print(selectedFrame);
     selectedFrame=selectedFrame.dropna(axis=1);
     print(selectedFrame);
+    columns=selectedFrame.columns;
+    print("columns - ",columns);
+    print("columns[0] - ",columns[0]);
+    reviewcolData=[];
+    colrcount=0;
+    while colrcount<len(columns):
+          reviewcol=columns[colrcount];
+          reviewcol.count();
+          reviewcol.sum();
+          reviewcol.median();
+          reviewcol.mean();
+          reviewcol.std();
+          colrcount=colrcount+1; 
     
    
     relations=selectedFrame.corr();
