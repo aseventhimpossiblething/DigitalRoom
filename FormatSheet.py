@@ -61,6 +61,7 @@ def headers():
                                    
                   NewKeysDictWords=[];
                   NewValuesDictNums=[];
+                  NovelCats=[];
                   NewQcats=[];
                   OldQcats=[];  
                   if Qobject>-1:
@@ -89,12 +90,15 @@ def headers():
                            DictIndexNum=strAsKeyDict[individual_element];
                            Nums_As_KeyDict=dcolumn.to_dict();
                            Nums_As_KeyDict[DictIndexNum];
+                           NovelCats.append(DictIndexNum); 
                            #NewQcats.append(catcount);
+                           print("catcount ",catcount); 
+                           print("DictIndexNum ",DictIndexNum); 
                            print("strAsKeyDict[individual_element] ",strAsKeyDict[individual_element]);
                            print("individual_element ",individual_element); 
                            print("Nums_As_KeyDict[DictIndexNum] ",Nums_As_KeyDict[DictIndexNum]); 
                            catnum=str(OldQcats).find(str(dcolumn[catcount]));
-                           
+                                                     
                            if catnum>-1:
                               NewQcats.append(catnum)
                            if catnum<0: 
