@@ -251,7 +251,7 @@ def RegCorDescShift():
           colModes.append(colMode);
           colcount=len(reviewcol);
           colcounts.append(colcount);
-          colMedian=reviewcol.median(skipna=True);
+          colMedian=0;
           colMedians.append(colMedian);
           colMean=reviewcol.mean();
           colMeans.append(colMean);
