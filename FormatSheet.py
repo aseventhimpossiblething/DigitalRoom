@@ -60,7 +60,8 @@ def headers():
                   Qobject=coltype.find('object');
                   
                  
-                  
+                  NewKeysDictWords=[];
+                  NewValuesDictNums=[];
                   NewQcats=[];
                   OldQcats=[];  
                   if Qobject>-1:
@@ -83,8 +84,10 @@ def headers():
                      catcount=0;
                      while catcount<len(dcolumn):
                            individual_element=dcolumn[catcount];
+                           NewKeysDictWords.append(individual_element);
+                           NewValuesDictNums.append(catcount);
                            print("individual_element ",individual_element); 
-                           print("dcolumn[catcount] ",dcolumn[catcount]);
+                           #print("dcolumn[catcount] ",dcolumn[catcount]);
                            #ind_elementName=Newdict[catcount];
                            catnum=str(OldQcats).find(str(dcolumn[catcount]));
                            if catnum>-1:
@@ -95,6 +98,9 @@ def headers():
                            
                            #NewQcats.append(catcount);
                            catcount=catcount+1;
+                     NewKeysDictWords;
+                     NewValuesDictNums;
+                     ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
                      ncolnam=str(col)+"_as_Cat_Var";      
                      readActiveSheet[ncolnam]=NewQcats; 
                   l2count=l2count+1;
