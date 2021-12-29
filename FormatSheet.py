@@ -249,15 +249,25 @@ def RegCorDescShift():
           colNames.append(colName);
           colMode=statistics.multimode(list(reviewcol));
           colModes.append(colMode);
+          colcount=len(reviewcol);
           colcounts.append(colcount);
+          colMedian=reviewcol.median(skipna=True);
           colMedians.append(colMedian);
+          colMean=reviewcol.mean();
           colMeans.append(colMean);
+          colSTD=reviewcol.std();
           colSTDs.append(colSTD);
+          colMax=reviewcol.max();
           colMaxs.append(colMax);
+          colMin=reviewcol.min();
           colMins.append(colMin);
+          colrange=colMax-colMin;
           colranges.append(colrange);
+          Trimmed05=stats.trim_mean(reviewcol,0.05);
           Trimmed05s.append(Trimmed05);
+          Trimmed10=stats.trim_mean(reviewcol,0.10);
           Trimmed10s.append(Trimmed10);
+          Trimmed15=stats.trim_mean(reviewcol,0.15);
           Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
     print("len cat modes ",len(catModes))
