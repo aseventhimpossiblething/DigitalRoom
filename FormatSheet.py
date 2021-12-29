@@ -82,8 +82,10 @@ def headers():
                      print(col," is catagorical cat process run");
                      catcount=0;
                      while catcount<len(dcolumn):
-                           dcolumn[catcount];
-                           ind_elementName=Newdict[catcount];
+                           individual_element=dcolumn[catcount];
+                           print("individual_element ",individual_element); 
+                           print("dcolumn[catcount] ",dcolumn[catcount]);
+                           #ind_elementName=Newdict[catcount];
                            catnum=str(OldQcats).find(str(dcolumn[catcount]));
                            if catnum>-1:
                               NewQcats.append(catnum)
