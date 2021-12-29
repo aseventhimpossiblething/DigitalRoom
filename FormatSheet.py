@@ -3,6 +3,7 @@ import os
 from pandas import ExcelWriter
 from pandas import ExcelFile
 from scipy import stats
+import statistics
 import seaborn
 import matplotlib.pyplot as plt
 import threading
@@ -181,7 +182,9 @@ def RegCorDescShift():
           colNames.append(colName)
           #print("colName  ",colName,"Passed the Guard");
           reviewcol=selectedFrame[colName];
-          colMode=reviewcol.mode();
+          #colMode=reviewcol.mode();
+          colMode=statistics.multimode(list(reviewcol));
+          print("mode ",colMode)
           colModes.append(colMode);
           colcount=len(reviewcol);
           colcounts.append(colcount);
