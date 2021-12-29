@@ -167,20 +167,20 @@ def RegCorDescShift():
     Trimmed15s=[];
     colrcount=0;
     while colrcount<len(columns):
-         colName=columns[colrcount]; 
-         catMode=statistics.mode(list(selected[colName]));
-         catModes.append(catMode);
+          colName=columns[colrcount]; 
+          catMode=statistics.mode(list(selected[colName]));
+          catModes.append(catMode);
          
-         #print("colName ",colName);
-         reviewcol=selectedFrame[colName];
-         guard1=str(reviewcol.dtype).find('object')
-         guard2=str(reviewcol.dtype).find('str') 
-         guardVar=guard1+guard2;
-         #print("dtype ",reviewcol.dtype);
-         #print("guard ",guardVar);
+          #print("colName ",colName);
+          reviewcol=selectedFrame[colName];
+          guard1=str(reviewcol.dtype).find('object')
+          guard2=str(reviewcol.dtype).find('str') 
+          guardVar=guard1+guard2;
+          #print("dtype ",reviewcol.dtype);
+          #print("guard ",guardVar);
          
-         #guardVar<-1; 
-         if guardVar==-2: 
+          #guardVar<-1; 
+          #if guardVar==-2: 
           #print("Passed the Guard")
           colName=columns[colrcount];
           colNames.append(colName)
