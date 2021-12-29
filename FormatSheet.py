@@ -207,10 +207,14 @@ def RegCorDescShift():
           Trimmed15s.append(Trimmed15); 
           
           def AboveBelowMean(x):
+              print("running ",x.columns)
+              print("type ",type(x)) 
+              print("running mean ",x.mean()) 
               valuesAboveMean=[];
               valuesBelowMean=[];
               HPCounter=0;
               while HPCounter<len(x):
+                    print("") 
                     elem=x[HPCounter];
                     if elem>x.mean():
                        valuesAboveMean.append(elem);
