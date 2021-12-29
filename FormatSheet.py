@@ -213,7 +213,7 @@ def RegCorDescShift():
           Trimmed15=stats.trim_mean(reviewcol,0.15);
           Trimmed15s.append(Trimmed15); 
           colMode=statistics.multimode(list(reviewcol));
-          if colcount>len(colMode)-2:
+          if colcount>len(colMode)-1:
              colMode="-";
           #print("mode ",colMode)
           #colModes.append(colMode);
@@ -252,11 +252,14 @@ def RegCorDescShift():
           #print("splitArr[0] ",splitArr[0]);
           #print("splitArr[1] ",splitArr[1]);
          else:
-          colNames.append(colName);
-          colMode=statistics.multimode(list(reviewcol));
-          colModes.append(colMode);
           colcount=len(reviewcol);
           colcounts.append(colcount);
+          colNames.append(colName);
+          colMode=statistics.multimode(list(reviewcol));
+          if len(colMode)>colcount-1:
+            colMode="-";
+          colModes.append(colMode);
+          
           colMedian=0;
           colMedians.append(colMedian);
           colMean=0;
