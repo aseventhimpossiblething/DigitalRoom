@@ -207,7 +207,10 @@ def RegCorDescShift():
           Trimmed15s.append(Trimmed15); 
           
           def AboveBelowMean(x):
-              print("running ",x.columns)
+              try:
+                print("running ",x.columns)
+              except:
+                print("Cols value not available")
               print("type ",type(x)) 
               print("running mean ",x.mean()) 
               valuesAboveMean=[];
