@@ -246,7 +246,8 @@ def RegCorDescShift():
           #print("splitArr[0] ",splitArr[0]);
           #print("splitArr[1] ",splitArr[1]);
          else:
-          colNames.append(colName)
+          colNames.append(colName);
+          colMode=statistics.multimode(list(reviewcol));
           colModes.append(colMode);
           colcounts.append(colcount);
           colMedians.append(colMedian);
