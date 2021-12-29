@@ -257,9 +257,9 @@ def RegCorDescShift():
           colMeans.append(colMean);
           colSTD=0;
           colSTDs.append(colSTD);
-          colMax=reviewcol.max();
+          colMax=0;
           colMaxs.append(colMax);
-          colMin=reviewcol.min();
+          colMin=0;
           colMins.append(colMin);
           colrange=colMax-colMin;
           colranges.append(colrange);
