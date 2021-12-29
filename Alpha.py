@@ -346,8 +346,12 @@ def rptt():
     print("reload-----")
     print(os.getcwd())
     if os.path.exists("rpt.html"):
+        page=open("rpt.html",'r');
+        DisplayPage=page.read();
+        page.close();
         print("if path entered..")
         #return redirect("/rptry"); 
+        return DisplayPage;
         return '<html><iframe src="/static/rpt.html"></iframe></html>'
         return "<html><meta http-equiv='refresh' content='1'; url='/static/rpt.html'>Loading...</html>"
         return "<html><meta http-equiv='refresh' content='1'; url='http://"+domain+"/static/rpt.html'>Loading...</html>"
