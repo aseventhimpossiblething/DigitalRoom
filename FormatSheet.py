@@ -167,20 +167,20 @@ def RegCorDescShift():
     Trimmed15s=[];
     colrcount=0;
     while colrcount<len(columns):
-          colName=columns[colrcount]; 
-          catMode=statistics.mode(list(selected[colName]));
-          catModes.append(catMode);
+         colName=columns[colrcount]; 
+         catMode=statistics.mode(list(selected[colName]));
+         catModes.append(catMode);
          
-          #print("colName ",colName);
-          reviewcol=selectedFrame[colName];
-          guard1=str(reviewcol.dtype).find('object')
-          guard2=str(reviewcol.dtype).find('str') 
-          guardVar=guard1+guard2;
-          #print("dtype ",reviewcol.dtype);
-          #print("guard ",guardVar);
+         #print("colName ",colName);
+         reviewcol=selectedFrame[colName];
+         guard1=str(reviewcol.dtype).find('object')
+         guard2=str(reviewcol.dtype).find('str') 
+         guardVar=guard1+guard2;
+         #print("dtype ",reviewcol.dtype);
+         #print("guard ",guardVar);
          
-          #guardVar<-1; 
-          #if guardVar==-2: 
+         #guardVar<-1; 
+         #if guardVar==-2: 
           #print("Passed the Guard")
           colName=columns[colrcount];
           colNames.append(colName)
@@ -245,9 +245,10 @@ def RegCorDescShift():
           #print("splitArr ",splitArr);
           #print("splitArr[0] ",splitArr[0]);
           #print("splitArr[1] ",splitArr[1]);
-          colrcount=colrcount+1; 
+         colrcount=colrcount+1; 
     print("len cat modes ",len(catModes))
     print("len colNames ",len(colNames))
+    print(" cat modes ",catModes)
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
     #print("DescriptiveTable");
     #print(DescriptiveTable);
