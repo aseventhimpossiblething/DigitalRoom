@@ -226,7 +226,9 @@ def RegCorDescShift():
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
           splitAtMean=AboveBelowMean(reviewcol);
-          UpperHalf=pandas.DataFrame(splitAtMean[0])
+          print("splitAtMean[0] ",splitAtMean[0])
+          print("type splitAtMean[0] ",type(splitAtMean[0]))
+          #UpperHalf=pandas.DataFrame(splitAtMean[0])
           print("type UpperHalf ",type(UpperHalf))
           #UpperQuartilesAtMean=AboveBelowMean(UpperHalf);
           #LowerQuartilesAtMean=AboveBelowMean(pandas.DataFrame(splitAtMean[1]));
