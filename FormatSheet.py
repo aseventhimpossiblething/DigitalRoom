@@ -187,9 +187,9 @@ def RegCorDescShift():
           #print("colName  ",colName,"Passed the Guard");
           reviewcol=selectedFrame[colName];
           #colMode=reviewcol.mode();
-          colMode=statistics.multimode(list(reviewcol));
-          print("mode ",colMode)
-          colModes.append(colMode);
+          #colMode=statistics.multimode(list(reviewcol));
+          #print("mode ",colMode)
+          #colModes.append(colMode);
           colcount=len(reviewcol);
           colcounts.append(colcount);
           colSum=reviewcol.sum();
@@ -212,6 +212,12 @@ def RegCorDescShift():
           Trimmed10s.append(Trimmed10);
           Trimmed15=stats.trim_mean(reviewcol,0.15);
           Trimmed15s.append(Trimmed15); 
+          colMode=statistics.multimode(list(reviewcol));
+          if colcount>len(colMode)-2:
+             colMode="-";
+          #print("mode ",colMode)
+          #colModes.append(colMode);
+          colModes.append(colMode);
           
           def AboveBelowMean(x):
               try:
