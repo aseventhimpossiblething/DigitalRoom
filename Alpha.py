@@ -355,7 +355,7 @@ def rptt():
         return '<html><iframe src="/static/rpt.html"></iframe></html>'
         return "<html><meta http-equiv='refresh' content='1'; url='/static/rpt.html'>Loading...</html>"
         return "<html><meta http-equiv='refresh' content='10'; url='http://"+domain+"/static/rpt.html'>Loading...</html>"
-    return "<html><meta http-equiv='refresh' content='30'>Loading...</html>"
+    return "<html><meta http-equiv='refresh' content='10'>Loading...</html>"
   
              
     
