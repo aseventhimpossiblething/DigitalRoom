@@ -75,21 +75,14 @@ def headers():
                            NDictCount=NDictCount+1;
                      ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
                      ReverseDict=dict(ReverseDict);
-                     #print("type(ReverseDict) ",type(ReverseDict));
-                     #print("ReverseDict.keys() ",ReverseDict.keys()); 
-                      
+                                       
                      #can delete below-----------------------------
-                     print("type dcolumn-", type(dcolumn));
-                     Newdict=dcolumn.to_dict();
-                     print("type Newdict ",type(Newdict));
-                     #print("Newdict ",Newdict); 
-                     print("Newdict[0] ",Newdict[0]); 
-                     print("Newdict[1] ",Newdict[1]);  
-                     print("Newdict[2] ",Newdict[2]); 
-                     dcolumnEX=numpy.array(dcolumn);
-                     print("HHHHH lll end ",(dcolumnEX=='xo').sum());
+                     #print("type dcolumn-", type(dcolumn));
+                     #Newdict=dcolumn.to_dict();
+                     #print("type Newdict ",type(Newdict));
+                     #dcolumnEX=numpy.array(dcolumn);
+                     #print("HHHHH lll end ",(dcolumnEX=='xo').sum());
                      #print( Newdict)
-                      
                      #can delet above------------------------------ 
                      
                      print(col," is catagorical cat process run");
@@ -97,26 +90,13 @@ def headers():
                      while catcount<len(dcolumn):
                            individual_element=dcolumn[catcount];
                            print("ReverseDict[individual_element] ",ReverseDict[individual_element]);
-                           #NewKeysDictWords.append(individual_element);
-                           #NewValuesDictNums.append(catcount);
-                           #print("individual_element ",individual_element); 
-                           #print("dcolumn[catcount] ",dcolumn[catcount]);
-                           #ind_elementName=Newdict[catcount];
                            catnum=str(OldQcats).find(str(dcolumn[catcount]));
                            if catnum>-1:
                               NewQcats.append(catnum)
                            if catnum<0: 
                               OldQcats.append(dcolumn[catcount]);
                               NewQcats.append(catcount);
-                           
-                           #NewQcats.append(catcount);
                            catcount=catcount+1;
-                     #NewKeysDictWords;
-                     #NewValuesDictNums;
-                     #ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
-                     #ReverseDict=dict(ReverseDict);
-                     #print("type(ReverseDict) ",type(ReverseDict));
-                     #print("ReverseDict.keys() ",ReverseDict.keys());
                      ncolnam=str(col)+"_as_Cat_Var";      
                      readActiveSheet[ncolnam]=NewQcats; 
                   l2count=l2count+1;
