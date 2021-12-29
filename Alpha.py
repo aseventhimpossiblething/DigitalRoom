@@ -348,7 +348,7 @@ def rptt():
     if os.path.exists("rpt.html"):
         print("if path entered..")
         #return redirect("/rptry"); 
-        return '<html><meta http-equiv="refresh" content="1; url="https://www.google.com">Loading...</html>'
+        return '<html><iframe src="http://'+domain+'/static/rpt.html"></iframe></html>'
         return "<html><meta http-equiv='refresh' content='1'; url='/static/rpt.html'>Loading...</html>"
         return "<html><meta http-equiv='refresh' content='1'; url='http://"+domain+"/static/rpt.html'>Loading...</html>"
     return "<html><meta http-qquiv='refresh' content='4'>Loading...</html>"
