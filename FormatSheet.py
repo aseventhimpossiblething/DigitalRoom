@@ -245,6 +245,19 @@ def RegCorDescShift():
           #print("splitArr ",splitArr);
           #print("splitArr[0] ",splitArr[0]);
           #print("splitArr[1] ",splitArr[1]);
+         else:
+          colNames.append(colName)
+          colModes.append(colMode);
+          colcounts.append(colcount);
+          colMedians.append(colMedian);
+          colMeans.append(colMean);
+          colSTDs.append(colSTD);
+          colMaxs.append(colMax);
+          colMins.append(colMin);
+          colranges.append(colrange);
+          Trimmed05s.append(Trimmed05);
+          Trimmed10s.append(Trimmed10);
+          Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
     print("len cat modes ",len(catModes))
     print("len colNames ",len(colNames))
