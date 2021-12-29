@@ -210,9 +210,9 @@ def RegCorDescShift():
               while HPCounter<len(x):
                     elem=x[HPCounter];
                     if elem>x.mean():
-                       valuesAboveMean.apend(elem);
+                       valuesAboveMean.append(elem);
                     if elem<x.mean():    
-                       valuesBelowMean.apend(elem); 
+                       valuesBelowMean.append(elem); 
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
           splitArr=AboveBelowMean(reviewcol);
