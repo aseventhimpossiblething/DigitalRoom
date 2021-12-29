@@ -261,6 +261,20 @@ def RegCorDescShift():
          colrcount=colrcount+1; 
     print("len cat modes ",len(catModes))
     print("len colNames ",len(colNames))
+    print("colcounts ",len(colcounts))
+    print("colSums ",len(colSums))
+    print("coledians ",len(colMedians))
+    print("colMeans ",len(colMeans))
+    print("colMods ",len(colModes))
+    print("colSTDs ",len(colSTDs))
+    print("colMaxs ",len(colMaxs))
+    print("colranges ",len(colranges))
+    print("colMins ",len(colMins))
+    print("colranges ",len(colranges))
+    print("Trimmed05s ",len(Trimmed05s))
+    print("Trimmed10s ",len(Trimmed10s))
+    print("Trimmed15s ",len(Trimmed15s))
+    colrcount=0;
     print(" cat modes ",catModes)
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
     #print("DescriptiveTable");
