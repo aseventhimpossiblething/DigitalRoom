@@ -155,6 +155,7 @@ def RegCorDescShift():
     colSums=[];
     colMedians=[];
     colMeans=[];
+    colModes=[];
     colSTDs=[];
     colMaxs=[];
     colMins=[];
@@ -180,6 +181,7 @@ def RegCorDescShift():
           colNames.append(colName)
           #print("colName  ",colName,"Passed the Guard");
           reviewcol=selectedFrame[colName];
+          colMode=reviewcol.mode();
           colcount=len(reviewcol);
           colcounts.append(colcount);
           colSum=reviewcol.sum();
@@ -221,7 +223,7 @@ def RegCorDescShift():
           #print("splitArr[1] ",splitArr[1]);
          colrcount=colrcount+1; 
     
-    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
+    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Mode':colModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
     #print("DescriptiveTable");
     #print(DescriptiveTable);
     DescriptiveTableTB=DescriptiveTable.to_html();
