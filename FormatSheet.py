@@ -209,7 +209,7 @@ def RegCorDescShift():
               HPCounter=0;
               while HPCounter<len(x):
                     x[HPCounter];
-                    HPCounte=HPCounte+1;
+                    HPCounter=HPCounter+1;
               return valuesAboveMean,valuesBelowMean;       
           splitArr=AboveBelowMean(reviewcol);
           print("splitArr ",splitArr);
