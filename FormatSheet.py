@@ -107,7 +107,8 @@ def headers():
                            
                            catcount=catcount+1;
                      ncolnam=str(col)+"_as_Cat_Var";      
-                     readActiveSheet[ncolnam]=NewQcats; 
+                     #readActiveSheet[ncolnam]=NewQcats;
+                     readActiveSheet[ncolnam]=NovelCats;
                   l2count=l2count+1;
             return readActiveSheet;
         aSP=activeSheetParse(readActiveSheet);
@@ -143,6 +144,7 @@ def RegCorDescShift():
     selectedFrame=headers()[0];
     #print("selectedFrame");
     #print(selectedFrame);
+    
     selectedFrame=selectedFrame.dropna(axis=1);
     print(selectedFrame);
     columns=selectedFrame.columns;
@@ -199,7 +201,20 @@ def RegCorDescShift():
           Trimmed10=stats.trim_mean(reviewcol,0.10);
           Trimmed10s.append(Trimmed10);
           Trimmed15=stats.trim_mean(reviewcol,0.15);
-          Trimmed15s.append(Trimmed15);          
+          Trimmed15s.append(Trimmed15); 
+          
+          def AboveBelowMean(x):
+              valuesAboveMean=[];
+              valuesBelowMean=[];
+              HPCounter=0;
+              while HPCounter<len(x):
+                    x[HPCounter];
+                    HPCounte=HPCounte+1;
+              return valuesAboveMean,valuesBelowMean;       
+          splitArr=AboveBelowMean(reviewcol);
+          print("splitArr ",splitArr);
+          print("splitArr[0] ",splitArr[0]);
+          print("splitArr[1] ",splitArr[1]);
          colrcount=colrcount+1; 
     
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
