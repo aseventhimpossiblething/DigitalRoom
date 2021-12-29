@@ -182,6 +182,7 @@ def RegCorDescShift():
           #print("colName  ",colName,"Passed the Guard");
           reviewcol=selectedFrame[colName];
           colMode=reviewcol.mode();
+          colModes.append(colMode);
           colcount=len(reviewcol);
           colcounts.append(colcount);
           colSum=reviewcol.sum();
@@ -217,8 +218,12 @@ def RegCorDescShift():
                        valuesBelowMean.append(elem); 
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
-          splitArr=AboveBelowMean(reviewcol);
-          print("splitArr ",splitArr);
+          splitAtMean=AboveBelowMean(reviewcol);
+          UpperQuartilesAtMean=AboveBelowMean(splitAtMean[0]);
+          LowerQuartilesAtMean=AboveBelowMean(splitAtMean[1]);
+          HighstQuartile=UpperQuartilesAtMean[0];
+          LowestQuartile=LowerQuartilesAtMean[1];
+          #print("splitArr ",splitArr);
           #print("splitArr[0] ",splitArr[0]);
           #print("splitArr[1] ",splitArr[1]);
          colrcount=colrcount+1; 
