@@ -101,6 +101,7 @@ def headers():
                      NewKeysDictWords;
                      NewValuesDictNums;
                      ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
+                     ReverseDict=dict(ReverseDict);
                      ReverseDict[0]
                      ncolnam=str(col)+"_as_Cat_Var";      
                      readActiveSheet[ncolnam]=NewQcats; 
