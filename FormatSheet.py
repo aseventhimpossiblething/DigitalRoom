@@ -58,15 +58,12 @@ def headers():
                   dcolumn=readActiveSheet[col];
                   coltype=str(dcolumn.dtypes);
                   Qobject=coltype.find('object');
-                  
-                 
+                                   
                   NewKeysDictWords=[];
                   NewValuesDictNums=[];
                   NewQcats=[];
                   OldQcats=[];  
                   if Qobject>-1:
-                     
-                     
                      NDictCount=0;
                      while NDictCount<len(dcolumn):
                            individual_element=dcolumn[NDictCount];
@@ -74,7 +71,7 @@ def headers():
                            NewValuesDictNums.append(NDictCount);
                            NDictCount=NDictCount+1;
                      ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
-                     ReverseDict=dict(ReverseDict);
+                     strAsKeyDict=dict(ReverseDict);
                                        
                      #can delete below-----------------------------
                      #print("type dcolumn-", type(dcolumn));
@@ -89,13 +86,21 @@ def headers():
                      catcount=0;
                      while catcount<len(dcolumn):
                            individual_element=dcolumn[catcount];
-                           print("ReverseDict[individual_element] ",ReverseDict[individual_element]);
+                           DictIndexNum=strAsKeyDict[individual_element];
+                           Nums_As_KeyDict=dcolumn.to_dict();
+                           Nums_As_KeyDict[DictIndexNum];
+                           #NewQcats.append(catcount);
+                           print("strAsKeyDict[individual_element] ",strAsKeyDict[individual_element]);
+                           print("individual_element ",individual_element); 
+                           print("Nums_As_KeyDict[DictIndexNum] ",Nums_As_KeyDict[DictIndexNum]); 
                            catnum=str(OldQcats).find(str(dcolumn[catcount]));
+                           
                            if catnum>-1:
                               NewQcats.append(catnum)
                            if catnum<0: 
                               OldQcats.append(dcolumn[catcount]);
                               NewQcats.append(catcount);
+                           
                            catcount=catcount+1;
                      ncolnam=str(col)+"_as_Cat_Var";      
                      readActiveSheet[ncolnam]=NewQcats; 
