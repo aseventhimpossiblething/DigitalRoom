@@ -66,6 +66,18 @@ def headers():
                   OldQcats=[];  
                   if Qobject>-1:
                      
+                     
+                     NDictCount=0;
+                     while NDictCount<len(dcolumn):
+                           individual_element=dcolumn[NDictCount];
+                           NewKeysDictWords.append(individual_element);
+                           NewValuesDictNums.append(NDictCount);
+                           NDictCount=NDictCount+1;
+                     ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
+                     ReverseDict=dict(ReverseDict);
+                     #print("type(ReverseDict) ",type(ReverseDict));
+                     #print("ReverseDict.keys() ",ReverseDict.keys()); 
+                      
                      #can delete below-----------------------------
                      print("type dcolumn-", type(dcolumn));
                      Newdict=dcolumn.to_dict();
@@ -84,8 +96,9 @@ def headers():
                      catcount=0;
                      while catcount<len(dcolumn):
                            individual_element=dcolumn[catcount];
-                           NewKeysDictWords.append(individual_element);
-                           NewValuesDictNums.append(catcount);
+                           print("ReverseDict[individual_element] ",ReverseDict[individual_element]);
+                           #NewKeysDictWords.append(individual_element);
+                           #NewValuesDictNums.append(catcount);
                            #print("individual_element ",individual_element); 
                            #print("dcolumn[catcount] ",dcolumn[catcount]);
                            #ind_elementName=Newdict[catcount];
@@ -98,12 +111,12 @@ def headers():
                            
                            #NewQcats.append(catcount);
                            catcount=catcount+1;
-                     NewKeysDictWords;
-                     NewValuesDictNums;
-                     ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
-                     ReverseDict=dict(ReverseDict);
-                     print("type(ReverseDict) ",type(ReverseDict));
-                     print("ReverseDict.keys() ",ReverseDict.keys());
+                     #NewKeysDictWords;
+                     #NewValuesDictNums;
+                     #ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
+                     #ReverseDict=dict(ReverseDict);
+                     #print("type(ReverseDict) ",type(ReverseDict));
+                     #print("ReverseDict.keys() ",ReverseDict.keys());
                      ncolnam=str(col)+"_as_Cat_Var";      
                      readActiveSheet[ncolnam]=NewQcats; 
                   l2count=l2count+1;
