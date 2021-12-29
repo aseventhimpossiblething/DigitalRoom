@@ -86,7 +86,7 @@ def headers():
                            individual_element=dcolumn[catcount];
                            NewKeysDictWords.append(individual_element);
                            NewValuesDictNums.append(catcount);
-                           print("individual_element ",individual_element); 
+                           #print("individual_element ",individual_element); 
                            #print("dcolumn[catcount] ",dcolumn[catcount]);
                            #ind_elementName=Newdict[catcount];
                            catnum=str(OldQcats).find(str(dcolumn[catcount]));
@@ -101,6 +101,7 @@ def headers():
                      NewKeysDictWords;
                      NewValuesDictNums;
                      ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
+                     ReverseDict[0]
                      ncolnam=str(col)+"_as_Cat_Var";      
                      readActiveSheet[ncolnam]=NewQcats; 
                   l2count=l2count+1;
