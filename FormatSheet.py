@@ -102,7 +102,8 @@ def headers():
                      NewValuesDictNums;
                      ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
                      ReverseDict=dict(ReverseDict);
-                     ReverseDict[0]
+                     print("type(ReverseDict) ",type(ReverseDict));
+                     print("ReverseDict.keys() ",ReverseDict.keys());
                      ncolnam=str(col)+"_as_Cat_Var";      
                      readActiveSheet[ncolnam]=NewQcats; 
                   l2count=l2count+1;
