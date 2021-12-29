@@ -260,23 +260,23 @@ def RegCorDescShift():
             colMode="-";
           colModes.append(colMode);
           
-          colMedian=0;
+          colMedian="-";
           colMedians.append(colMedian);
-          colMean=0;
+          colMean="-";
           colMeans.append(colMean);
-          colSTD=0;
+          colSTD="-";
           colSTDs.append(colSTD);
-          colMax=0;
+          colMax="-";
           colMaxs.append(colMax);
-          colMin=0;
+          colMin="-";
           colMins.append(colMin);
-          colrange=0;
+          colrange="-";
           colranges.append(colrange);
-          Trimmed05=0;
+          Trimmed05="-";
           Trimmed05s.append(Trimmed05);
-          Trimmed10=0;
+          Trimmed10="-";
           Trimmed10s.append(Trimmed10);
-          Trimmed15=0;
+          Trimmed15="-";
           Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
     print("len cat modes ",len(catModes))
