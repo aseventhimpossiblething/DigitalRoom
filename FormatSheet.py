@@ -322,7 +322,7 @@ def RegCorDescShift():
          ModeCount=len(colModeReps);
          print("Mode ",wMode," size ",ModeCount);
          print("fCounts ",fCounts," size ",len(fCounts));
-        mCount=mCount+1;
+         mCount=mCount+1;
       return colModeReps;
     catModCount=modeCounter(colNames,catModes,selected); 
     print("catModCount ",catModCount)
