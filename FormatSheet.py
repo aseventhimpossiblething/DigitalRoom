@@ -309,6 +309,7 @@ def RegCorDescShift():
         ColName=x[mCount];
         FullCol=z[ColName];
         colModeReps=[];
+        print("wMode ",wMode)
         fCounts.append(wMode);
         lineCount=0;
         while lineCount<len(FullCol):
