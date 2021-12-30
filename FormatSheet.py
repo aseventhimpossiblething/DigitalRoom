@@ -297,8 +297,7 @@ def RegCorDescShift():
     #colrcount=0;
     print(" cat modes ",catModes);
     
-    #DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
-    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
+    
     def modeCounter(IdCol,ModeCol,InitialTable):
       x=IdCol;
       y=ModeCol;
@@ -314,15 +313,18 @@ def RegCorDescShift():
               colElem=FullCol[lineCount];
               if colElem==wMode:
                colModeReps.append(colElem);
-               #print('Mode Class ',wMode);
-               #print('colModeReps ',colModeReps);
-              
               lineCount=lineCount+1;
         ModeCount=len(colModeReps);
         print("Mode ",wMode," size ",ModeCount);
-        
         mCount=mCount+1;
-    modeCounter(DescriptiveTable['Descriptive_Statistic'],catModes,selected)    
+        return colModeReps;
+    catModCount=modeCounter(colNames,catModes,selected); 
+    print("catModCount ",catModCount)
+    
+    
+    #DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
+    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
+      
     #print("DescriptiveTable");
     #print("DescriptiveTable");
     #print(DescriptiveTable);
