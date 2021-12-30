@@ -305,25 +305,25 @@ def RegCorDescShift():
       mCount=0;
       fCounts=[];
       while mCount<len(x):
-        wMode=y[mCount];
-        ColName=x[mCount];
-        FullCol=z[ColName];
-        colModeReps=[];
-        print("len(x) ",len(x))
-        print("wMode ",wMode)
-        print("mCount ",mCount)
-        fCounts.append(wMode);
-        lineCount=0;
-        while lineCount<len(FullCol):
+         wMode=y[mCount];
+         ColName=x[mCount];
+         FullCol=z[ColName];
+         colModeReps=[];
+         print("len(x) ",len(x))
+         print("wMode ",wMode)
+         print("mCount ",mCount)
+         fCounts.append(wMode);
+         lineCount=0;
+         while lineCount<len(FullCol):
               colElem=FullCol[lineCount];
               if colElem==wMode:
                colModeReps.append(colElem);
               lineCount=lineCount+1;
-        ModeCount=len(colModeReps);
-        print("Mode ",wMode," size ",ModeCount);
-        print("fCounts ",fCounts," size ",len(fCounts));
+         ModeCount=len(colModeReps);
+         print("Mode ",wMode," size ",ModeCount);
+         print("fCounts ",fCounts," size ",len(fCounts));
         mCount=mCount+1;
-       return colModeReps;
+      return colModeReps;
     catModCount=modeCounter(colNames,catModes,selected); 
     print("catModCount ",catModCount)
     
