@@ -322,6 +322,7 @@ def RegCorDescShift():
         print(wMode,"Count= ",ModeCount);
         
         mCount=mCount+1;
+    modeCounter(DescriptiveTable['Descriptive_Statistic'],catModes,Selected)    
     #print("DescriptiveTable");
     #print("DescriptiveTable");
     #print(DescriptiveTable);
