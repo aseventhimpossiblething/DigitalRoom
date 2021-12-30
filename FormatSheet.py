@@ -303,11 +303,13 @@ def RegCorDescShift():
       y=ModeCol;
       z=InitialTable;
       mCount=0;
+      fCounts=[];
       while mCount<len(x):
         wMode=y[mCount];
         ColName=x[mCount];
         FullCol=z[ColName];
         colModeReps=[];
+        fCounts.append(wMode);
         lineCount=0;
         while lineCount<len(FullCol):
               colElem=FullCol[lineCount];
@@ -316,6 +318,7 @@ def RegCorDescShift():
               lineCount=lineCount+1;
         ModeCount=len(colModeReps);
         print("Mode ",wMode," size ",ModeCount);
+        print("fCounts ",fCounts," size ",len(fCounts));
         mCount=mCount+1;
         return colModeReps;
     catModCount=modeCounter(colNames,catModes,selected); 
