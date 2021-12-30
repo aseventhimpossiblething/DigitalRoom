@@ -249,7 +249,7 @@ def RegCorDescShift():
           print("type UpperHalf ",type(UpperHalf))
           UpperQuartilesAtMean=AboveBelowMean(UpperHalf)[0];
           #UpperQuartilesAtMean[0]
-          print('UpperQuartilesAtMean ',UpperQuartilesAtMean);
+          print('UpperQuartilesAtMean ',UpperQuartilesAtMean[0]);
           print('UpperQuartilesAtMean ',UpperQuartilesAtMean);
           #LowerQuartilesAtMean=AboveBelowMean(pandas.DataFrame(splitAtMean[1]));
           #HighstQuartile=pandas.DataFrame(UpperQuartilesAtMean[0]);
