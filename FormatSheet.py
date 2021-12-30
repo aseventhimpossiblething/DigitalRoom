@@ -93,19 +93,19 @@ def headers():
                            Nums_As_KeyDict[DictIndexNum];
                            NovelCats.append(DictIndexNum); 
                            #NewQcats.append(catcount);
-                           print("catcount ",catcount); 
-                           print("DictIndexNum ",DictIndexNum); 
-                           print("strAsKeyDict[individual_element] ",strAsKeyDict[individual_element]);
-                           print("individual_element ",individual_element); 
-                           print("Nums_As_KeyDict[DictIndexNum] ",Nums_As_KeyDict[DictIndexNum]); 
-                           catnum=str(OldQcats).find(str(dcolumn[catcount]));
-                                                     
+                           #print("catcount ",catcount); 
+                           #print("DictIndexNum ",DictIndexNum); 
+                           #print("strAsKeyDict[individual_element] ",strAsKeyDict[individual_element]);
+                           #print("individual_element ",individual_element); 
+                           #print("Nums_As_KeyDict[DictIndexNum] ",Nums_As_KeyDict[DictIndexNum]); 
+                           #catnum=str(OldQcats).find(str(dcolumn[catcount]));
+                           """                          
                            if catnum>-1:
                               NewQcats.append(catnum)
                            if catnum<0: 
                               OldQcats.append(dcolumn[catcount]);
                               NewQcats.append(catcount);
-                           
+                           """
                            catcount=catcount+1;
                      ncolnam=str(col)+"_as_Cat_Var";      
                      #readActiveSheet[ncolnam]=NewQcats;
@@ -295,9 +295,33 @@ def RegCorDescShift():
     print("Trimmed10s ",len(Trimmed10s))
     print("Trimmed15s ",len(Trimmed15s))
     #colrcount=0;
-    print(" cat modes ",catModes)
+    print(" cat modes ",catModes);
+    
     #DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
+    def modeCounter(IdCol,ModeCol,InitialTable):
+      x=IdCol;
+      y=ModeCol;
+      z=InitialTable;
+      mCount=0;
+      while mCount<len(x):
+        wMode=y[mCount];
+        ColName=x[mCount];
+        FullCol=z[ColName];
+        colModeReps=[];
+        lineCount=0;
+        while lineCount<len(FullCol);
+              colElem=FullCol[lineCount];
+              if colElem=wMode;
+              colModeReps.append(colElem);
+              print('Mode Class ',wMode);
+              print('colModeReps ',colModeReps);
+              
+              lineCount=lineCount+1;
+        ModeCount=len(colModeReps);
+        print(wMode,"Count= ",ModeCount);
+        
+        mCount=mCount+1;
     #print("DescriptiveTable");
     #print("DescriptiveTable");
     #print(DescriptiveTable);
