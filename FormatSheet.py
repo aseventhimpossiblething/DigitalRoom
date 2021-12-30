@@ -239,12 +239,12 @@ def RegCorDescShift():
                        valuesBelowMean.append(elem); 
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
-          #splitAtMean=AboveBelowMean(reviewcol);
+          splitAtMean=AboveBelowMean(reviewcol);
           #print("splitAtMean[0] ",splitAtMean[0])
-          #print("type splitAtMean[0] ",type(splitAtMean[0]))
-          #UpperHalf=pandas.DataFrame(splitAtMean[0])
+          print("type splitAtMean[0] ",type(splitAtMean[0]))
+          UpperHalf=pandas.DataFrame(splitAtMean[0])
           #AboveBelowMean(UpperHalf);
-          #print("type UpperHalf ",type(UpperHalf))
+          print("type UpperHalf ",type(UpperHalf))
           #UpperQuartilesAtMean=AboveBelowMean(UpperHalf);
           #LowerQuartilesAtMean=AboveBelowMean(pandas.DataFrame(splitAtMean[1]));
           #HighstQuartile=pandas.DataFrame(UpperQuartilesAtMean[0]);
@@ -311,9 +311,9 @@ def RegCorDescShift():
          ColName=x[mCount];
          FullCol=z[ColName];
          colModeReps=[];
-         print("len(x) ",len(x))
-         print("wMode ",wMode)
-         print("mCount ",mCount)
+         #print("len(x) ",len(x))
+         #print("wMode ",wMode)
+         #print("mCount ",mCount)
          #fCounts.append(wMode);
          lineCount=0;
          while lineCount<len(FullCol):
@@ -354,7 +354,7 @@ def RegCorDescShift():
     
     page="<html><header><style>#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
     #page="<html><header><style>#cortab{margin-top: 25px;}</style></header><div>Statistical Overview</div><div>"+DescriptiveTableTB+"</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div id='cortab'>"+relations.to_html()+"</div></html>"
-    page="<html><header><style>th{background-color:black; color:white;}tr:nth-child(even){background-color:black; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
+    page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:black; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
     
     
     report=open("rpt.html",'w');
