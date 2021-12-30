@@ -248,6 +248,7 @@ def RegCorDescShift():
           #AboveBelowMean(UpperHalf);
           print("type UpperHalf ",type(UpperHalf))
           print("UpperHalf ",UpperHalf)
+          print("UpperHalf mean ",UpperHalf.mean())
           UpperQuartilesAtMean=AboveBelowMean(UpperHalf);
           #UpperQuartilesAtMean[0]
           #print('UpperQuartilesAtMean ',UpperQuartilesAtMean[0]);
