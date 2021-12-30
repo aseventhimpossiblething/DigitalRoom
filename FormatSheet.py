@@ -146,7 +146,8 @@ def RegCorDescShift():
     #print("selectedFrame");
     #print(selectedFrame);
     
-    selectedFrame=selected.dropna(axis=1);
+    #selectedFrame=selected.dropna(axis=1);
+    selectedFrame=selected
     #print(selectedFrame);
     columns=selectedFrame.columns;
     #print("columns - ",columns);
@@ -238,12 +239,12 @@ def RegCorDescShift():
                        valuesBelowMean.append(elem); 
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
-          splitAtMean=AboveBelowMean(reviewcol);
+          #splitAtMean=AboveBelowMean(reviewcol);
           #print("splitAtMean[0] ",splitAtMean[0])
           #print("type splitAtMean[0] ",type(splitAtMean[0]))
-          UpperHalf=pandas.DataFrame(splitAtMean[0])
+          #UpperHalf=pandas.DataFrame(splitAtMean[0])
           #AboveBelowMean(UpperHalf);
-          print("type UpperHalf ",type(UpperHalf))
+          #print("type UpperHalf ",type(UpperHalf))
           #UpperQuartilesAtMean=AboveBelowMean(UpperHalf);
           #LowerQuartilesAtMean=AboveBelowMean(pandas.DataFrame(splitAtMean[1]));
           #HighstQuartile=pandas.DataFrame(UpperQuartilesAtMean[0]);
@@ -279,6 +280,7 @@ def RegCorDescShift():
           Trimmed15="-";
           Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
+    """
     print("len cat modes ",len(catModes))
     print("len colNames ",len(colNames))
     print("colcounts ",len(colcounts))
@@ -296,7 +298,7 @@ def RegCorDescShift():
     print("Trimmed15s ",len(Trimmed15s))
     #colrcount=0;
     print(" cat modes ",catModes);
-    
+    """
     
     def modeCounter(IdCol,ModeCol,InitialTable):
       x=IdCol;
@@ -321,13 +323,13 @@ def RegCorDescShift():
               lineCount=lineCount+1;
          ModeCount=len(colModeReps);
          fCounts.append(ModeCount);
-         print("Mode ",wMode," size ",ModeCount);
-         print("fCounts ",fCounts," size ",len(fCounts));
+         #print("Mode ",wMode," size ",ModeCount);
+         #print("fCounts ",fCounts," size ",len(fCounts));
          
          mCount=mCount+1;
       return fCounts;
     catModCount=modeCounter(colNames,catModes,selected); 
-    print("catModCount ",catModCount)
+    #print("catModCount ",catModCount)
     
     
     #DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
