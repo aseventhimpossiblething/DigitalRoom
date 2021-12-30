@@ -313,9 +313,9 @@ def RegCorDescShift():
         while lineCount<len(FullCol):
               colElem=FullCol[lineCount];
               if colElem==wMode:
-              colModeReps.append(colElem);
-              print('Mode Class ',wMode);
-              print('colModeReps ',colModeReps);
+               colModeReps.append(colElem);
+               print('Mode Class ',wMode);
+               print('colModeReps ',colModeReps);
               
               lineCount=lineCount+1;
         ModeCount=len(colModeReps);
