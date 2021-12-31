@@ -8,6 +8,7 @@ import seaborn
 import matplotlib.pyplot as plt
 import threading
 import numpy
+import sys
 plt.tight_layout();
 
 def headers():
