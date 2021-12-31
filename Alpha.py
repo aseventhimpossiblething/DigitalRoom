@@ -305,6 +305,8 @@ def indupdate():
     
 @app.route('/Loadfiles')
 def inddigogo():
+    if os.path.exists("rpt.html"):    
+       os.remove("rpt.html"); 
     global domain;     
     domainFavi=domain+"/favicon.png";
     view9="/view11"
@@ -317,6 +319,8 @@ def inddigogo():
     
 @app.route('/Loadfiles1',methods=['POST','GET'])
 def inddigog1():
+    if os.path.exists("rpt.html"):    
+       os.remove("rpt.html"); 
     print("Print cwd ",os.getcwd())
     DisplayFiles.SaveFileFromLoadingTemplate(request,"/GMDelight/DigitalRoom/Sheets/CTRData");
     global domain;     
