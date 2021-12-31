@@ -221,6 +221,8 @@ def RegCorDescShift():
           colModes.append(colMode);
           
           def AboveBelowMean(x):
+              Vartype=type(x);
+              print('Vartype ',Vartype);
               """
               try:
                 print("running ",x.columns)
