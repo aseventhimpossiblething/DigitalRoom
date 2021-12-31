@@ -127,6 +127,7 @@ def RegCorDescShift():
     try: 
       selected=headers()[0];
     except:
+      print("end of try fail ")
       return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
     print("selected ",selected)
     selectedFrame=selected
