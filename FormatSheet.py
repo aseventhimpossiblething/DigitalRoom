@@ -236,7 +236,7 @@ def RegCorDescShift():
                     mean=statistics.mean(x);
                     #print("") 
                     elem=x[HPCounter];
-                    print("elem ",elem);
+                    #print("elem ",elem);
                     #if elem>x.mean():
                     if elem>mean:
                         valuesAboveMean.append(elem);
@@ -244,6 +244,7 @@ def RegCorDescShift():
                     if elem<mean:
                        valuesBelowMean.append(elem); 
                     HPCounter=HPCounter+1;
+                    print('valuesAboveMean ',valuesAboveMean);  
               return [valuesAboveMean,valuesBelowMean];       
           splitAtMean=AboveBelowMean(reviewcol);
           #print("splitAtMean[0] ",splitAtMean[0])
