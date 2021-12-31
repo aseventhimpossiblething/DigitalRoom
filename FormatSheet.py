@@ -221,11 +221,14 @@ def RegCorDescShift():
           colModes.append(colMode);
           
           def AboveBelowMean(x):
+              print('initial x ',x);
               Vartype=type(x);
               SeekStr=str(Vartype).find('str');
               print('SeekStr ',SeekStr);
               if SeekStr<0:
-               x=x.values.tolist(); 
+               x=x.values.tolist();
+               print('run to list')
+              print('running x ',x);  
               valuesAboveMean=[];
               valuesBelowMean=[];
               HPCounter=0;
