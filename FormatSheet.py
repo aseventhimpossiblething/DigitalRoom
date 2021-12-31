@@ -18,11 +18,13 @@ def headers():
        os.remove("selectedFrame.png");
   if os.path.exists("rpt.html"):    
        os.remove("rpt.html");    
-  #print("Headers called 1")
   os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
+  
   numOfSheets=len(ActiveSheets);
+  print("numOfSheets - ",numOfSheets)
   if numOfSheets==0:
+     print("Sheet number fount to be 0") 
      return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
   ListOfFrames=[];
   lCount=0;
@@ -75,16 +77,9 @@ def headers():
                      ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
                      strAsKeyDict=dict(ReverseDict);
                                        
-                     #can delete below-----------------------------
-                     #print("type dcolumn-", type(dcolumn));
-                     #Newdict=dcolumn.to_dict();
-                     #print("type Newdict ",type(Newdict));
-                     #dcolumnEX=numpy.array(dcolumn);
-                     #print("HHHHH lll end ",(dcolumnEX=='xo').sum());
-                     #print( Newdict)
-                     #can delet above------------------------------ 
+                    
                      
-                     print(col," is catagorical cat process run");
+                     #print(col," is catagorical cat process run");
                      catcount=0;
                      while catcount<len(dcolumn):
                            individual_element=dcolumn[catcount];
@@ -118,16 +113,7 @@ def headers():
            ListOfFrames.append(aSP);
        
         lCount=lCount+1;
-  """
-  print("00000000000000000000000000000000000000000000000011111111111111") 
-  print("00000000000000000000000000000000000000000000000011111111111111") 
-  print(ListOfFrames);  
-  print("len(ListOfFrames) ",len(ListOfFrames))
-  print("00000000000000000000000000000000000000000000000022222222222222") 
-  print("00000000000000000000000000000000000000000000000022222222222222") 
-  #return ActiveSheets;
-  """
-  return ListOfFrames;
+    return ListOfFrames;
 
 
 def RegCorDescShift():
@@ -138,20 +124,12 @@ def RegCorDescShift():
        os.remove("selectedFrame.png");
     if os.path.exists("rpt.html"):    
        os.remove("rpt.html");    
-        
-    
-    #headers() 
-    #print("headers() regcordescshift ",headers());
+     
     selected=headers()[0];
-    #print("selectedFrame");
-    #print(selectedFrame);
-    
-    #selectedFrame=selected.dropna(axis=1);
+    print("selected ",selected)
     selectedFrame=selected
     #print(selectedFrame);
     columns=selectedFrame.columns;
-    #print("columns - ",columns);
-    #print("columns[0] - ",columns[0]);
     catModes=[];
     colNames=[];
     colcounts=[];
@@ -176,25 +154,15 @@ def RegCorDescShift():
          catMode=statistics.mode(list(selected[colName]));
          catModes.append(catMode);
          
-         #print("colName ",colName);
          reviewcol=selectedFrame[colName];
          guard1=str(reviewcol.dtype).find('object')
          guard2=str(reviewcol.dtype).find('str') 
          guardVar=guard1+guard2;
-         #print("dtype ",reviewcol.dtype);
-         #print("guard ",guardVar);
-         
-         #guardVar<-1; 
+        
          if guardVar==-2: 
-          #print("Passed the Guard")
           colName=columns[colrcount];
           colNames.append(colName)
-          #print("colName  ",colName,"Passed the Guard");
           reviewcol=selectedFrame[colName];
-          #colMode=reviewcol.mode();
-          #colMode=statistics.multimode(list(reviewcol));
-          #print("mode ",colMode)
-          #colModes.append(colMode);
           colcount=len(reviewcol);
           colcounts.append(colcount);
           colSum=reviewcol.sum();
@@ -220,19 +188,11 @@ def RegCorDescShift():
           colMode=statistics.multimode(list(reviewcol));
           if colcount>len(colMode)-1:
              colMode="-";
-          #print("mode ",colMode)
-          #colModes.append(colMode);
           colModes.append(colMode);
           
           def AboveBelowMean(x):
-              #print('initial x ',x);
               Vartype=type(x);
               SeekStr=str(Vartype).find('str');
-              #print('SeekStr ',SeekStr);
-              #if SeekStr<0:
-              #x=x.values.tolist();
-              #print('run to list')
-              #print('running x ',x);  
               valuesAboveMean=[];
               valuesBelowMean=[];
               HPCounter=0;
@@ -270,24 +230,7 @@ def RegCorDescShift():
           print('NoFLowerhalf ',NoFLowerhalf)
           print('NofUpperQuartile ',NofUpperQuartile)
           print('NofLowerQuartile ',NofLowerQuartile)
-          
-          #print("splitAtMean[0] ",splitAtMean[0])
-          #print("type splitAtMean[0] ",type(splitAtMean[0]))
-          
-          #AboveBelowMean(UpperHalf);
-          #print("type UpperHalf ",type(UpperHalf))
-          #print("UpperHalf ",UpperHalf)
-          #print("list UpperHalf mean ",UpperHalf.values.tolist())
-          #UpperQuartilesAtMean=AboveBelowMean(UpperHalf);
-          #UpperQuartilesAtMean[0]
-          #print('UpperQuartileAtMean ',UpperQuartileAtMean);
-          #print('UpperQuartilesAtMean ',UpperQuartilesAtMean);
-          #LowerQuartilesAtMean=AboveBelowMean(pandas.DataFrame(splitAtMean[1]));
-          #HighstQuartile=pandas.DataFrame(UpperQuartilesAtMean[0]);
-          #LowestQuartile=pandas.DataFrame(LowerQuartilesAtMean[1]);
-          #print("splitArr ",splitArr);
-          #print("splitArr[0] ",splitArr[0]);
-          #print("splitArr[1] ",splitArr[1]);
+               
          else:
           NoAboveMeanArr.append("-");
           NoBelowMeanArr.append("-");
@@ -321,25 +264,7 @@ def RegCorDescShift():
           Trimmed15="-";
           Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
-    """
-    print("len cat modes ",len(catModes))
-    print("len colNames ",len(colNames))
-    print("colcounts ",len(colcounts))
-    print("colSums ",len(colSums))
-    print("coledians ",len(colMedians))
-    print("colMeans ",len(colMeans))
-    print("colMods ",len(colModes))
-    print("colSTDs ",len(colSTDs))
-    print("colMaxs ",len(colMaxs))
-    print("colranges ",len(colranges))
-    print("colMins ",len(colMins))
-    print("colranges ",len(colranges))
-    print("Trimmed05s ",len(Trimmed05s))
-    print("Trimmed10s ",len(Trimmed10s))
-    print("Trimmed15s ",len(Trimmed15s))
-    #colrcount=0;
-    print(" cat modes ",catModes);
-    """
+    
     
     def modeCounter(IdCol,ModeCol,InitialTable):
       x=IdCol;
@@ -352,10 +277,6 @@ def RegCorDescShift():
          ColName=x[mCount];
          FullCol=z[ColName];
          colModeReps=[];
-         #print("len(x) ",len(x))
-         #print("wMode ",wMode)
-         #print("mCount ",mCount)
-         #fCounts.append(wMode);
          lineCount=0;
          while lineCount<len(FullCol):
               colElem=FullCol[lineCount];
@@ -364,19 +285,10 @@ def RegCorDescShift():
               lineCount=lineCount+1;
          ModeCount=len(colModeReps);
          fCounts.append(ModeCount);
-         #print("Mode ",wMode," size ",ModeCount);
-         #print("fCounts ",fCounts," size ",len(fCounts));
-         
          mCount=mCount+1;
       return fCounts;
     catModCount=modeCounter(colNames,catModes,selected); 
-    #print("catModCount ",catModCount)
-    """
-     NoAboveMean.append("-");
-          NoBelowMean.append("-");
-          NofUpperQuartile.append("-");
-          NofLowerQuartile.append("-");
-    """
+ 1
     
     #DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMeanArr,'#_Below_Mean':NoBelowMeanArr,'Distal_Quartile>Mean':NofUpperQuartileArr,'Distal_Quartile<Mean':NofLowerQuartileArr});
