@@ -25,7 +25,7 @@ def headers():
   numOfSheets=len(ActiveSheets);
   print("numOfSheets = ",numOfSheets)
   if numOfSheets<1:
-     print("Sheet number fount to be 0") 
+     print("Sheet number found to be 0") 
      return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
   ListOfFrames=[];
   lCount=0;
@@ -138,7 +138,15 @@ def RegCorDescShift():
     print("selected ",selected)
     selectedFrame=selected
     #print(selectedFrame);
-    columns=selectedFrame.columns;
+    try:
+     columns=selectedFrame.columns;
+    except:
+      print("end of try fail ");
+      page="Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! Please Retry"
+      report=open("rpt.html",'w');
+      report.write(page);
+      report.close();
+      sys.exit(); 
     catModes=[];
     colNames=[];
     colcounts=[];
