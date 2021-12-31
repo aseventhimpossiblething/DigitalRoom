@@ -124,8 +124,10 @@ def RegCorDescShift():
        os.remove("selectedFrame.png");
     if os.path.exists("rpt.html"):    
        os.remove("rpt.html");    
-     
-    selected=headers()[0];
+    try: 
+      selected=headers()[0];
+    except:
+      return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
     print("selected ",selected)
     selectedFrame=selected
     #print(selectedFrame);
