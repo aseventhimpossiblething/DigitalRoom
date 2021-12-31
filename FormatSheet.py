@@ -155,6 +155,10 @@ def RegCorDescShift():
     catModes=[];
     colNames=[];
     colcounts=[];
+    NoAboveMean=[];
+    NoBelowMean=[];
+    NofUpperQuartile=[];
+    NofLowerQuartile=[];
     colSums=[];
     colMedians=[];
     colMeans=[];
@@ -251,14 +255,22 @@ def RegCorDescShift():
           LowerHalf=splitAtMean[1];
           UpperQuartileAtMean=AboveBelowMean(UpperHalf)[0];
           LowerQuartileAtMean=AboveBelowMean(LowerHalf)[1];
+          NofUpperhalf=len(UpperHalf)
+          NoFLowerhalf=len(LowerHalf)          
           NofUpperQuartile=len(UpperQuartileAtMean);
           NofLowerQuartile=len(LowerQuartileAtMean);
-          print("colName - ",colName)
           
-          print('len UpperHalf',len(UpperHalf)) 
-          print('len LowerHalf',len(LowerHalf))
+          NoAboveMean.append();
+          NoBelowMean.append();
+          NofUpperQuartile.append();
+          NofLowerQuartile.append();
+                   
+          print("colName - ",colName)          
+          print('NofUpperhalf ',NofUpperhalf) 
+          print('NoFLowerhalf ',NoFLowerhalf)
           print('NofUpperQuartile ',NofUpperQuartile)
           print('NofLowerQuartile ',NofLowerQuartile)
+          
           #print("splitAtMean[0] ",splitAtMean[0])
           #print("type splitAtMean[0] ",type(splitAtMean[0]))
           
@@ -277,6 +289,11 @@ def RegCorDescShift():
           #print("splitArr[0] ",splitArr[0]);
           #print("splitArr[1] ",splitArr[1]);
          else:
+          NoAboveMean.append("-");
+          NoBelowMean.append("-");
+          NofUpperQuartile.append("-");
+          NofLowerQuartile.append("-");
+          
           colcount=len(reviewcol);
           colcounts.append(colcount);
           colNames.append(colName);
@@ -355,9 +372,14 @@ def RegCorDescShift():
     catModCount=modeCounter(colNames,catModes,selected); 
     #print("catModCount ",catModCount)
     
+     NoAboveMean.append("-");
+          NoBelowMean.append("-");
+          NofUpperQuartile.append("-");
+          NofLowerQuartile.append("-");
+    
     
     #DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
-    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
+    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMean,'#_Below_Mean':NoBelowMean,'Distal_Quartile>Mean':NofUpperQuartile,'Distal_Quartile<Mean':NofLowerQuartile});
       
     #print("DescriptiveTable");
     #print("DescriptiveTable");
