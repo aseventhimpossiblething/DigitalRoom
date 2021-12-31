@@ -221,25 +221,22 @@ def RegCorDescShift():
           colModes.append(colMode);
           
           def AboveBelowMean(x):
-              Vartype=type(x);
-              print('Vartype ',Vartype);
-              """
-              try:
-                print("running ",x.columns)
-              except:
-                print("Cols value not available")
-              """
-              #print("type ",type(x)) 
-              #print("running mean ",x.mean()) 
+              SeekStr=str(Vartype=type(x)).find('str');
+              print('SeekStr ',SeekStr);
+              if SeekStr<0:
+               x=x.values.tolist(); 
               valuesAboveMean=[];
               valuesBelowMean=[];
               HPCounter=0;
               while HPCounter<len(x):
+                    mean=statistics.mean(x);
                     #print("") 
                     elem=x[HPCounter];
-                    if elem>x.mean():
-                       valuesAboveMean.append(elem);
-                    if elem<x.mean():    
+                    #if elem>x.mean():
+                    if elem>mean:
+                        valuesAboveMean.append(elem);
+                    #if elem<x.mean(): 
+                    if elem<mean:
                        valuesBelowMean.append(elem); 
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
@@ -250,7 +247,7 @@ def RegCorDescShift():
           #AboveBelowMean(UpperHalf);
           print("type UpperHalf ",type(UpperHalf))
           print("UpperHalf ",UpperHalf)
-          print("list UpperHalf mean ",UpperHalf.values.tolist())
+          #print("list UpperHalf mean ",UpperHalf.values.tolist())
           UpperQuartilesAtMean=AboveBelowMean(UpperHalf);
           #UpperQuartilesAtMean[0]
           #print('UpperQuartilesAtMean ',UpperQuartilesAtMean[0]);
