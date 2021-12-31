@@ -221,14 +221,14 @@ def RegCorDescShift():
           colModes.append(colMode);
           
           def AboveBelowMean(x):
-              print('initial x ',x);
+              #print('initial x ',x);
               Vartype=type(x);
               SeekStr=str(Vartype).find('str');
-              print('SeekStr ',SeekStr);
+              #print('SeekStr ',SeekStr);
               if SeekStr<0:
                #x=x.values.tolist();
-               print('run to list')
-              print('running x ',x);  
+               #print('run to list')
+              #print('running x ',x);  
               valuesAboveMean=[];
               valuesBelowMean=[];
               HPCounter=0;
@@ -244,7 +244,7 @@ def RegCorDescShift():
                     if elem<mean:
                        valuesBelowMean.append(elem); 
                     HPCounter=HPCounter+1;
-              print('final out valuesAboveMean ',valuesAboveMean);  
+              #print('final out valuesAboveMean ',valuesAboveMean);  
               return [valuesAboveMean,valuesBelowMean];       
           splitAtMean=AboveBelowMean(reviewcol);
           UpperHalf=splitAtMean[0];
@@ -253,7 +253,11 @@ def RegCorDescShift():
           LowerQuartileAtMean=AboveBelowMean(LowerHalf)[1];
           NofUpperQuartile=len(UpperQuartileAtMean);
           NofLowerQuartile=len(LowerQuartileAtMean);
-          print('NofUpperQuartile ', NofUpperQuartile)
+          print("colName - ",colName)
+          
+          print('len UpperHalf',len(UpperHalf)) 
+          print('len LowerHalf',len(LowerHalf))
+          print('NofUpperQuartile ',NofUpperQuartile)
           print('NofLowerQuartile ',NofLowerQuartile)
           #print("splitAtMean[0] ",splitAtMean[0])
           #print("type splitAtMean[0] ",type(splitAtMean[0]))
