@@ -226,7 +226,7 @@ def RegCorDescShift():
               SeekStr=str(Vartype).find('str');
               print('SeekStr ',SeekStr);
               if SeekStr<0:
-               x=x.values.tolist();
+               #x=x.values.tolist();
                print('run to list')
               print('running x ',x);  
               valuesAboveMean=[];
