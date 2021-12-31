@@ -247,16 +247,18 @@ def RegCorDescShift():
               print('final out valuesAboveMean ',valuesAboveMean);  
               return [valuesAboveMean,valuesBelowMean];       
           splitAtMean=AboveBelowMean(reviewcol);
+          UpperHalf=splitAtMean[0];
+          UpperQuartileAtMean=AboveBelowMean(UpperHalf)[0];
           #print("splitAtMean[0] ",splitAtMean[0])
           print("type splitAtMean[0] ",type(splitAtMean[0]))
-          UpperHalf=splitAtMean[0]
+          
           #AboveBelowMean(UpperHalf);
           print("type UpperHalf ",type(UpperHalf))
           print("UpperHalf ",UpperHalf)
           #print("list UpperHalf mean ",UpperHalf.values.tolist())
-          UpperQuartilesAtMean=AboveBelowMean(UpperHalf);
+          #UpperQuartilesAtMean=AboveBelowMean(UpperHalf);
           #UpperQuartilesAtMean[0]
-          #print('UpperQuartilesAtMean ',UpperQuartilesAtMean[0]);
+          print('UpperQuartileAtMean ',UpperQuartileAtMean);
           #print('UpperQuartilesAtMean ',UpperQuartilesAtMean);
           #LowerQuartilesAtMean=AboveBelowMean(pandas.DataFrame(splitAtMean[1]));
           #HighstQuartile=pandas.DataFrame(UpperQuartilesAtMean[0]);
