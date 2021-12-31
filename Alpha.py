@@ -332,12 +332,9 @@ def inddigog1():
 def rpt():
     global domain;     
     domainFavi=domain+"/favicon.png";
-    FormatSheet.rpt();
-    #if os.path.exists("rpt.html"):  
-    #return "<embed src='/rptry'>"
-    #fimage=str(DisplayFiles.showfiles())
+    print('return from process attempt = ',FormatSheet.rpt())
     return redirect("/rptry?");
-    #return render_template('LoadingTemplate3.html',domain=domain,domainFav=domainFavi,fimage=fimage,);
+ 
          
 @app.route('/rptry')
 def rptt():
@@ -350,7 +347,6 @@ def rptt():
         DisplayPage=page.read();
         page.close();
         print("if path entered..")
-        #return redirect("/rptry"); 
         return DisplayPage;
         return '<html><iframe src="/static/rpt.html"></iframe></html>'
         return "<html><meta http-equiv='refresh' content='1'; url='/static/rpt.html'>Loading...</html>"
