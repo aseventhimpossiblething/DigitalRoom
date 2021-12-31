@@ -236,6 +236,7 @@ def RegCorDescShift():
                     mean=statistics.mean(x);
                     #print("") 
                     elem=x[HPCounter];
+                    print("elem ",elem);
                     #if elem>x.mean():
                     if elem>mean:
                         valuesAboveMean.append(elem);
