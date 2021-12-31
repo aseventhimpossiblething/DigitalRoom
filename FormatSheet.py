@@ -221,7 +221,8 @@ def RegCorDescShift():
           colModes.append(colMode);
           
           def AboveBelowMean(x):
-              SeekStr=str(Vartype=type(x)).find('str');
+              Vartype=type(x);
+              SeekStr=str(Vartype).find('str');
               print('SeekStr ',SeekStr);
               if SeekStr<0:
                x=x.values.tolist(); 
