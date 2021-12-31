@@ -330,6 +330,8 @@ def inddigog1():
 
 @app.route('/rpt',methods=['POST','GET'])
 def rpt():
+    if os.path.exists("rpt.html"):    
+       os.remove("rpt.html"); 
     global domain;     
     domainFavi=domain+"/favicon.png";
     print('return from process attempt = ',FormatSheet.rpt())
@@ -348,9 +350,9 @@ def rptt():
         page.close();
         print("if path entered..")
         return DisplayPage;
-        return '<html><iframe src="/static/rpt.html"></iframe></html>'
-        return "<html><meta http-equiv='refresh' content='1'; url='/static/rpt.html'>Loading...</html>"
-        return "<html><meta http-equiv='refresh' content='10'; url='http://"+domain+"/static/rpt.html'>Loading...</html>"
+        #return '<html><iframe src="/static/rpt.html"></iframe></html>'
+        #return "<html><meta http-equiv='refresh' content='1'; url='/static/rpt.html'>Loading...</html>"
+        #return "<html><meta http-equiv='refresh' content='10'; url='http://"+domain+"/static/rpt.html'>Loading...</html>"
     return "<html><meta http-equiv='refresh' content='60'>Loading...</html>"
   
              
