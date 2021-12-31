@@ -260,10 +260,10 @@ def RegCorDescShift():
           NofUpperQuartile=len(UpperQuartileAtMean);
           NofLowerQuartile=len(LowerQuartileAtMean);
           
-          NoAboveMean.append();
-          NoBelowMean.append();
-          NofUpperQuartile.append();
-          NofLowerQuartile.append();
+          NoAboveMean.append(NofUpperhalf);
+          NoBelowMean.append(NoFLowerhalf);
+          NofUpperQuartile.append(NofUpperQuartile);
+          NofLowerQuartile.append(NofLowerQuartile);
                    
           print("colName - ",colName)          
           print('NofUpperhalf ',NofUpperhalf) 
