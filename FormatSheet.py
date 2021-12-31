@@ -22,8 +22,8 @@ def headers():
   ActiveSheets=os.listdir();
   
   numOfSheets=len(ActiveSheets);
-  print("numOfSheets - ",numOfSheets)
-  if numOfSheets==0:
+  print("numOfSheets = ",numOfSheets)
+  if numOfSheets<1:
      print("Sheet number fount to be 0") 
      return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
   ListOfFrames=[];
