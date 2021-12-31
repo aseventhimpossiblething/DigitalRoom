@@ -127,7 +127,12 @@ def RegCorDescShift():
     try: 
       selected=headers()[0];
     except:
-      print("end of try fail ")
+      print("end of try fail ");
+      page="Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! Please Retry"
+      report=open("rpt.html",'w');
+      report.write(page);
+      report.close();
+      sys.exit();
       return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
     print("selected ",selected)
     selectedFrame=selected
