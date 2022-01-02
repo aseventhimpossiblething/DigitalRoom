@@ -27,7 +27,8 @@ def headers():
        os.remove("selectedFrame.png");
   if os.path.exists("rpt.html"):    
        os.remove("rpt.html");
-  """    
+  """ 
+  os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
   print('ActiveSheets ',ActiveSheets);
   numOfSheets=len(ActiveSheets);
