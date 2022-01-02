@@ -45,6 +45,7 @@ def headers():
         iscsv=ActiveSheet.lower().find(".csv");
         readActiveSheet="Drop9";
         if isxlsx > 1:
+              os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
               readActiveSheet=pandas.read_excel(ActiveSheet); 
         if iscsv > 1:
               readActiveSheet=pandas.read_csv(ActiveSheet); 
