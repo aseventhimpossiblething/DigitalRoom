@@ -21,8 +21,9 @@ import scipy
 import pandas
 import FormatSheet
 import threading
-
 import os
+import sys
+
 from flask import Flask, Markup, render_template, request, make_response, redirect
 from flask import send_file
 from flask import send_from_directory
@@ -305,11 +306,14 @@ def indupdate():
     
 @app.route('/Loadfiles')
 def inddigogo():
+    print("---------------------------------------------------")
     os.chdir('/GMDelight/DigitalRoom/static/');
     print("get cwd ",os.getcwd())
+    os.remove("rpt.html"); 
     if os.path.exists("/rpt.html"): 
        print("If path ") 
        os.remove("rpt.html"); 
+    print("---------------------------------------------------")    
     global domain;     
     domainFavi=domain+"/favicon.png";
     view9="/view11"
