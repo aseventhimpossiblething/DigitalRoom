@@ -21,7 +21,7 @@ def headers():
        os.remove("rpt.html");    
   os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
-  
+  print('ActiveSheets ',ActiveSheets);
   numOfSheets=len(ActiveSheets);
   print("numOfSheets = ",numOfSheets)
   if numOfSheets<1:
