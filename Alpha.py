@@ -308,7 +308,7 @@ def indupdate():
 def inddigogo():
     print("---------------------------------------------------")
     os.chdir('/GMDelight/DigitalRoom/static/');
-    print("get cwd ",os.getcwd())
+    #print("get cwd ",os.getcwd())
     os.remove("rpt.html"); 
     if os.path.exists("/rpt.html"): 
        print("If path ") 
