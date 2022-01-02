@@ -12,6 +12,7 @@ import sys
 plt.tight_layout();
 
 def headers():
+  """
   os.chdir('/GMDelight/DigitalRoom/static/');
   if os.path.exists("heatmap.png"):
        os.remove("heatmap.png");
@@ -26,7 +27,7 @@ def headers():
        os.remove("selectedFrame.png");
   if os.path.exists("rpt.html"):    
        os.remove("rpt.html");
-      
+  """    
   ActiveSheets=os.listdir();
   print('ActiveSheets ',ActiveSheets);
   numOfSheets=len(ActiveSheets);
