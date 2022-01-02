@@ -305,6 +305,7 @@ def indupdate():
     
 @app.route('/Loadfiles')
 def inddigogo():
+    os.chdir('/GMDelight/DigitalRoom/static/');
     if os.path.exists("rpt.html"):    
        os.remove("rpt.html"); 
     global domain;     
@@ -319,6 +320,7 @@ def inddigogo():
     
 @app.route('/Loadfiles1',methods=['POST','GET'])
 def inddigog1():
+    os.chdir('/GMDelight/DigitalRoom/static/');
     if os.path.exists("rpt.html"):    
        os.remove("rpt.html"); 
     print("Print cwd ",os.getcwd())
@@ -334,6 +336,7 @@ def inddigog1():
 
 @app.route('/rpt',methods=['POST','GET'])
 def rpt():
+    os.chdir('/GMDelight/DigitalRoom/static/');
     if os.path.exists("rpt.html"):    
        os.remove("rpt.html"); 
     global domain;     
@@ -348,6 +351,7 @@ def rptt():
     domainFavi=domain+"/favicon.png";
     print("reload-----")
     print(os.getcwd())
+    os.chdir('/GMDelight/DigitalRoom/static/');
     if os.path.exists("rpt.html"):
         page=open("rpt.html",'r');
         DisplayPage=page.read();
