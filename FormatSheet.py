@@ -42,7 +42,7 @@ def headers():
         #readActiveSheet="";
         ActiveSheet=ActiveSheets[lCount];
         
-        readActiveSheet=pandas.read_excel("/GMDelight/DigitalRoom/Sheets/CTRData"+"/"+ActiveSheet);
+        #readActiveSheet=pandas.read_excel("/GMDelight/DigitalRoom/Sheets/CTRData"+"/"+ActiveSheet);
         
         #print("Headers called 2")
         #print("Headers called active sheet ",ActiveSheet)
@@ -159,7 +159,7 @@ def RegCorDescShift():
     selectedFrame=selected
     #print(selectedFrame);
     try:
-     columns=selectedFrame.columns;
+      columns=selectedFrame.columns;
     except:
       print("end of try fail ");
       page="Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! Please Retry"
