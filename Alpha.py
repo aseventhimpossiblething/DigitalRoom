@@ -314,6 +314,8 @@ def inddigogo():
     if os.path.exists("/rpt.html"): 
        print("If path ") 
        os.remove("rpt.html"); 
+    os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData'); 
+    print("List dir ",os.listdir())
     print("---------------------------------------------------")    
     global domain;     
     domainFavi=domain+"/favicon.png";
