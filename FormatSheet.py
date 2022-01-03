@@ -53,7 +53,8 @@ def headers():
               os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
               print('xlsx listdir ',os.listdir());
               print('ActiveSheet ',ActiveSheet);
-              readActiveSheet=pandas.read_excel(ActiveSheet); 
+              readActiveSheet=pandas.read_excel("/GMDelight/DigitalRoom/Sheets/CTRData"+"/"+ActiveSheet);
+              #readActiveSheet=pandas.read_excel(ActiveSheet); 
         if iscsv > 1:
               readActiveSheet=pandas.read_csv(ActiveSheet); 
               readActiveSheet=pandas.DataFrame(data=readActiveSheet);
