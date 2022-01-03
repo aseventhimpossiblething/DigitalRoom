@@ -41,6 +41,9 @@ def headers():
   while lCount < numOfSheets:
         #readActiveSheet="";
         ActiveSheet=ActiveSheets[lCount];
+        
+        readActiveSheet=pandas.read_excel(ActiveSheet);
+        
         #print("Headers called 2")
         #print("Headers called active sheet ",ActiveSheet)
         isxlsx=ActiveSheet.lower().find(".xlsx");
@@ -50,7 +53,7 @@ def headers():
               os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
               print('xlsx listdir ',os.listdir());
               print('ActiveSheet ',ActiveSheet);
-              readActiveSheet=pandas.read_excel("/"+ActiveSheet); 
+              readActiveSheet=pandas.read_excel(ActiveSheet); 
         if iscsv > 1:
               readActiveSheet=pandas.read_csv(ActiveSheet); 
               readActiveSheet=pandas.DataFrame(data=readActiveSheet);
