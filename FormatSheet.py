@@ -163,9 +163,9 @@ def RegCorDescShift():
     except:
       print("end of try fail ");
       page="Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! Please Retry"
-      report=open("rpt.html",'w');
-      report.write(page);
-      report.close();
+      #report=open("rpt.html",'w');
+      #report.write(page);
+      #report.close();
       sys.exit(); 
     catModes=[];
     colNames=[];
