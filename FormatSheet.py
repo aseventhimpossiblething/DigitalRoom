@@ -42,7 +42,7 @@ def headers():
         #readActiveSheet="";
         ActiveSheet=ActiveSheets[lCount];
         
-        readActiveSheet=pandas.read_excel(ActiveSheet);
+        readActiveSheet=pandas.read_excel("/GMDelight/DigitalRoom/Sheets/CTRData"+"/"+ActiveSheet);
         
         #print("Headers called 2")
         #print("Headers called active sheet ",ActiveSheet)
