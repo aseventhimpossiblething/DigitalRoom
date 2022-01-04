@@ -33,12 +33,6 @@ def headers():
   #os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
   print('ActiveSheets ',ActiveSheets);
-  """
-  if ActiveSheets=="":
-    print("Empty slot! 1");
-  if ActiveSheets==" ":
-    print("Empty slot! 2-spaced"); 
-  """
   if ActiveSheets==[]:
     print("Empty slot! 3 brackets");
     print("list dir",os.listdir());
@@ -74,8 +68,8 @@ def headers():
         
         print("len(readActiveSheet) -- ",len(readActiveSheet));
         if len(readActiveSheet)==0:
-           os.system("cat BlankSheet")
-           print("list dir",os.listdir());
+           os.system("> BlankSheet")
+           print("list dir ln 71 ",os.listdir());
            #print("",):
            sys.exit();
             
