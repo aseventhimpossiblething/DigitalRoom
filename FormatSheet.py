@@ -68,6 +68,7 @@ def headers():
               readActiveSheet=pandas.DataFrame(data=readActiveSheet);
         
         print("len(readActiveSheet) -- ",len(readActiveSheet));
+        os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
         if len(readActiveSheet)==0:
            os.system("> BlankSheet")
            print("list dir ln 71 ",os.getcwd()); 
