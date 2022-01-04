@@ -27,15 +27,18 @@ def headers():
        os.remove("selectedFrame.png");
   if os.path.exists("rpt.html"):    
        os.remove("rpt.html");
+  if os.path.exists("rpt.html"):    
+       os.remove("rpt.html");    
    
   #os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
   print('ActiveSheets ',ActiveSheets);
-  
+  """
   if ActiveSheets=="":
     print("Empty slot! 1");
   if ActiveSheets==" ":
     print("Empty slot! 2-spaced"); 
+  """
   if ActiveSheets==[]:
     print("Empty slot! 3 brackets");
     print("list dir",os.listdir());
@@ -70,6 +73,9 @@ def headers():
               readActiveSheet=pandas.DataFrame(data=readActiveSheet);
         
         print("len(readActiveSheet) -- ",len(readActiveSheet));
+        if len(readActiveSheet)==0:
+           print("list dir",os.listdir());
+           #print("",) 
         
         def activeSheetParse(readActiveSheet):
             TypereadActiveSheet=str(type(readActiveSheet)).find('str');
