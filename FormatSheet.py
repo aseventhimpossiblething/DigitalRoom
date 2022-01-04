@@ -27,8 +27,8 @@ def headers():
        os.remove("selectedFrame.png");
   if os.path.exists("rpt.html"):    
        os.remove("rpt.html");
-  if os.path.exists("rpt.html"):    
-       os.remove("rpt.html");    
+  if os.path.exists("BlankSheet""):    
+       os.remove("BlankSheet"");    
    
   #os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
@@ -74,8 +74,11 @@ def headers():
         
         print("len(readActiveSheet) -- ",len(readActiveSheet));
         if len(readActiveSheet)==0:
+           os.system("cat BlankSheet")
            print("list dir",os.listdir());
-           #print("",) 
+           #print("",):
+           sys.exit();
+            
         
         def activeSheetParse(readActiveSheet):
             TypereadActiveSheet=str(type(readActiveSheet)).find('str');
