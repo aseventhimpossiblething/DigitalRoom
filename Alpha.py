@@ -358,11 +358,14 @@ def rpt():
          
 @app.route('/rptry')
 def rptt():
+    os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
+    print("check for fail  ",os.lisdtdir())
     global domain;     
     domainFavi=domain+"/favicon.png";
     print("reload-----")
     print(os.getcwd())
     os.chdir('/GMDelight/DigitalRoom/static/');
+    print(os.getcwd())
     if os.path.exists("rpt.html"):
         page=open("rpt.html",'r');
         DisplayPage=page.read();
