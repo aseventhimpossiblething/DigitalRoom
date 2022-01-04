@@ -12,7 +12,7 @@ import sys
 plt.tight_layout();
 
 def headers():
-  """
+  
   os.chdir('/GMDelight/DigitalRoom/static/');
   if os.path.exists("heatmap.png"):
        os.remove("heatmap.png");
@@ -27,16 +27,27 @@ def headers():
        os.remove("selectedFrame.png");
   if os.path.exists("rpt.html"):    
        os.remove("rpt.html");
-  """ 
-  os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
+   
+  #os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
   print('ActiveSheets ',ActiveSheets);
+  
+  if ActiveSheets=="":
+    print("Empty slot! 1");
+  if ActiveSheets==" ":
+    print("Empty slot! 2-spaced"); 
+  if ActiveSheets==[]:
+    print("Empty slot! 3 brackets");
+  if ActiveSheets==[ ]:
+    print("Empty slot! 4 space brackets");
+    
   numOfSheets=len(ActiveSheets);
   print("numOfSheets = ",numOfSheets)
   if numOfSheets<1:
      print("Sheet number found to be 0") 
      return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
   ListOfFrames=[];
+  #print("",ListOfFrames)
   lCount=0;
   while lCount < numOfSheets:
         #readActiveSheet="";
@@ -94,10 +105,7 @@ def headers():
                            NDictCount=NDictCount+1;
                      ReverseDict=zip(NewKeysDictWords,NewValuesDictNums); 
                      strAsKeyDict=dict(ReverseDict);
-                                       
-                    
-                     
-                     #print(col," is catagorical cat process run");
+                  
                      catcount=0;
                      while catcount<len(dcolumn):
                            individual_element=dcolumn[catcount];
@@ -105,20 +113,7 @@ def headers():
                            Nums_As_KeyDict=dcolumn.to_dict();
                            Nums_As_KeyDict[DictIndexNum];
                            NovelCats.append(DictIndexNum); 
-                           #NewQcats.append(catcount);
-                           #print("catcount ",catcount); 
-                           #print("DictIndexNum ",DictIndexNum); 
-                           #print("strAsKeyDict[individual_element] ",strAsKeyDict[individual_element]);
-                           #print("individual_element ",individual_element); 
-                           #print("Nums_As_KeyDict[DictIndexNum] ",Nums_As_KeyDict[DictIndexNum]); 
-                           #catnum=str(OldQcats).find(str(dcolumn[catcount]));
-                           """                          
-                           if catnum>-1:
-                              NewQcats.append(catnum)
-                           if catnum<0: 
-                              OldQcats.append(dcolumn[catcount]);
-                              NewQcats.append(catcount);
-                           """
+                           
                            catcount=catcount+1;
                      ncolnam=str(col)+"_as_Cat_Var";      
                      #readActiveSheet[ncolnam]=NewQcats;
