@@ -28,7 +28,7 @@ def headers():
   if os.path.exists("rpt.html"):    
        os.remove("rpt.html");
   if os.path.exists("BlankSheet"):    
-       os.remove("BlankSheet"");    
+       os.remove("BlankSheet");    
    
   #os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
