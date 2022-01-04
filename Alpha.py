@@ -360,6 +360,10 @@ def rpt():
 def rptt():
     os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
     print("check for fail  ",os.listdir())
+    if os.path.exists("BlankSheet"):    
+       os.remove("BlankSheet"); 
+       print("check for fail; path followed  ")
+       return "FAILED TRANSACTION..NO VALID SHEET FOUND" 
     global domain;     
     domainFavi=domain+"/favicon.png";
     print("reload-----")
