@@ -36,6 +36,7 @@ def headers():
   if ActiveSheets==[]:
     print("Empty slot! 3 brackets");
     print("list dir",os.listdir());
+    os.system("> BlankSheet")
   if ActiveSheets==[ ]:
     print("Empty slot! 4 space brackets");
     print("list dir",os.listdir());
