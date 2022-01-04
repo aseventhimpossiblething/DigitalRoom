@@ -38,25 +38,23 @@ def headers():
     print("Empty slot! 2-spaced"); 
   if ActiveSheets==[]:
     print("Empty slot! 3 brackets");
+    print("list dir",os.listdir());
   if ActiveSheets==[ ]:
     print("Empty slot! 4 space brackets");
+    print("list dir",os.listdir());
     
   numOfSheets=len(ActiveSheets);
+  """
   print("numOfSheets = ",numOfSheets)
   if numOfSheets<1:
      print("Sheet number found to be 0") 
      return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
+  """
   ListOfFrames=[];
   #print("",ListOfFrames)
   lCount=0;
   while lCount < numOfSheets:
-        #readActiveSheet="";
         ActiveSheet=ActiveSheets[lCount];
-        
-        #readActiveSheet=pandas.read_excel("/GMDelight/DigitalRoom/Sheets/CTRData"+"/"+ActiveSheet);
-        
-        #print("Headers called 2")
-        #print("Headers called active sheet ",ActiveSheet)
         isxlsx=ActiveSheet.lower().find(".xlsx");
         iscsv=ActiveSheet.lower().find(".csv");
         readActiveSheet="Drop9";
@@ -65,11 +63,13 @@ def headers():
               print('xlsx listdir ',os.listdir());
               print('ActiveSheet ',ActiveSheet);
               readActiveSheet=pandas.read_excel("/GMDelight/DigitalRoom/Sheets/CTRData"+"/"+ActiveSheet);
-              print("len(readActiveSheet) -- ",len(readActiveSheet));
+              #print("len(readActiveSheet) -- ",len(readActiveSheet));
               #readActiveSheet=pandas.read_excel(ActiveSheet); 
         if iscsv > 1:
               readActiveSheet=pandas.read_csv(ActiveSheet); 
               readActiveSheet=pandas.DataFrame(data=readActiveSheet);
+        
+        print("len(readActiveSheet) -- ",len(readActiveSheet));
         
         def activeSheetParse(readActiveSheet):
             TypereadActiveSheet=str(type(readActiveSheet)).find('str');
