@@ -27,7 +27,7 @@ def headers():
        os.remove("selectedFrame.png");
   if os.path.exists("rpt.html"):    
        os.remove("rpt.html");
-  if os.path.exists("BlankSheet""):    
+  if os.path.exists("BlankSheet"):    
        os.remove("BlankSheet"");    
    
   #os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
