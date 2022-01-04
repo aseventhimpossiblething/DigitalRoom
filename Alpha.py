@@ -359,7 +359,7 @@ def rpt():
 @app.route('/rptry')
 def rptt():
     os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
-    print("check for fail  ",os.lisdtdir())
+    print("check for fail  ",os.listdir())
     global domain;     
     domainFavi=domain+"/favicon.png";
     print("reload-----")
