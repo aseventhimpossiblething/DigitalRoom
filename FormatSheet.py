@@ -70,6 +70,7 @@ def headers():
         print("len(readActiveSheet) -- ",len(readActiveSheet));
         if len(readActiveSheet)==0:
            os.system("> BlankSheet")
+           print("list dir ln 71 ",os.getcwd()); 
            print("list dir ln 71 ",os.listdir());
            #print("",):
            sys.exit();
