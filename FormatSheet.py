@@ -301,7 +301,7 @@ def RegCorDescShift():
           Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
     
-    """
+    
     def modeCounter(IdCol,ModeCol,InitialTable):
       x=IdCol;
       y=ModeCol;
@@ -323,7 +323,7 @@ def RegCorDescShift():
          fCounts.append(ModeCount);
          mCount=mCount+1;
       return fCounts;
-    """
+    
     print("Start modeCounter ------------------------")  
     catModCount=modeCounter(colNames,catModes,selected);
     print("After modeCounter ------------------------")    
