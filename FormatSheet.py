@@ -270,12 +270,11 @@ def RegCorDescShift():
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
           """
-          #AboveBelowMean(x,colrcount,columns)
           splitAtMean=AboveBelowMean(reviewcol,colrcount,columns);
           UpperHalf=splitAtMean[0];
           LowerHalf=splitAtMean[1];
-          UpperQuartileAtMean=AboveBelowMean(UpperHalf)[0];
-          LowerQuartileAtMean=AboveBelowMean(LowerHalf)[1];
+          UpperQuartileAtMean=AboveBelowMean(UpperHalf,colrcount,columns)[0];
+          LowerQuartileAtMean=AboveBelowMean(LowerHalf,colrcount,columns)[1];
           NofUpperhalf=len(UpperHalf)
           NoFLowerhalf=len(LowerHalf)          
           NofUpperQuartile=len(UpperQuartileAtMean);
@@ -367,15 +366,9 @@ def RegCorDescShift():
     lorem2="-----------------L2"
     lorem3="-----------------L3"
     lorem4="-----------------L4"
-    #page="<html><header><style>#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
-    #page="<html><header><style>#cortab{margin-top: 25px;}</style></header><div>Statistical Overview</div><div>"+DescriptiveTableTB+"</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div id='cortab'>"+relations.to_html()+"</div></html>"
     page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem1+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem2+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
     page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem1+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem2+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div><div>"+lorem3+"</div>"+DescriptiveTableTB+"</div><div>"+lorem4+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
-   
-    
-    
-    
-    
+
     report=open("rpt.html",'w');
     report.write(page);
     report.close();
