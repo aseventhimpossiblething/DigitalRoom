@@ -12,7 +12,7 @@ import sys
 plt.tight_layout();
 
 
-def AboveBelowMean(x):
+def AboveBelowMean(x,colrcount,columns):
               Vartype=type(x);
               SeekStr=str(Vartype).find('str');
               valuesAboveMean=[];
@@ -86,14 +86,7 @@ def headers():
     print("list dir",os.listdir());
     
   numOfSheets=len(ActiveSheets);
-  """
-  print("numOfSheets = ",numOfSheets)
-  if numOfSheets<1:
-     print("Sheet number found to be 0") 
-     return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
-  """
   ListOfFrames=[];
-  #print("",ListOfFrames)
   lCount=0;
   while lCount < numOfSheets:
         ActiveSheet=ActiveSheets[lCount];
@@ -163,13 +156,12 @@ def headers():
                            Nums_As_KeyDict=dcolumn.to_dict();
                            Nums_As_KeyDict[DictIndexNum];
                            NovelCats.append(DictIndexNum); 
-                           
                            catcount=catcount+1;
                      ncolnam=str(col)+"_as_Cat_Var";      
-                     #readActiveSheet[ncolnam]=NewQcats;
                      readActiveSheet[ncolnam]=NovelCats;
                   l2count=l2count+1;
             return readActiveSheet;
+          
         aSP=activeSheetParse(readActiveSheet);
         EmptyQ=str(aSP).find("Empty_File");
         if EmptyQ<0:
@@ -180,6 +172,7 @@ def headers():
 
 
 def RegCorDescShift():
+  
     os.chdir('/GMDelight/DigitalRoom/static/');
     if os.path.exists("heatmap.png"):
        os.remove("heatmap.png");
@@ -277,7 +270,8 @@ def RegCorDescShift():
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
           """
-          splitAtMean=AboveBelowMean(reviewcol);
+          #AboveBelowMean(x,colrcount,columns)
+          splitAtMean=AboveBelowMean(reviewcol,colrcount,columns);
           UpperHalf=splitAtMean[0];
           LowerHalf=splitAtMean[1];
           UpperQuartileAtMean=AboveBelowMean(UpperHalf)[0];
@@ -355,6 +349,7 @@ def RegCorDescShift():
  
     
     #DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
+    
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMeanArr,'#_Below_Mean':NoBelowMeanArr,'Distal_Quartile>Mean':NofUpperQuartileArr,'Distal_Quartile<Mean':NofLowerQuartileArr});
     DescriptiveTableTB=DescriptiveTable.to_html();
     
