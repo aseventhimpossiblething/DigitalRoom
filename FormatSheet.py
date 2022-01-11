@@ -211,7 +211,6 @@ def RegCorDescShift():
     Trimmed15s=[];
     colrcount=0;
     while colrcount<len(columns):
-         #print("main while count = ",colrcount," len cols = ",len(columns))   
          colName=columns[colrcount]; 
          catMode=statistics.mode(list(selected[colName]));
          catModes.append(catMode);
@@ -252,24 +251,7 @@ def RegCorDescShift():
              colMode="-";
           colModes.append(colMode);
           
-          """ 
-          def AboveBelowMean(x):
-              Vartype=type(x);
-              SeekStr=str(Vartype).find('str');
-              valuesAboveMean=[];
-              valuesBelowMean=[];
-              HPCounter=0;
-              while HPCounter<len(x):
-                    print("while of AboveBelowMean count ",HPCounter," main while count = ",colrcount," len cols = ",len(columns))
-                    mean=statistics.mean(x);
-                    elem=x[HPCounter];
-                    if elem>mean:
-                        valuesAboveMean.append(elem);
-                    if elem<mean:
-                       valuesBelowMean.append(elem); 
-                    HPCounter=HPCounter+1;
-              return [valuesAboveMean,valuesBelowMean];       
-          """
+   
           splitAtMean=AboveBelowMean(reviewcol,colrcount,columns);
           UpperHalf=splitAtMean[0];
           LowerHalf=splitAtMean[1];
@@ -317,31 +299,7 @@ def RegCorDescShift():
           Trimmed15="-";
           Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
-         
-         
-    """     
-    def modeCounter(IdCol,ModeCol,InitialTable):
-      x=IdCol;
-      y=ModeCol;
-      z=InitialTable;
-      mCount=0;
-      fCounts=[];
-      while mCount<len(x):
-         wMode=y[mCount];
-         ColName=x[mCount];
-         FullCol=z[ColName];
-         colModeReps=[];
-         lineCount=0;
-         while lineCount<len(FullCol):
-              colElem=FullCol[lineCount];
-              if colElem==wMode:
-               colModeReps.append(colElem);
-              lineCount=lineCount+1;
-         ModeCount=len(colModeReps);
-         fCounts.append(ModeCount);
-         mCount=mCount+1;
-      return fCounts;
-    """
+
     print("Start modeCounter ------------------------")  
     catModCount=modeCounter(colNames,catModes,selected);
     print("After modeCounter ------------------------")    
@@ -362,12 +320,13 @@ def RegCorDescShift():
     print("image saved")
    
     lorem="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    lorem0="-----------------L0"
     lorem1="-----------------L1"
     lorem2="-----------------L2"
     lorem3="-----------------L3"
     lorem4="-----------------L4"
     page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem1+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem2+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
-    page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem1+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem2+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div><div>"+lorem3+"</div>"+DescriptiveTableTB+"</div><div>"+lorem4+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
+    page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem0+"</div><div>"+lorem1+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem2+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div><div>"+lorem3+"</div>"+DescriptiveTableTB+"</div><div>"+lorem4+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
 
     report=open("rpt.html",'w');
     report.write(page);
