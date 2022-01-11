@@ -294,13 +294,17 @@ def RegCorDescShift():
        print("Start modeCounter ------------------------")  
        catModCount=modeCounter(colNames,catModes,selected);
        print("After modeCounter ------------------------")  
+       TableandCorr=[]; 
        DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMeanArr,'#_Below_Mean':NoBelowMeanArr,'Distal_Quartile>Mean':NofUpperQuartileArr,'Distal_Quartile<Mean':NofLowerQuartileArr});
        DescriptiveTableTB=DescriptiveTable.to_html();
-       relations=selectedFrame.corr();
+       relations=selectedFrame.corr().to_html();
        seaborn.heatmap(relations);
        selectedFrame.plot(kind='hist');
-       return DescriptiveTableTB;  
-    DescriptiveTableTB=SubRoll(selectedFrame);    
+       TableandCorr.append(DescriptiveTableTB); 
+       TableandCorr.append(relations); 
+       return TableandCorr;  
+    DescriptiveTableTB=SubRoll(selectedFrame)[1];
+    relations=SubRoll(selectedFrame)[2]; 
     print("after subroll ")
 
     os.chdir('/GMDelight/DigitalRoom/static/');
@@ -316,7 +320,7 @@ def RegCorDescShift():
     lorem3="-----------------L3"
     lorem4="-----------------L4"
     page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem1+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem2+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
-    page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem0+"</div><div>"+lorem1+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem2+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div><div>"+lorem3+"</div>"+DescriptiveTableTB+"</div><div>"+lorem4+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
+    page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem0+"</div><div>"+lorem1+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem2+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div><div>"+lorem3+"</div>"+DescriptiveTableTB+"</div><div>"+lorem4+"</div><div id='cortab'>"+relations+"</div></html>"
 
     report=open("rpt.html",'w');
     report.write(page);
