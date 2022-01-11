@@ -198,6 +198,7 @@ def RegCorDescShift():
     Trimmed15s=[];
     colrcount=0;
     while colrcount<len(columns):
+         print("main while count = ",colrcount," len cols = ",len(columns))   
          colName=columns[colrcount]; 
          catMode=statistics.mode(list(selected[colName]));
          catModes.append(catMode);
