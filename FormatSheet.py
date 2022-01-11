@@ -12,7 +12,7 @@ import sys
 plt.tight_layout();
 
 
-def AboveBelowMean(x,colrcount,columns):
+def AboveBelowMean(x,y,z,colrcount,columns):
               Vartype=type(x);
               SeekStr=str(Vartype).find('str');
               valuesAboveMean=[];
@@ -24,8 +24,10 @@ def AboveBelowMean(x,colrcount,columns):
                     elem=x[HPCounter];
                     if elem>mean:
                         valuesAboveMean.append(elem);
+                        #y.append(elem);
                     if elem<mean:
-                       valuesBelowMean.append(elem); 
+                       valuesBelowMean.append(elem);
+                       #z.append(elem); 
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
             
@@ -73,8 +75,6 @@ def headers():
        os.remove("rpt.html");
   if os.path.exists("BlankSheet"):    
        os.remove("BlankSheet");    
-   
-  #os.chdir('/GMDelight/DigitalRoom/Sheets/CTRData');
   ActiveSheets=os.listdir();
   print('ActiveSheets ',ActiveSheets);
   if ActiveSheets==[]:
@@ -247,11 +247,18 @@ def RegCorDescShift():
           if colcount>len(colMode)-1:
              colMode="-";
           colModes.append(colMode);
-          splitAtMean=AboveBelowMean(reviewcol,colrcount,columns);
+          
+          UpperHalfArr=[];
+          LowerHalfArr=[];
+          UpperQuartileAtMeanArr=[];
+          LowerQuartileAtMeanArr=[];
+          
+          splitAtMean=AboveBelowMean(reviewcol,UpperHalfArr,LowerHalfArr,colrcount,columns);
           UpperHalf=splitAtMean[0];
           LowerHalf=splitAtMean[1];
-          UpperQuartileAtMean=AboveBelowMean(UpperHalf,colrcount,columns)[0];
-          LowerQuartileAtMean=AboveBelowMean(LowerHalf,colrcount,columns)[1];
+          UpperQuartileAtMean=AboveBelowMean(UpperHalf,UpperQuartileAtMeanArr,LowerQuartileAtMeanArr,colrcount,columns)[0];
+          LowerQuartileAtMean=AboveBelowMean(LowerHalf,UpperQuartileAtMeanArr,LowerQuartileAtMeanArr,colrcount,columns)[1];
+          
           NofUpperhalf=len(UpperHalf)
           NoFLowerhalf=len(LowerHalf)          
           NofUpperQuartile=len(UpperQuartileAtMean);
@@ -305,7 +312,7 @@ def RegCorDescShift():
        return DescriptiveTableTB; 
     TableandCorr=[];  
     DescriptiveTableTB=SubRoll(selectedFrame);
-    relations=TableandCorr[2]; 
+    relations=TableandCorr[1]; 
     print("after subroll ")
 
     os.chdir('/GMDelight/DigitalRoom/static/');
