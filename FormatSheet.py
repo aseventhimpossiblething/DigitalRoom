@@ -10,7 +10,7 @@ import threading
 import numpy
 import sys
 plt.tight_layout();
-"""
+
 def modeCounter(IdCol,ModeCol,InitialTable):
       print("modeCounter running?------------------------")
       print("modeCounter running?------------------------")
@@ -34,7 +34,7 @@ def modeCounter(IdCol,ModeCol,InitialTable):
          fCounts.append(ModeCount);
          mCount=mCount+1;
       return fCounts;
-"""
+
 def headers():
   
   os.chdir('/GMDelight/DigitalRoom/static/');
@@ -198,7 +198,7 @@ def RegCorDescShift():
     Trimmed15s=[];
     colrcount=0;
     while colrcount<len(columns):
-         print("main while count = ",colrcount," len cols = ",len(columns))   
+         #print("main while count = ",colrcount," len cols = ",len(columns))   
          colName=columns[colrcount]; 
          catMode=statistics.mode(list(selected[colName]));
          catModes.append(catMode);
@@ -246,7 +246,7 @@ def RegCorDescShift():
               valuesBelowMean=[];
               HPCounter=0;
               while HPCounter<len(x):
-                    print("while of AboveBelowMean count ",HPCounter)
+                    print("while of AboveBelowMean count ",HPCounter," main while count = ",colrcount," len cols = ",len(columns))
                     mean=statistics.mean(x);
                     elem=x[HPCounter];
                     if elem>mean:
@@ -303,7 +303,7 @@ def RegCorDescShift():
           Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
     
-    
+    """     
     def modeCounter(IdCol,ModeCol,InitialTable):
       x=IdCol;
       y=ModeCol;
@@ -325,7 +325,7 @@ def RegCorDescShift():
          fCounts.append(ModeCount);
          mCount=mCount+1;
       return fCounts;
-    
+    """
     print("Start modeCounter ------------------------")  
     catModCount=modeCounter(colNames,catModes,selected);
     print("After modeCounter ------------------------")    
