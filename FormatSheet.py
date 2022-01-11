@@ -300,7 +300,7 @@ def RegCorDescShift():
        seaborn.heatmap(relations);
        selectedFrame.plot(kind='hist');
        return DescriptiveTableTB;  
-    SubRoll(selectedFrame);    
+    DescriptiveTableTB=SubRoll(selectedFrame);    
     print("after subroll ")
 
     os.chdir('/GMDelight/DigitalRoom/static/');
