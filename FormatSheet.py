@@ -172,54 +172,51 @@ def headers():
 
 
 def RegCorDescShift():
-  
+    #def SubRoll():
     os.chdir('/GMDelight/DigitalRoom/static/');
     if os.path.exists("heatmap.png"):
-       os.remove("heatmap.png");
+     os.remove("heatmap.png");
     if os.path.exists("selectedFrame.png"):    
-       os.remove("selectedFrame.png");
+     os.remove("selectedFrame.png");
     if os.path.exists("rpt.html"):    
-       os.remove("rpt.html");  
-    
+     os.remove("rpt.html");  
     selected=headers()[0];
     print("selected ",selected)
     selectedFrame=selected
-    
-    try:
-      columns=selectedFrame.columns;
-    except:
-      print("end of try fail ");
-      page="Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! Please Retry"
-      sys.exit(); 
-    catModes=[];
-    colNames=[];
-    colcounts=[];
-    NoAboveMeanArr=[];
-    NoBelowMeanArr=[];
-    NofUpperQuartileArr=[];
-    NofLowerQuartileArr=[];
-    colSums=[];
-    colMedians=[];
-    colMeans=[];
-    colModes=[];
-    colSTDs=[];
-    colMaxs=[];
-    colMins=[];
-    colranges=[];
-    Trimmed05s=[];
-    Trimmed10s=[];
-    Trimmed15s=[];
-    colrcount=0;
-    while colrcount<len(columns):
+    def SubRoll(X):  
+       try:
+         columns=selectedFrame.columns;
+       except:
+         print("end of try fail ");
+         page="Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! Please Retry"
+         sys.exit(); 
+       catModes=[];
+       colNames=[];
+       colcounts=[];
+       NoAboveMeanArr=[];
+       NoBelowMeanArr=[];
+       NofUpperQuartileArr=[];
+       NofLowerQuartileArr=[];
+       colSums=[];
+       colMedians=[];
+       colMeans=[];
+       colModes=[];
+       colSTDs=[];
+       colMaxs=[];
+       colMins=[];
+       colranges=[];
+       Trimmed05s=[];
+       Trimmed10s=[];
+       Trimmed15s=[];
+       colrcount=0;
+       while colrcount<len(columns):
          colName=columns[colrcount]; 
          catMode=statistics.mode(list(selected[colName]));
          catModes.append(catMode);
-         
          reviewcol=selectedFrame[colName];
          guard1=str(reviewcol.dtype).find('object')
          guard2=str(reviewcol.dtype).find('str') 
          guardVar=guard1+guard2;
-        
          if guardVar==-2: 
           colName=columns[colrcount];
           colNames.append(colName)
@@ -250,8 +247,6 @@ def RegCorDescShift():
           if colcount>len(colMode)-1:
              colMode="-";
           colModes.append(colMode);
-          
-   
           splitAtMean=AboveBelowMean(reviewcol,colrcount,columns);
           UpperHalf=splitAtMean[0];
           LowerHalf=splitAtMean[1];
@@ -261,7 +256,6 @@ def RegCorDescShift():
           NoFLowerhalf=len(LowerHalf)          
           NofUpperQuartile=len(UpperQuartileAtMean);
           NofLowerQuartile=len(LowerQuartileAtMean);
-          
           NoAboveMeanArr.append(NofUpperhalf);
           NoBelowMeanArr.append(NoFLowerhalf);
           NofUpperQuartileArr.append(NofUpperQuartile);
@@ -271,7 +265,6 @@ def RegCorDescShift():
           NoBelowMeanArr.append("-");
           NofUpperQuartileArr.append("-");
           NofLowerQuartileArr.append("-");
-          
           colcount=len(reviewcol);
           colcounts.append(colcount);
           colNames.append(colName);
@@ -279,7 +272,6 @@ def RegCorDescShift():
           if len(colMode)>colcount-1:
             colMode="-";
           colModes.append(colMode);
-          
           colMedian="-";
           colMedians.append(colMedian);
           colMean="-";
@@ -298,24 +290,21 @@ def RegCorDescShift():
           Trimmed10s.append(Trimmed10);
           Trimmed15="-";
           Trimmed15s.append(Trimmed15); 
-         colrcount=colrcount+1; 
+         colrcount=colrcount+1;
+       print("Start modeCounter ------------------------")  
+       catModCount=modeCounter(colNames,catModes,selected);
+       print("After modeCounter ------------------------")  
+       DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMeanArr,'#_Below_Mean':NoBelowMeanArr,'Distal_Quartile>Mean':NofUpperQuartileArr,'Distal_Quartile<Mean':NofLowerQuartileArr});
+       DescriptiveTableTB=DescriptiveTable.to_html();
+       relations=selectedFrame.corr();
+       seaborn.heatmap(relations);
+       selectedFrame.plot(kind='hist');
+    SubRoll(selectedFrame);    
+    
 
-    print("Start modeCounter ------------------------")  
-    catModCount=modeCounter(colNames,catModes,selected);
-    print("After modeCounter ------------------------")    
- 
-    
-    #DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
-    
-    DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMeanArr,'#_Below_Mean':NoBelowMeanArr,'Distal_Quartile>Mean':NofUpperQuartileArr,'Distal_Quartile<Mean':NofLowerQuartileArr});
-    DescriptiveTableTB=DescriptiveTable.to_html();
-    
-    relations=selectedFrame.corr();
-    seaborn.heatmap(relations);
     os.chdir('/GMDelight/DigitalRoom/static/');
     plt.savefig("heatmap.png",bbox_inches='tight' )
     
-    selectedFrame.plot(kind='hist');
     plt.savefig("selectedFrame.png")
     print("image saved")
    
