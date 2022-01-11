@@ -11,6 +11,28 @@ import numpy
 import sys
 plt.tight_layout();
 
+def modeCounter(IdCol,ModeCol,InitialTable):
+      x=IdCol;
+      y=ModeCol;
+      z=InitialTable;
+      mCount=0;
+      fCounts=[];
+      while mCount<len(x):
+         wMode=y[mCount];
+         ColName=x[mCount];
+         FullCol=z[ColName];
+         colModeReps=[];
+         lineCount=0;
+         while lineCount<len(FullCol):
+              colElem=FullCol[lineCount];
+              if colElem==wMode:
+               colModeReps.append(colElem);
+              lineCount=lineCount+1;
+         ModeCount=len(colModeReps);
+         fCounts.append(ModeCount);
+         mCount=mCount+1;
+      return fCounts;
+
 def headers():
   
   os.chdir('/GMDelight/DigitalRoom/static/');
@@ -145,29 +167,14 @@ def RegCorDescShift():
        os.remove("rpt.html");  
     
     selected=headers()[0];
-    """
-    try: 
-      selected=headers()[0];
-    except:
-      print("end of try fail ");
-      page="Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! Please Retry"
-      report=open("rpt.html",'w');
-      report.write(page);
-      report.close();
-      sys.exit();
-      return "Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! "
-    """
     print("selected ",selected)
     selectedFrame=selected
-    #print(selectedFrame);
+    
     try:
       columns=selectedFrame.columns;
     except:
       print("end of try fail ");
       page="Enter a single csv or xlsx sheet. - DO NOT ENTER A MULTISHEET WORKBOOK! Please Retry"
-      #report=open("rpt.html",'w');
-      #report.write(page);
-      #report.close();
       sys.exit(); 
     catModes=[];
     colNames=[];
@@ -237,17 +244,12 @@ def RegCorDescShift():
               HPCounter=0;
               while HPCounter<len(x):
                     mean=statistics.mean(x);
-                    #print("") 
                     elem=x[HPCounter];
-                    #print("elem ",elem);
-                    #if elem>x.mean():
                     if elem>mean:
                         valuesAboveMean.append(elem);
-                    #if elem<x.mean(): 
                     if elem<mean:
                        valuesBelowMean.append(elem); 
                     HPCounter=HPCounter+1;
-              #print('final out valuesAboveMean ',valuesAboveMean);  
               return [valuesAboveMean,valuesBelowMean];       
           splitAtMean=AboveBelowMean(reviewcol);
           UpperHalf=splitAtMean[0];
@@ -263,13 +265,6 @@ def RegCorDescShift():
           NoBelowMeanArr.append(NoFLowerhalf);
           NofUpperQuartileArr.append(NofUpperQuartile);
           NofLowerQuartileArr.append(NofLowerQuartile);
-          """         
-          print("colName - ",colName)          
-          print('NofUpperhalf ',NofUpperhalf) 
-          print('NoFLowerhalf ',NoFLowerhalf)
-          print('NofUpperQuartile ',NofUpperQuartile)
-          print('NofLowerQuartile ',NofLowerQuartile)
-          """     
          else:
           NoAboveMeanArr.append("-");
           NoBelowMeanArr.append("-");
@@ -304,7 +299,7 @@ def RegCorDescShift():
           Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
     
-    
+    """
     def modeCounter(IdCol,ModeCol,InitialTable):
       x=IdCol;
       y=ModeCol;
@@ -326,15 +321,12 @@ def RegCorDescShift():
          fCounts.append(ModeCount);
          mCount=mCount+1;
       return fCounts;
+    """
     catModCount=modeCounter(colNames,catModes,selected); 
  
     
     #DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Sum':colSums,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical Modes':catModes,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges});
     DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMeanArr,'#_Below_Mean':NoBelowMeanArr,'Distal_Quartile>Mean':NofUpperQuartileArr,'Distal_Quartile<Mean':NofLowerQuartileArr});
-      
-    #print("DescriptiveTable");
-    #print("DescriptiveTable");
-    #print(DescriptiveTable);
     DescriptiveTableTB=DescriptiveTable.to_html();
     
     relations=selectedFrame.corr();
@@ -345,27 +337,19 @@ def RegCorDescShift():
     selectedFrame.plot(kind='hist');
     plt.savefig("selectedFrame.png")
     print("image saved")
-    #print("type relations",type(relations));
-    
+   
     lorem="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    
-    page="<html><header><style>#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
+    lorem1=""
+    lorem2=""
+    #page="<html><header><style>#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
     #page="<html><header><style>#cortab{margin-top: 25px;}</style></header><div>Statistical Overview</div><div>"+DescriptiveTableTB+"</div><div id='right'><img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div id='left'><img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div id='cortab'>"+relations.to_html()+"</div></html>"
-    page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
-    
-    #os.system("cat rpt.html");
+    page="<html><header><style>th{background-color:blue; color:white;}tr:nth-child(even){background-color:blue; color:white;}#title{text-align:center; font-weight:bold; font-size:20px; margin-bottom:80px;}#cortab{margin-top: 25px;}#right{float:right; width:15%; background-color:blue;}#left{float:left; width:15%; background-color:red;}</style></header><div id='title'>Statistical Overview</div><div>"+lorem1+"<img src='http://digitalroomfileshare.cloud/static/selectedFrame.png'></div><div>"+lorem2+"<img src='http://digitalroomfileshare.cloud/static/heatmap.png'></div><div>"+DescriptiveTableTB+"</div><div id='cortab'>"+relations.to_html()+"</div></html>"
     report=open("rpt.html",'w');
     report.write(page);
     report.close();
     print("report loaded");
-    
-    
-   
     return "RegCorDescShift";
-  
-  
-  
-  
+
 def rpt():
     distalRPT=threading.Thread(target=RegCorDescShift); 
     distalRPT.start();
