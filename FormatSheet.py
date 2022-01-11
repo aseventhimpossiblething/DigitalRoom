@@ -11,6 +11,26 @@ import numpy
 import sys
 plt.tight_layout();
 
+
+def AboveBelowMean(x):
+              Vartype=type(x);
+              SeekStr=str(Vartype).find('str');
+              valuesAboveMean=[];
+              valuesBelowMean=[];
+              HPCounter=0;
+              while HPCounter<len(x):
+                    print("while of AboveBelowMean count ",HPCounter," main while count = ",colrcount," len cols = ",len(columns))
+                    mean=statistics.mean(x);
+                    elem=x[HPCounter];
+                    if elem>mean:
+                        valuesAboveMean.append(elem);
+                    if elem<mean:
+                       valuesBelowMean.append(elem); 
+                    HPCounter=HPCounter+1;
+              return [valuesAboveMean,valuesBelowMean];       
+            
+
+
 def modeCounter(IdCol,ModeCol,InitialTable):
       print("modeCounter running?------------------------")
       print("modeCounter running?------------------------")
@@ -239,6 +259,7 @@ def RegCorDescShift():
              colMode="-";
           colModes.append(colMode);
           
+           
           def AboveBelowMean(x):
               Vartype=type(x);
               SeekStr=str(Vartype).find('str');
@@ -255,6 +276,7 @@ def RegCorDescShift():
                        valuesBelowMean.append(elem); 
                     HPCounter=HPCounter+1;
               return [valuesAboveMean,valuesBelowMean];       
+          
           splitAtMean=AboveBelowMean(reviewcol);
           UpperHalf=splitAtMean[0];
           LowerHalf=splitAtMean[1];
@@ -302,7 +324,8 @@ def RegCorDescShift():
           Trimmed15="-";
           Trimmed15s.append(Trimmed15); 
          colrcount=colrcount+1; 
-    
+         
+         
     """     
     def modeCounter(IdCol,ModeCol,InitialTable):
       x=IdCol;
