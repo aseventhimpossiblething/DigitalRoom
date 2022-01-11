@@ -294,7 +294,7 @@ def RegCorDescShift():
        print("Start modeCounter ------------------------")  
        catModCount=modeCounter(colNames,catModes,selected);
        print("After modeCounter ------------------------")  
-       TableandCorr=[]; 
+       #TableandCorr=[]; 
        DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMeanArr,'#_Below_Mean':NoBelowMeanArr,'Distal_Quartile>Mean':NofUpperQuartileArr,'Distal_Quartile<Mean':NofLowerQuartileArr});
        DescriptiveTableTB=DescriptiveTable.to_html();
        relations=selectedFrame.corr().to_html();
@@ -302,9 +302,10 @@ def RegCorDescShift():
        selectedFrame.plot(kind='hist');
        TableandCorr.append(DescriptiveTableTB); 
        TableandCorr.append(relations); 
-       return TableandCorr;  
-    DescriptiveTableTB=SubRoll(selectedFrame)[1];
-    relations=SubRoll(selectedFrame)[2]; 
+       return DescriptiveTableTB; 
+    TableandCorr=[];  
+    DescriptiveTableTB=SubRoll(selectedFrame);
+    #relations=SubRoll(selectedFrame)[2]; 
     print("after subroll ")
 
     os.chdir('/GMDelight/DigitalRoom/static/');
