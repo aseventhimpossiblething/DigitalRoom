@@ -10,7 +10,7 @@ import threading
 import numpy
 import sys
 plt.tight_layout();
-
+"""
 def modeCounter(IdCol,ModeCol,InitialTable):
       print("modeCounter running?------------------------")
       print("modeCounter running?------------------------")
@@ -34,7 +34,7 @@ def modeCounter(IdCol,ModeCol,InitialTable):
          fCounts.append(ModeCount);
          mCount=mCount+1;
       return fCounts;
-
+"""
 def headers():
   
   os.chdir('/GMDelight/DigitalRoom/static/');
@@ -246,6 +246,7 @@ def RegCorDescShift():
               valuesBelowMean=[];
               HPCounter=0;
               while HPCounter<len(x):
+                    print("while of AboveBelowMean count ",HPCounter)
                     mean=statistics.mean(x);
                     elem=x[HPCounter];
                     if elem>mean:
