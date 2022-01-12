@@ -314,10 +314,11 @@ def RegCorDescShift():
        os.chdir('/GMDelight/DigitalRoom/static/');
        plt.savefig("heatmap.png",bbox_inches='tight' ) 
        plt.savefig("selectedFrame.png")
-       return DescriptiveTableTB; 
+       #return DescriptiveTableTB;
+       return TableandCorr; 
     
     TableandCorr=[];  
-    #DescriptiveTableTB=SubRoll(selectedFrame);
+    DescriptiveTableTB=SubRoll(selectedFrame);
     print("TableandCorr ",TableandCorr)
     #DescriptiveTableTB=TableandCorr[0];
     relations=TableandCorr[1]; 
