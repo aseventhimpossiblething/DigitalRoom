@@ -305,14 +305,16 @@ def RegCorDescShift():
        TableandCorr=[]; 
        DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMeanArr,'#_Below_Mean':NoBelowMeanArr,'Distal_Quartile>Mean':NofUpperQuartileArr,'Distal_Quartile<Mean':NofLowerQuartileArr});
        DescriptiveTableTB=DescriptiveTable.to_html();
+       os.chdir('/GMDelight/DigitalRoom/static/'); 
        relations=selectedFrame.corr();
        seaborn.heatmap(relations);
+       plt.savefig("heatmap.png",bbox_inches='tight' )  
        selectedFrame.plot(kind='hist');
        #global TableandCorr
        TableandCorr.append(DescriptiveTableTB); 
        TableandCorr.append(relations.to_html());
        os.chdir('/GMDelight/DigitalRoom/static/');
-       plt.savefig("heatmap.png",bbox_inches='tight' ) 
+       #plt.savefig("heatmap.png",bbox_inches='tight' ) 
        plt.savefig("selectedFrame.png")
        #return DescriptiveTableTB;
        return TableandCorr; 
