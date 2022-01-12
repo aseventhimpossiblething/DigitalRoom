@@ -130,6 +130,7 @@ def headers():
                return "Empty_File";
             l2count=0;
             while l2count<len(readActiveSheet.columns):
+                  print(" 1st while loop for activeSheetParse(readActiveSheet) ",l2count)
                   col=readActiveSheet.columns[l2count];
                   dcolumn=readActiveSheet[col];
                   coltype=str(dcolumn.dtypes);
