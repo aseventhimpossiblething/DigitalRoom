@@ -307,12 +307,14 @@ def RegCorDescShift():
        relations=selectedFrame.corr();
        seaborn.heatmap(relations);
        selectedFrame.plot(kind='hist');
+       global TableandCorr
        TableandCorr.append(DescriptiveTableTB); 
        TableandCorr.append(relations.to_html());
        os.chdir('/GMDelight/DigitalRoom/static/');
        plt.savefig("heatmap.png",bbox_inches='tight' ) 
        plt.savefig("selectedFrame.png")
        return DescriptiveTableTB; 
+    
     TableandCorr=[];  
     #DescriptiveTableTB=SubRoll(selectedFrame);
     print("TableandCorr ",TableandCorr)
