@@ -317,7 +317,7 @@ def RegCorDescShift():
        #return DescriptiveTableTB;
        return TableandCorr; 
     
-    TableandCorr=SubRoll(selectedFrame);;  
+    TableandCorr=SubRoll(selectedFrame); 
     #DescriptiveTableTB=SubRoll(selectedFrame);
     print("TableandCorr ",TableandCorr)
     DescriptiveTableTB=TableandCorr[0];
