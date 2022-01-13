@@ -312,13 +312,15 @@ def RegCorDescShift():
        plt.savefig("heatmap.png",bbox_inches='tight' )  
        #selectedFrame.plot(kind='hist');
        selectedFrame.plot(kind='bar');
-       #global TableandCorr
-       TableandCorr.append(DescriptiveTableTB); 
-       TableandCorr.append(relations.to_html());
-       os.chdir('/GMDelight/DigitalRoom/static/');
+       plt.figure().set_figwidth(20)
+      
+       
+       #os.chdir('/GMDelight/DigitalRoom/static/');
        #plt.savefig("heatmap.png",bbox_inches='tight' ) 
        plt.savefig("selectedFrame.png")
-       #return DescriptiveTableTB;
+   
+       TableandCorr.append(DescriptiveTableTB); 
+       TableandCorr.append(relations.to_html()); 
        return TableandCorr; 
     
     TableandCorr=SubRoll(selectedFrame); 
