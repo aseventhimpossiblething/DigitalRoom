@@ -310,7 +310,8 @@ def RegCorDescShift():
        relations=selectedFrame.corr();
        seaborn.heatmap(relations);
        plt.savefig("heatmap.png",bbox_inches='tight' )  
-       selectedFrame.plot(kind='hist');
+       #selectedFrame.plot(kind='hist');
+       selectedFrame.plot(kind='bar');
        #global TableandCorr
        TableandCorr.append(DescriptiveTableTB); 
        TableandCorr.append(relations.to_html());
