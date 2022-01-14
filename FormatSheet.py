@@ -330,11 +330,12 @@ def RegCorDescShift():
        fig.set_size_inches(15,5);
        print("gcf set ")  
        #fig.savefig("selectedFrame.png")
+       
+       
+       print("pre frame saved") 
+       plt.savefig("selectedFrame.png")
        print("frame saved") 
        
-    
-       plt.savefig("selectedFrame.png")
-   
        TableandCorr.append(DescriptiveTableTB); 
        TableandCorr.append(relations.to_html());
        print("TableandCorrs appended")
