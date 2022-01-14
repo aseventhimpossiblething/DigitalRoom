@@ -318,7 +318,7 @@ def RegCorDescShift():
        #plt.figure().set_figwidth(10)
        #plt.figure()
        #plt.bar(selectedFrame); 
-       fig=matplotlib.pyplot.gcf().set_size_inches(5,5);
+       fig=plt.pyplot.gcf().set_size_inches(5,5);
        fig.savefig("selectedFrame.png")
        
     
