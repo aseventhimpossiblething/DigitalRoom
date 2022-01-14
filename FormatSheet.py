@@ -308,24 +308,31 @@ def RegCorDescShift():
        DescriptiveTable=pandas.DataFrame({'Descriptive_Statistic':colNames,'N':colcounts,'Median':colMedians,'Mean':colMeans,'#Mode':colModes,'Catagorical_Modes':catModes,'Count_Of_Prime_Mode':catModCount,'Std_Deviation':colSTDs,'Max':colMaxs,'Min':colMins,'5%_Trimmed_Mean':Trimmed05s,'10%_Trimmed_Mean':Trimmed10s,'15%_Trimmed_Mean':Trimmed15s,'Range':colranges,'#_Above_Mean':NoAboveMeanArr,'#_Below_Mean':NoBelowMeanArr,'Distal_Quartile>Mean':NofUpperQuartileArr,'Distal_Quartile<Mean':NofLowerQuartileArr});
        DescriptiveTableTB=DescriptiveTable.to_html();
        os.chdir('/GMDelight/DigitalRoom/static/'); 
+       print("establish dir (/GMDelight/DigitalRoom/static/) ")
        relations=selectedFrame.corr();
        seaborn.heatmap(relations);
-       plt.savefig("heatmap.png",bbox_inches='tight' )  
+       print("Corr made heatmape made") 
+       plt.savefig("heatmap.png",bbox_inches='tight' ) 
+       print("heatmap saved ")
        #selectedFrame.plot(kind='hist');
       
        selectedFrame.plot(kind='bar');
+       print("Frame plot made bar ") 
        #plt.figure(figsize=(1,1)) 
        #plt.figure().set_figwidth(10)
        #plt.figure()
        #plt.bar(selectedFrame); 
-       fig=plt.pyplot.gcf().set_size_inches(5,5);
+       fig=plt.gcf().set_size_inches(5,5);
+       print("gcf set ")  
        fig.savefig("selectedFrame.png")
+       print("frame saved") 
        
     
        #plt.savefig("selectedFrame.png")
    
        TableandCorr.append(DescriptiveTableTB); 
-       TableandCorr.append(relations.to_html()); 
+       TableandCorr.append(relations.to_html());
+       print("TableandCorrs appended")
        return TableandCorr; 
     
     TableandCorr=SubRoll(selectedFrame); 
