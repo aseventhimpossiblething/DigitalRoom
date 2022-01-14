@@ -313,7 +313,7 @@ def RegCorDescShift():
        #selectedFrame.plot(kind='hist');
       
        selectedFrame.plot(kind='bar');
-       plt.figure(figsize=(20)) 
+       plt.figure(figsize=(1,1)) 
        #plt.figure().set_figwidth(10)
        #plt.figure()
        #plt.bar(selectedFrame); 
