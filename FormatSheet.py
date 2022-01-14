@@ -314,16 +314,16 @@ def RegCorDescShift():
        print("Corr made heatmape made") 
        plt.savefig("heatmap.png",bbox_inches='tight' ) 
        print("heatmap saved ")
-       #selectedFrame.plot(kind='hist');
+       selectedFrame.plot(kind='hist');
       
-       selectedFrame.plot(kind='bar');
+       #selectedFrame.plot(kind='bar');
        print("Frame plot made bar ") 
        #plt.figure(figsize=(1,1)) 
        #plt.figure().set_figwidth(10)
        #plt.figure()
        #plt.bar(selectedFrame); 
-       #fig=plt.gcf()
-       #fig.set_size_inches(15,5);
+       fig=plt.gcf()
+       fig.set_size_inches(15,5);
        print("gcf set ")  
        #fig.savefig("selectedFrame.png")
        print("frame saved") 
