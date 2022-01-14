@@ -6,6 +6,7 @@ from scipy import stats
 import statistics
 import seaborn
 import matplotlib.pyplot as plt
+#import matplotlib.pyplot.gcf()
 import threading
 import numpy
 import sys
@@ -313,13 +314,15 @@ def RegCorDescShift():
        #selectedFrame.plot(kind='hist');
       
        selectedFrame.plot(kind='bar');
-       plt.figure(figsize=(1,1)) 
+       #plt.figure(figsize=(1,1)) 
        #plt.figure().set_figwidth(10)
        #plt.figure()
        #plt.bar(selectedFrame); 
+       fig=matplotlib.pyplot.gcf().set_size_inches(5,5);
+       fig.savefig("selectedFrame.png")
        
     
-       plt.savefig("selectedFrame.png")
+       #plt.savefig("selectedFrame.png")
    
        TableandCorr.append(DescriptiveTableTB); 
        TableandCorr.append(relations.to_html()); 
