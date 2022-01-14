@@ -311,8 +311,9 @@ def RegCorDescShift():
        seaborn.heatmap(relations);
        plt.savefig("heatmap.png",bbox_inches='tight' )  
        #selectedFrame.plot(kind='hist');
-       plt.figure(figsize=(5,8))
+      
        selectedFrame.plot(kind='bar');
+       plt.figure(figsize=(20,20)) 
        #plt.figure().set_figwidth(10)
        #plt.figure()
        #plt.bar(selectedFrame); 
