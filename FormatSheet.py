@@ -310,6 +310,10 @@ def RegCorDescShift():
        os.chdir('/GMDelight/DigitalRoom/static/'); 
        print("establish dir (/GMDelight/DigitalRoom/static/) ")
        relations=selectedFrame.corr();
+      
+       fig=plt.gcf()
+       fig.set_size_inches(15,5);
+      
        seaborn.heatmap(relations);
        print("Corr made heatmape made") 
        plt.savefig("heatmap.png",bbox_inches='tight' ) 
@@ -322,8 +326,8 @@ def RegCorDescShift():
        #plt.figure().set_figwidth(10)
        #plt.figure()
        #plt.bar(selectedFrame); 
-       fig=plt.gcf()
-       fig.set_size_inches(15,5);
+       #fig=plt.gcf()
+       #fig.set_size_inches(15,5);
        print("gcf set ")  
        #fig.savefig("selectedFrame.png")
        print("frame saved") 
