@@ -353,7 +353,7 @@ def rpt():
     global domain;     
     domainFavi=domain+"/favicon.png";
     print('return from process attempt = ',FormatSheet.rpt())
-    return redirect("/rptry?");
+    return redirect("/rptry");
  
          
 @app.route('/rptry')
