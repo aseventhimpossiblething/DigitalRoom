@@ -319,7 +319,8 @@ def RegCorDescShift():
        plt.savefig("heatmap.png",bbox_inches='tight' ) 
        print("heatmap saved ")
        print("heatmap saved 2")
-       print(os.getcwd()); 
+       print(os.getcwd());
+       print(os.listdir());
        #selectedFrame.plot(kind='bar');
        print("heatmap saved 3")
       
