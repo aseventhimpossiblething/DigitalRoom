@@ -323,6 +323,7 @@ def RegCorDescShift():
        print(os.listdir());
        selectedFrame.plot(kind='bar');
        print("heatmap saved 3")
+        
       
        #selectedFrame.plot(kind='bar');
        print("Frame plot made bar ") 
@@ -333,7 +334,7 @@ def RegCorDescShift():
        #fig=plt.gcf()
        #fig.set_size_inches(15,5);
        print("gcf set ")  
-       #fig.savefig("selectedFrame.png")
+       fig.savefig("selectedFrame.png")
        
        
        print("pre frame saved") 
