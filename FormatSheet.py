@@ -339,7 +339,7 @@ def RegCorDescShift():
        print("frame saved") 
        
        TableandCorr.append(DescriptiveTableTB); 
-       TableandCorr.append(relations.to_html());
+       TableandCorr.append(relations1.to_html());
        print("TableandCorrs appended")
        return TableandCorr; 
     
