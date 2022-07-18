@@ -309,12 +309,12 @@ def RegCorDescShift():
        DescriptiveTableTB=DescriptiveTable.to_html();
        os.chdir('/GMDelight/DigitalRoom/static/'); 
        print("establish dir (/GMDelight/DigitalRoom/static/) ")
-       relations=selectedFrame.corr();
+       relations1=selectedFrame.corr();
       
        fig=plt.gcf()
        fig.set_size_inches(15,5);
       
-       seaborn.heatmap(relations);
+       seaborn.heatmap(relations1);
        print("Corr made heatmape made") 
        plt.savefig("heatmap.png",bbox_inches='tight' ) 
        print("heatmap saved ")
