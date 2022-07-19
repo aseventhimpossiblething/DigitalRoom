@@ -320,8 +320,10 @@ def RegCorDescShift():
        print("heatmap saved 2")
        print(os.getcwd());
        print(os.listdir());
-       print(selectedFrame); 
-       selectedFrame.plot(kind='line');
+       print(selectedFrame);
+       selectedFrame.iloc[1];
+       print(selectedFrame.iloc[1]); 
+       selectedFrame.plot(y='company',x=selectedFrame.iloc[1]);
        #selectedFrame.plot.hist(subplots=True); 
        #selectedFrame.hist(subplots=True);
        #selectedFrame.plot();
