@@ -322,7 +322,7 @@ def RegCorDescShift():
        print(os.getcwd());
        print(os.listdir());
        print(selectedFrame); 
-       selectedFrame.line();
+       selectedFrame.plot();
        #selectedFrame.plot.hist(subplots=True); 
        #selectedFrame.hist(subplots=True);
        #selectedFrame.plot();
