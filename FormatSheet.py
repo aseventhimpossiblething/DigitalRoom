@@ -322,7 +322,8 @@ def RegCorDescShift():
        print(os.getcwd());
        print(os.listdir());
        print(selectedFrame); 
-       selectedFrame.hist(subplots=True);
+       selectedFrame.plot.hist(subplots=True); 
+       #selectedFrame.hist(subplots=True);
        #selectedFrame.plot();
        #selectedFrame.plot(kind='bar');
        print("heatmap saved 3")
