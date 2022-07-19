@@ -323,7 +323,7 @@ def RegCorDescShift():
        print(selectedFrame);
        #selectedFrame.iloc[1];
        print(selectedFrame.columns.values); 
-       selectedFrame.plot(y='company',x=selectedFrame.columns.values);
+       selectedFrame.plot(x=selectedFrame.columns.values);
        #selectedFrame.plot.hist(subplots=True); 
        #selectedFrame.hist(subplots=True);
        #selectedFrame.plot();
