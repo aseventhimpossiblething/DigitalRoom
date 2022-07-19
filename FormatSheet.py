@@ -313,10 +313,9 @@ def RegCorDescShift():
       
        fig=plt.gcf()
        fig.set_size_inches(15,5);
-      
        seaborn.heatmap(relations1);
-       print("Corr made heatmape made") 
-       plt.savefig("heatmap.png",bbox_inches='tight' ) 
+       plt.savefig("heatmap.png",bbox_inches='tight' );
+       plt.clf();
        print("heatmap saved ")
        print("heatmap saved 2")
        print(os.getcwd());
