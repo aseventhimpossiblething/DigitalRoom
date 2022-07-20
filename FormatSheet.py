@@ -324,8 +324,11 @@ def RegCorDescShift():
        #selectedFrame.iloc[1];
        print(' print 0 ',selectedFrame.columns.values[0]); 
        print(' print 1 ',selectedFrame.columns.values[1]); 
-       print(' print 2 ',selectedFrame.columns.values[2]);  
-       selectedFrame.plot(x=selectedFrame.columns.values[1], y=selectedFrame.columns.values[2]);
+       print(' print 2 ',selectedFrame.columns.values[2]);
+       x=[5,8,4,3,7,10]
+       y=[6,5,6,10,5,8] 
+       selectedFrame.plot(x,y)
+       #selectedFrame.plot(selectedFrame.columns.values[1], selectedFrame.columns.values[2]);
        #selectedFrame.plot(x=selectedFrame.columns.values[1], y=selectedFrame.columns.values[1]); 
        #selectedFrame.plot.hist(subplots=True); 
        #selectedFrame.hist(subplots=True);
