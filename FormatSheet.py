@@ -326,8 +326,9 @@ def RegCorDescShift():
        print(' print 1 ',selectedFrame.columns.values[1]); 
        print(' print 2 ',selectedFrame.columns.values[2]);
        x=[5,8,4,3,7,9]
-       y=[6,5,6,8,5,8] 
-       selectedFrame.plot(x,y)
+       y=[6,5,6,8,5,8]
+       plt.plot(x,y)
+       #selectedFrame.plot(x,y)
        #selectedFrame.plot(selectedFrame.columns.values[1], selectedFrame.columns.values[2]);
        #selectedFrame.plot(x=selectedFrame.columns.values[1], y=selectedFrame.columns.values[1]); 
        #selectedFrame.plot.hist(subplots=True); 
@@ -336,7 +337,7 @@ def RegCorDescShift():
        #selectedFrame.plot(kind='bar');
        print("heatmap saved 3")
         
-      
+       
        #selectedFrame.plot(kind='bar');
        print("Frame plot made bar ") 
        #plt.figure(figsize=(1,1)) 
