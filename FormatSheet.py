@@ -329,8 +329,8 @@ def RegCorDescShift():
        print(' print 4 ',selectedFrame.columns.values[4]); 
        #x=selectedFrame[0];
        #y=selectedFrame[1];
-       print('x = ',x);
-       print('y = ',y) 
+       #print('x = ',x);
+       #print('y = ',y) 
        #x=[5,8,4,3,7,9]
        #y=[6,5,6,8,5,8]
        plt.plot(selectedFrame['id'],selectedFrame['company'])
